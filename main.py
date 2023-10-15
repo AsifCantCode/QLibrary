@@ -18,19 +18,19 @@ class Ui_Form(object):
         self.widget = QtWidgets.QWidget(Form)
         self.widget.setGeometry(QtCore.QRect(10, 20, 590, 420))
         self.widget.setStyleSheet("QPushButton#pushButton{\n"
-        "background-color: rgba(85,98,112,255);\n"
-        "color: rgba(255,255,255,200);\n"
-        "border-radius:5px;\n"
-        "}\n"
-        "QPushButton#pushButton:pressed{\n"
-        "padding-left: 5px;\n"
-        "padding-top:5px;\n"
-        "background-color: rgba(255,107,107,255);\n"
-        "background-position:calc(100%-10px)center;\n"
-        "}\n"
-        "QPushButton#pushButton:hover{\n"
-        "background-color:rgba(255,107,107,255);\n"
-        "}")
+"background-color: rgba(85,98,112,255);\n"
+"color: rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton:pressed{\n"
+"padding-left: 5px;\n"
+"padding-top:5px;\n"
+"background-color: rgba(255,107,107,255);\n"
+"background-position:calc(100%-10px)center;\n"
+"}\n"
+"QPushButton#pushButton:hover{\n"
+"background-color:rgba(255,107,107,255);\n"
+"}")
         self.widget.setObjectName("widget")
         self.label = QtWidgets.QLabel(self.widget)
         self.label.setGeometry(QtCore.QRect(300, 50, 260, 330))
@@ -63,7 +63,7 @@ class Ui_Form(object):
 "border-bottom-color:rgba(46, 82, 101, 200);\n"
 "color:rgba(0,0,0);\n"
 "padding-bottom:7px;")
-        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.widget)
         self.lineEdit_2.setGeometry(QtCore.QRect(330, 190, 190, 40))
@@ -72,6 +72,7 @@ class Ui_Form(object):
 "border-bottom-color:rgba(46, 82, 101, 200);\n"
 "color:rgba(0,0,0);\n"
 "padding-bottom:7px;")
+        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.widget)
         self.pushButton.setGeometry(QtCore.QRect(370, 280, 120, 40))
@@ -115,11 +116,34 @@ class Ui_Form(object):
         self.label_4.setText(_translate("Form", "QLIBRARY"))
 
 
+class LoginApp(QtWidgets.QWidget):
+    def __init__(self):
+        super(LoginApp, self).__init__()
+
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+        # Connect the login button to the login function
+        self.ui.pushButton.clicked.connect(self.login)
+
+    def login(self):
+        # Get the entered username and password
+        entered_username = self.ui.lineEdit.text()
+        entered_password = self.ui.lineEdit_2.text()
+
+        # Replace these values with your actual valid username and password
+        valid_username = "Asif"
+        valid_password = "1234"
+
+        # Check if entered credentials match the valid ones
+        if entered_username == valid_username and entered_password == valid_password:
+            QtWidgets.QMessageBox.information(self, 'Login Successful', 'Welcome, {}'.format(entered_username))
+        else:
+            QtWidgets.QMessageBox.warning(self, 'Login Failed', 'Invalid username or password')
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    login_app = LoginApp()
+    login_app.show()
     sys.exit(app.exec_())
