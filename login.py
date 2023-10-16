@@ -4,6 +4,9 @@ from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow 
 from PyQt5.uic import loadUi
+from scene2 import Scene2
+
+
 
 class MyMainWindow(QtWidgets.QWidget):
     def __init__(self):
@@ -28,6 +31,9 @@ class MyMainWindow(QtWidgets.QWidget):
         # Check if entered credentials match the valid ones
         if entered_username == valid_username and entered_password == valid_password:
             QtWidgets.QMessageBox.information(self, 'Login Successful', 'Welcome, {}'.format(entered_username))
+            self.close()
+            window = Scene2()
+            window.show()
         else:
             QtWidgets.QMessageBox.warning(self, 'Login Failed', 'Invalid username or password')
         
@@ -41,8 +47,4 @@ class MyMainWindow(QtWidgets.QWidget):
 
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MyMainWindow()
-    window.show()
-    sys.exit(app.exec_())
+
