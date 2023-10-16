@@ -1,21 +1,45 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+import PyQt5
+from PyQt5 import QtGui, QtWidgets , QtCore 
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow 
 from PyQt5.uic import loadUi
 
-class MyMainWindow(QMainWindow):
+class MyMainWindow(QtWidgets.QWidget):
     def __init__(self):
-        super().__init__()
+        super(MyMainWindow , self ).__init__()
 
         # Load the UI from the .ui file dynamically
-        loadUi('login.ui', self)
+        self.ui=loadUi('login.ui', self)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
-        # Connect the button click event to a function
-        self.pushButton.clicked.connect(self.update_label_text)
+       
+        self.ui.pushButton.clicked.connect(self.login)
+    def login(self):
+        # Get the entered username and password
+        entered_username = self.ui.lineEdit.text()
+        entered_password = self.ui.lineEdit_2.text()
 
-    def update_label_text(self):
-        # Dynamically update the text of the label
-        new_text = "Dynamic Update Successful!"
-        self.label.setText(new_text)
+        # Replace these values with your actual valid username and password
+        valid_username = "Asif"
+        valid_password = "1234"
+
+        # Check if entered credentials match the valid ones
+        if entered_username == valid_username and entered_password == valid_password:
+            QtWidgets.QMessageBox.information(self, 'Login Successful', 'Welcome, {}'.format(entered_username))
+        else:
+            QtWidgets.QMessageBox.warning(self, 'Login Failed', 'Invalid username or password')
+        
+        
+    
+    def keyPressEvent(self,event):
+        if event.key()==Qt.Key_Escape:
+            self.close()
+
+
+
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
