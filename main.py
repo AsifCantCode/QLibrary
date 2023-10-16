@@ -15,6 +15,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(637, 537)
+        Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        Form.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.widget = QtWidgets.QWidget(Form)
         self.widget.setGeometry(QtCore.QRect(10, 20, 590, 420))
         self.widget.setStyleSheet("QPushButton#pushButton{\n"
@@ -102,6 +104,8 @@ class Ui_Form(object):
         self.label_5.setText("")
         self.label_5.setPixmap(QtGui.QPixmap("icon.jpg"))
         self.label_5.setObjectName("label_5")
+        
+        self.label.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=20, xOffset=0, yOffset=0))
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
