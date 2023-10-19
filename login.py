@@ -5,6 +5,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow 
 from PyQt5.uic import loadUi
 from scene2 import Scene2
+import login_api
 
 
 
@@ -17,26 +18,15 @@ class MyMainWindow(QtWidgets.QWidget):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
-       
         self.ui.pushButton.clicked.connect(self.login)
     def login(self):
         # Get the entered username and password
         entered_username = self.ui.lineEdit.text()
         entered_password = self.ui.lineEdit_2.text()
+        window = Scene2()
+        window.show()
+        login_api.loginController.librarian_login(entered_username, entered_password)
 
-        # Replace these values with your actual valid username and password
-        valid_username = "Asif"
-        valid_password = "1234"
-
-        # Check if entered credentials match the valid ones
-        if entered_username == valid_username and entered_password == valid_password:
-            QtWidgets.QMessageBox.information(self, 'Login Successful', 'Welcome, {}'.format(entered_username))
-            self.close()
-            window = Scene2()
-            window.show()
-        else:
-            QtWidgets.QMessageBox.warning(self, 'Login Failed', 'Invalid username or password')
-        
         
     
     def keyPressEvent(self,event):
