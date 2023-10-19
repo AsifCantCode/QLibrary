@@ -15,7 +15,7 @@ class loginController:
         }
         response = requests.post(loginController.librarian_url , params=login_payload )
 
-        print(response.json())
+        
 
         if response.status_code >= 200 and response.status_code < 300:
             print("Request was successful!")

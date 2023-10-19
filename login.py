@@ -23,9 +23,13 @@ class MyMainWindow(QtWidgets.QWidget):
         # Get the entered username and password
         entered_username = self.ui.lineEdit.text()
         entered_password = self.ui.lineEdit_2.text()
-        window = Scene2()
-        window.show()
-        login_api.loginController.librarian_login(entered_username, entered_password)
+        state=login_api.loginController.librarian_login(entered_username, entered_password)
+        if(state):
+            self.close()
+            window=Scene2()
+            window.show()
+
+
 
         
     
