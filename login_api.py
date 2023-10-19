@@ -17,6 +17,13 @@ class loginController:
 
         print(response.json())
 
+        if response.status_code >= 200 and response.status_code < 300:
+            print("Request was successful!")
+            return True
+        return False
+
+
+
 
 
 if __name__ == "__main__":
