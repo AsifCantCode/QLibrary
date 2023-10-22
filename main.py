@@ -13,6 +13,7 @@ from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow 
 from PyQt5.uic import loadUi
+from PyQt5.QtCore import pyqtSlot, QFile, QTextStream
 
 from login import MyMainWindow
 
@@ -20,6 +21,10 @@ from login import MyMainWindow
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    style_file = QFile("style.qss")
+    style_file.open(QFile.ReadOnly | QFile.Text)
+    style_stream = QTextStream(style_file)
+    app.setStyleSheet(style_stream.readAll())   
     window = MyMainWindow()
     window.show()    
     sys.exit(app.exec_())

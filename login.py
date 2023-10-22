@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
 from scene2 import Scene2
 import login_api
+from sidebar_ui import Sidebar_ui
 
 
 
@@ -26,7 +27,7 @@ class MyMainWindow(QtWidgets.QWidget):
         state=login_api.loginController.librarian_login(entered_username, entered_password)
         if(state):
             self.close()
-            window=Scene2()
+            window=Sidebar_ui()
             window.show()
 
 
