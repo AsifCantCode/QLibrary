@@ -13,6 +13,11 @@
 		border: none;
 		width: 30px;
 		height: 30px;
+		color: white;
+		background-color:#efefef;
+	}
+	#change_btn:hover {
+		background-color: grey;
 	}
 /*= END
   ==================================================== */
@@ -20,7 +25,7 @@
 /*= Style for header widget START
   ==================================================== */
 	#widget {
-		background-color: #f9fafd;
+		background-color: #efefef;
 	}
 /*= END
   ==================================================== */
@@ -114,6 +119,10 @@
   ==================================================== */
 	#user_btn {
 		border: none;
+		padding: 10px;
+	}
+	#user_btn:hover {
+		background-color: grey;
 	}
 /*= END
   ==================================================== */
