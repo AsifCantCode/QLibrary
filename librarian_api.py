@@ -6,10 +6,11 @@ class librarianApi:
         self.start=0
 
     @classmethod
-    def insert_book(self , title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,username , password):
+    def insert_book(self , id ,  title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,username , password):
         url="http://localhost:8081/librarian/book-entry"
 
         payload={
+            "id":id,
             "title":title,
             "isbn":isbn,
             "year":year,

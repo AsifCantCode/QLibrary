@@ -2,12 +2,13 @@ import sys
 import PyQt5
 from PyQt5 import QtGui, QtWidgets , QtCore 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog 
 from PyQt5.uic import loadUi
 from scene2 import Scene2
 import login_api
 from sidebar_ui import Ui_MainWindow
-
+import csv
+from librarian_api import librarianApi
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -15,6 +16,7 @@ class MainWindow(QMainWindow):
         self.ui=loadUi('sidebar.ui', self)
 
         # self.ui.icon_only_widget.hide()
+        self.selected_files = []
         self.ui.full_menu_widget.hide()
         self.ui.stackedWidget.setCurrentIndex(0)
         self.ui.home_btn_2.setChecked(True)
@@ -56,7 +58,9 @@ class MainWindow(QMainWindow):
 
     def on_orders_btn_1_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(2)
-
+        self.ui.bookbtn.clicked.connect(self.uploadBooks)
+        self.ui.authbtn.clicked.connect(self.uploadAuthors)
+        
     def on_orders_btn_2_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
@@ -71,6 +75,37 @@ class MainWindow(QMainWindow):
 
     def on_customers_btn_2_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(4)
+        
+    def uploadBooks(self):
+            options = QFileDialog.Options()
+            # Show the file dialog and get the selected file path
+            filePath, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files ();;Text Files (.txt)", options=options)
+            
+            if filePath:
+                print(f'Selected File: {filePath}')   
+                with open(filePath, mode ='r')as file:
+
+                    # reading the CSV file
+                    csvFile = csv.reader(file)
+                    # displaying the contents of the CSV file
+                    for lines in csvFile:
+                            librarianApi.insert_book(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9]
+                                                    ,entered_username, entered_password)
+    def uploadAuthors(self):
+            options = QFileDialog.Options()
+            # Show the file dialog and get the selected file path
+            filePath, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files ();;Text Files (.txt)", options=options)
+            
+            if filePath:
+                print(f'Selected File: {filePath}')   
+                with open(filePath, mode ='r')as file:
+
+                    # reading the CSV file
+                    csvFile = csv.reader(file)
+                    # displaying the contents of the CSV file
+                    for lines in csvFile:
+                            librarianApi.insert_author(lines[0], lines[1], lines[2], entered_username, entered_password)
+
 
 
 class MyMainWindow(QtWidgets.QWidget):
@@ -85,7 +120,9 @@ class MyMainWindow(QtWidgets.QWidget):
         self.ui.pushButton.clicked.connect(self.login)
     def login(self):
         # Get the entered username and password
+        global entered_username
         entered_username = self.ui.lineEdit.text()
+        global entered_password 
         entered_password = self.ui.lineEdit_2.text()
         state=login_api.loginController.librarian_login(entered_username, entered_password)
         if(state):
