@@ -4,6 +4,12 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLa
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtCore import Qt, QTimer
 from pyzbar.pyzbar import decode
+from PIL import Image, ImageDraw, ImageFont
+import qrcode
+
+
+
+
 
 class QRCodeScannerApp(QWidget):
     def __init__(self):
@@ -15,7 +21,7 @@ class QRCodeScannerApp(QWidget):
         self.setWindowTitle('QR Code Scanner')
         self.setGeometry(100, 100, 640, 480)
 
-        self.camera = cv2.VideoCapture(0)
+        self.camera = cv2.VideoCapture(1)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
         self.timer.start(50)
@@ -53,8 +59,42 @@ class QRCodeScannerApp(QWidget):
                     qr_data = code.data.decode('utf-8')
                     print(f"Scanned QR Code: {qr_data}")
 
-if __name__ == '__main__':
+    
+def createQR(data , text_to_add):
+        
+        
+        
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(data)
+        qr.make(fit=True)
+        
+        qr_image = qr.make_image(fill_color="black", back_color="white")
+        
+        draw = ImageDraw.Draw(qr_image)
+        font = ImageFont.truetype("arial.ttf", 18)  
+        x1 , y1, x2 ,y2 =  draw.textbbox((0, 0), text=text_to_add, font=font)
+        text_width=x2-x1
+        text_height=y2-y1
+        text_position = (0, qr_image.height - text_height - 10)
+        draw.text(text_position, text_to_add, fill="black", font=font)
+        
+        qr_image.save("qrcode_with_text.png")
+        
+        #qr_image.show()
+
+        return 0
+
+
+
+if __name__== '__main__':
     app = QApplication(sys.argv)
     scanner = QRCodeScannerApp()
+    createQR(1234 , 'myqr')
     scanner.show()
+
     sys.exit(app.exec_())
