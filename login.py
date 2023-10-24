@@ -60,14 +60,9 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.bookbtn.clicked.connect(self.uploadBooks)
         self.ui.authbtn.clicked.connect(self.uploadAuthors)
-        #self.ui.submitbtn.clicked.connect(self.submitFiles)
         
-
     def on_orders_btn_2_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(2)
-        #self.ui.bookbtn.clicked.connect(self.openFileDialog)
-        #self.ui.authbtn.clicked.connect(self.uploadAuthors)
-        #self.ui.submitbtn.clicked.connect(self.submitFiles)
 
     def on_products_btn_1_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(3)
