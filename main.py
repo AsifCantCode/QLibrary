@@ -20,6 +20,11 @@ from login import MyMainWindow
 
 
 if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    login_app = LoginApp()
+    login_app.show()
     app = QApplication(sys.argv)
     style_file = QFile("style.qss")
     style_file.open(QFile.ReadOnly | QFile.Text)

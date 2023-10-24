@@ -1,15 +1,19 @@
 import sys
 import PyQt5
+import cv2
 from PyQt5 import QtGui, QtWidgets , QtCore 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog 
+from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtCore import Qt , QTimer
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog ,QWidget, QVBoxLayout, QPushButton, QLabel
 from PyQt5.uic import loadUi
 from scene2 import Scene2
 import login_api
 from sidebar_ui import Ui_MainWindow
 import csv
 from librarian_api import librarianApi
+from pyzbar.pyzbar import decode
 import qr
+
 
 
 
@@ -17,6 +21,10 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui=loadUi('sidebar.ui', self)
+
+        
+
+
 
         # self.ui.icon_only_widget.hide()
         self.selected_files = []
@@ -55,7 +63,11 @@ class MainWindow(QMainWindow):
 
     def on_dashborad_btn_1_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(1)
-        self.ui.qrbtn.clicked.connect(self.goToQR)
+        self.camera = cv2.VideoCapture(1)
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.updateFrame)
+        self.timer.start(50)
+        self.ui.qrbtn.clicked.connect(self.scanQRCode)
 
     def on_dashborad_btn_2_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -110,13 +122,28 @@ class MainWindow(QMainWindow):
                     # displaying the contents of the CSV file
                     for lines in csvFile:
                             librarianApi.insert_author(lines[0], lines[1], lines[2], entered_username, entered_password)
+
+    def updateFrame(self):
+        ret, frame = self.camera.read()
+        if ret:
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            height, width, channel = frame.shape
+            bytesPerLine = 3 * width
+            qImg = QImage(frame.data, width, height, bytesPerLine, QImage.Format_RGB888)
+            pixmap = QPixmap.fromImage(qImg)
+            self.image_label.setPixmap(pixmap)
+
+    def scanQRCode(self):
+        ret, frame = self.camera.read()
+
+        if ret:
+            codes = decode(frame)
+            if codes:
+                for code in codes:
+                    qr_data = code.data.decode('utf-8')
+                    print(f"Scanned QR Code: {qr_data}")
     
-    def goToQR(self):
-        
-        window = MyMainWindow()
-        
-        window.show()
-        
+
 
 
 
