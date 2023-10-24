@@ -160,7 +160,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -182,23 +182,35 @@
           </layout>
          </widget>
          <widget class="QWidget" name="page_2">
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_5">
-             <property name="font">
-              <font>
-               <pointsize>20</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Dashboard Page</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QWidget" name="verticalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>30</y>
+             <width>471</width>
+             <height>311</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>QR SCANNER:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="qrbtn">
+              <property name="text">
+               <string>SCAN</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListView" name="booklist"/>
+            </item>
+           </layout>
+          </widget>
          </widget>
          <widget class="QWidget" name="page_3">
           <widget class="QWidget" name="verticalLayoutWidget">
@@ -621,7 +633,7 @@
          <item>
           <widget class="QPushButton" name="dashborad_btn_2">
            <property name="text">
-            <string>Dashboard</string>
+            <string>BORROW</string>
            </property>
            <property name="icon">
             <iconset resource="resource.qrc">

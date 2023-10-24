@@ -6,6 +6,7 @@ from PyQt5.QtCore import Qt, QTimer
 from pyzbar.pyzbar import decode
 from PIL import Image, ImageDraw, ImageFont
 import qrcode
+import os
 
 
 
@@ -14,17 +15,17 @@ import qrcode
 class QRCodeScannerApp(QWidget):
     def __init__(self):
         super().__init__()
-
+        self.loaded=False
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle('QR Code Scanner')
         self.setGeometry(100, 100, 640, 480)
 
-        self.camera = cv2.VideoCapture(1)
+        self.camera = cv2.VideoCapture(0)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
-        self.timer.start(50)
+        self.timer.start(200)
 
         self.image_label = QLabel(self)
         self.image_label.setAlignment(Qt.AlignCenter)
@@ -37,6 +38,8 @@ class QRCodeScannerApp(QWidget):
         layout.addWidget(self.button)
 
         self.setLayout(layout)
+
+        self.loaded=True
 
     def updateFrame(self):
         ret, frame = self.camera.read()
@@ -63,7 +66,7 @@ class QRCodeScannerApp(QWidget):
 def createQR(data , text_to_add):
         
         
-        
+
         qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -83,7 +86,11 @@ def createQR(data , text_to_add):
         text_position = (0, qr_image.height - text_height - 10)
         draw.text(text_position, text_to_add, fill="black", font=font)
         
-        qr_image.save("qrcode_with_text.png")
+        folder_path='Qr'
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        qr_image.save(folder_path+"/qrcode"+data+".png")
         
         #qr_image.show()
 
@@ -94,7 +101,7 @@ def createQR(data , text_to_add):
 if __name__== '__main__':
     app = QApplication(sys.argv)
     scanner = QRCodeScannerApp()
-    createQR(1234 , 'myqr')
+    createQR('1234' , 'myqr')
     scanner.show()
 
     sys.exit(app.exec_())

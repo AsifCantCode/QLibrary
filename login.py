@@ -9,6 +9,9 @@ import login_api
 from sidebar_ui import Ui_MainWindow
 import csv
 from librarian_api import librarianApi
+import qr
+
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -52,6 +55,7 @@ class MainWindow(QMainWindow):
 
     def on_dashborad_btn_1_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(1)
+        self.ui.qrbtn.clicked.connect(self.goToQR)
 
     def on_dashborad_btn_2_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -91,6 +95,7 @@ class MainWindow(QMainWindow):
                     for lines in csvFile:
                             librarianApi.insert_book(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9]
                                                     ,entered_username, entered_password)
+                            qr.createQR(lines[0] ,lines[1] )
     def uploadAuthors(self):
             options = QFileDialog.Options()
             # Show the file dialog and get the selected file path
@@ -105,6 +110,14 @@ class MainWindow(QMainWindow):
                     # displaying the contents of the CSV file
                     for lines in csvFile:
                             librarianApi.insert_author(lines[0], lines[1], lines[2], entered_username, entered_password)
+    
+    def goToQR(self):
+        
+        window = MyMainWindow()
+        
+        window.show()
+        
+
 
 
 
