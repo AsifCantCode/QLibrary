@@ -22,10 +22,6 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui=loadUi('sidebar.ui', self)
 
-        
-
-
-
         # self.ui.icon_only_widget.hide()
         self.selected_files = []
         self.ui.full_menu_widget.hide()
@@ -63,7 +59,7 @@ class MainWindow(QMainWindow):
 
     def on_dashborad_btn_1_toggled(self):
         self.ui.stackedWidget.setCurrentIndex(1)
-        self.camera = cv2.VideoCapture(1)
+        self.camera = cv2.VideoCapture(0)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
         self.timer.start(50)
@@ -154,10 +150,8 @@ class MyMainWindow(QtWidgets.QWidget):
 
         # Load the UI from the .ui file dynamically
         self.ui=loadUi('login.ui', self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-
         self.ui.pushButton.clicked.connect(self.login)
+        
     def login(self):
         # Get the entered username and password
         global entered_username
@@ -169,9 +163,6 @@ class MyMainWindow(QtWidgets.QWidget):
             self.close()
             window=MainWindow()
             window.show()
-
-
-
         
     
     def keyPressEvent(self,event):

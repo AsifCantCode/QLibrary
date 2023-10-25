@@ -1,7 +1,7 @@
 /*= Style for mainwindow START
   ==================================================== */
 	#MainWindow {
-		background-color: #fff;
+		background-color: #eef;
 	}
 /*= END
   ==================================================== */
@@ -9,15 +9,15 @@
 /*= Style for button to change menu style START
   ==================================================== */
 	#change_btn {
-		padding: 5px;
+		padding: 7px;
 		border: none;
-		width: 30px;
-		height: 30px;
+		width: 32px;
+		height: 32px;
 		color: white;
 		background-color:#efefef;
 	}
 	#change_btn:hover {
-		background-color: grey;
+		background-color: #2a5900d6;
 	}
 /*= END
   ==================================================== */
@@ -34,7 +34,7 @@
   ==================================================== */
   	/* style for widget */
 	#icon_only_widget {
-		background-color: #313a46;
+		background-color: #ef5900d6;
 		width:50px;
 	}
 
@@ -46,7 +46,7 @@
 	}
 
 	#icon_only_widget QPushButton:hover {
-		background-color: rgba( 86, 101, 115, 0.5);
+		background-color: #86fefff5;
 	}
 
 	/* style for logo image */
@@ -60,7 +60,7 @@
   ==================================================== */
 	/* style for widget */
 	#full_menu_widget {
-		background-color: #313a46;
+		background-color: #ef5900d6;
 	}
 
 	/* style for QPushButton */
@@ -69,11 +69,11 @@
 		border-radius: 3px;
 		text-align: left;
 		padding: 8px 0 8px 15px;
-		color: #788596;
+		color: #f4fdff;
 	}
 
 	#full_menu_widget QPushButton:hover {
-		background-color: rgba( 86, 101, 115, 0.5);
+		background-color: #86fefff5;
 	}
 
 	#full_menu_widget QPushButton:checked {
@@ -122,7 +122,7 @@
 		padding: 10px;
 	}
 	#user_btn:hover {
-		background-color: grey;
+		background-color: #2a5900d6;
 	}
 /*= END
   ==================================================== */
