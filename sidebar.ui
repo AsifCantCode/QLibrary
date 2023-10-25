@@ -299,7 +299,21 @@ QPushButton:hover {
           <item>
            <widget class="QPushButton" name="change_btn">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 3px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 12px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
             </property>
             <property name="text">
              <string/>
@@ -311,7 +325,7 @@ QPushButton:hover {
             <property name="iconSize">
              <size>
               <width>18</width>
-              <height>24</height>
+              <height>28</height>
              </size>
             </property>
             <property name="checkable">
@@ -361,7 +375,7 @@ QLineEdit:focus {
 
 /* Style for a disabled QLineEdit */
 QLineEdit:disabled {
-    background-color: #F5F5F5; /* Background color for disabled state */
+    background-color: #dff2ff; /* Background color for disabled state */
     color: #999999; /* Text color for disabled state */
 }
 </string>
@@ -405,6 +419,28 @@ QLineEdit:disabled {
           </item>
           <item>
            <widget class="QPushButton" name="user_btn">
+            <property name="font">
+             <font>
+              <pointsize>-1</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 3px; /* Rounded corners */
+    padding: 4px 8px; /* Padding around the button text */
+	font-size: 12px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -415,7 +451,7 @@ QLineEdit:disabled {
             <property name="iconSize">
              <size>
               <width>24</width>
-              <height>28</height>
+              <height>29</height>
              </size>
             </property>
            </widget>

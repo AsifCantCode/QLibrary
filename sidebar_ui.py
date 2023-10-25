@@ -137,12 +137,26 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.change_btn = QtWidgets.QPushButton(self.widget)
-        self.change_btn.setStyleSheet("")
+        self.change_btn.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 3px; /* Rounded corners */\n"
+"    padding: 5px 10px; /* Padding around the button text */\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
         self.change_btn.setText("")
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(":/icon/icon/menu-4-32.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.change_btn.setIcon(icon6)
-        self.change_btn.setIconSize(QtCore.QSize(18, 24))
+        self.change_btn.setIconSize(QtCore.QSize(18, 28))
         self.change_btn.setCheckable(True)
         self.change_btn.setChecked(False)
         self.change_btn.setObjectName("change_btn")
@@ -171,7 +185,7 @@ class Ui_MainWindow(object):
 "\n"
 "/* Style for a disabled QLineEdit */\n"
 "QLineEdit:disabled {\n"
-"    background-color: #F5F5F5; /* Background color for disabled state */\n"
+"    background-color: #dff2ff; /* Background color for disabled state */\n"
 "    color: #999999; /* Text color for disabled state */\n"
 "}\n"
 "")
@@ -189,11 +203,29 @@ class Ui_MainWindow(object):
         spacerItem2 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem2)
         self.user_btn = QtWidgets.QPushButton(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.user_btn.setFont(font)
+        self.user_btn.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 3px; /* Rounded corners */\n"
+"    padding: 4px 8px; /* Padding around the button text */\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
         self.user_btn.setText("")
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-male-user-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.user_btn.setIcon(icon8)
-        self.user_btn.setIconSize(QtCore.QSize(24, 28))
+        self.user_btn.setIconSize(QtCore.QSize(24, 29))
         self.user_btn.setObjectName("user_btn")
         self.horizontalLayout_4.addWidget(self.user_btn)
         self.verticalLayout_5.addWidget(self.widget)

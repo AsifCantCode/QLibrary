@@ -1,7 +1,7 @@
 /*= Style for mainwindow START
   ==================================================== */
 	#MainWindow {
-		background-color: #eef;
+		background-color: #fff;
 	}
 /*= END
   ==================================================== */
@@ -24,9 +24,7 @@
 
 /*= Style for header widget START
   ==================================================== */
-	#widget {
-		background-color: #efefef;
-	}
+	
 /*= END
   ==================================================== */
 
@@ -89,7 +87,7 @@
 	/* style for APP title */
 	#logo_label_3 {
 		padding-right: 10px;
-		color: #fff;
+		color: #dff;
 	}
 /*= END
   ==================================================== */
