@@ -14,13 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(893, 711)
+        Form.resize(997, 768)
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setPointSize(1)
         Form.setFont(font)
         self.widget = QtWidgets.QWidget(Form)
-        self.widget.setGeometry(QtCore.QRect(100, 60, 721, 591))
+        self.widget.setGeometry(QtCore.QRect(110, 70, 791, 651))
         self.widget.setStyleSheet("QPushButton#pushButton{\n"
 "background-color: rgba(85,98,112,255);\n"
 "color: rgba(255,255,255,200);\n"
@@ -37,7 +37,7 @@ class Ui_Form(object):
 "}")
         self.widget.setObjectName("widget")
         self.label = QtWidgets.QLabel(self.widget)
-        self.label.setGeometry(QtCore.QRect(300, 60, 381, 471))
+        self.label.setGeometry(QtCore.QRect(300, 60, 411, 521))
         self.label.setStyleSheet("/* Style for QLabel with a solid lightest blue background */\n"
 "QLabel {\n"
 "    background-color: #FFFFFF; /* Lightest blue background color */\n"
@@ -52,7 +52,7 @@ class Ui_Form(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setGeometry(QtCore.QRect(40, 25, 341, 541))
+        self.label_2.setGeometry(QtCore.QRect(40, 25, 351, 591))
         self.label_2.setStyleSheet("/* Style for QLabel with a darker gradient background */\n"
 "QLabel {\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 0, 128, 255), stop:1 rgba(0, 0, 128, 255));\n"
@@ -77,7 +77,7 @@ class Ui_Form(object):
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.widget)
-        self.label_3.setGeometry(QtCore.QRect(450, 130, 171, 81))
+        self.label_3.setGeometry(QtCore.QRect(470, 160, 171, 81))
         font = QtGui.QFont()
         font.setFamily("Javanese Text")
         font.setPointSize(32)
@@ -88,7 +88,7 @@ class Ui_Form(object):
 "")
         self.label_3.setObjectName("label_3")
         self.lineEdit = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit.setGeometry(QtCore.QRect(420, 240, 211, 40))
+        self.lineEdit.setGeometry(QtCore.QRect(430, 270, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.lineEdit.setFont(font)
@@ -100,7 +100,7 @@ class Ui_Form(object):
         self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(420, 320, 211, 40))
+        self.lineEdit_2.setGeometry(QtCore.QRect(430, 350, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.lineEdit_2.setFont(font)
@@ -113,7 +113,7 @@ class Ui_Form(object):
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setGeometry(QtCore.QRect(440, 430, 181, 41))
+        self.pushButton.setGeometry(QtCore.QRect(450, 450, 201, 51))
         font = QtGui.QFont()
         font.setFamily("Arial,sans-serif")
         font.setPointSize(-1)
@@ -123,10 +123,10 @@ class Ui_Form(object):
 "    background-color: #0000A5; /* Solid blue background color */\n"
 "    color: #FFFFFF; /* Text color (white) */\n"
 "    border: 1px solid #333333; /* Border style */\n"
-"    border-radius: 5px; /* Rounded corners */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
 "    padding: 10px 20px; /* Padding around the content */\n"
 "    font-family: Arial, sans-serif; /* Font family */\n"
-"    font-size: 18px; /* Font size */\n"
+"    font-size: 20px; /* Font size */\n"
 "}\n"
 "\n"
 "/* QPushButton when hovered */\n"
@@ -137,10 +137,10 @@ class Ui_Form(object):
 "")
         self.pushButton.setObjectName("pushButton")
         self.label_4 = QtWidgets.QLabel(self.widget)
-        self.label_4.setGeometry(QtCore.QRect(60, 110, 281, 81))
+        self.label_4.setGeometry(QtCore.QRect(60, 110, 321, 91))
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
-        font.setPointSize(34)
+        font.setPointSize(36)
         font.setBold(True)
         font.setWeight(75)
         self.label_4.setFont(font)
@@ -150,7 +150,7 @@ class Ui_Form(object):
 "margin-right:center;")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.widget)
-        self.label_5.setGeometry(QtCore.QRect(80, 220, 261, 281))
+        self.label_5.setGeometry(QtCore.QRect(80, 240, 271, 281))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Ignored)
         sizePolicy.setHorizontalStretch(5)
         sizePolicy.setVerticalStretch(0)
@@ -166,7 +166,7 @@ class Ui_Form(object):
         self.label_5.setMidLineWidth(0)
         self.label_5.setText("")
         self.label_5.setTextFormat(QtCore.Qt.AutoText)
-        self.label_5.setPixmap(QtGui.QPixmap("D:/Downloaded Files/books (2).png"))
+        self.label_5.setPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/online-library (2).png"))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
 

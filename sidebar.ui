@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1082</width>
-    <height>701</height>
+    <width>1105</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -68,7 +68,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>icon/book.png</pixmap>
+            <pixmap>icon/online-library (1).png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -114,7 +114,7 @@
            <property name="icon">
             <iconset>
              <normaloff>icon/icons8-qr-code-24 (1).png</normaloff>
-             <normalon>D:/Downloaded Files/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
+             <normalon>icon/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -163,8 +163,8 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>D:/Downloaded Files/icons8-knowledge-sharing-48.png</normaloff>
-           <normalon>D:/Downloaded Files/icons8-knowledge-sharing-48 (1).png</normalon>D:/Downloaded Files/icons8-knowledge-sharing-48.png</iconset>
+           <normaloff>icon/icons8-knowledge-sharing-48.png</normaloff>
+           <normalon>icon/icons8-knowledge-sharing-48 (1).png</normalon>icon/icons8-knowledge-sharing-48.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -226,8 +226,6 @@ QPushButton {
     color: #000000; /* Black text color */
     border: 1px solid #000000; /* Black border */
     border-radius: 3px; /* Rounded corners */
-    padding: 2px 5px; /* Padding around the button text */
-	font-size: 12px;
 }
 
 /* QPushButton when hovered */
@@ -245,8 +243,8 @@ QPushButton:hover {
          </property>
          <property name="iconSize">
           <size>
-           <width>20</width>
-           <height>30</height>
+           <width>22</width>
+           <height>24</height>
           </size>
          </property>
         </widget>
@@ -298,6 +296,11 @@ QPushButton:hover {
           </property>
           <item>
            <widget class="QPushButton" name="change_btn">
+            <property name="font">
+             <font>
+              <pointsize>-1</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">/* Style for QPushButton */
 QPushButton {
@@ -324,8 +327,8 @@ QPushButton:hover {
             </property>
             <property name="iconSize">
              <size>
-              <width>18</width>
-              <height>28</height>
+              <width>16</width>
+              <height>24</height>
              </size>
             </property>
             <property name="checkable">
@@ -387,17 +390,33 @@ QLineEdit:disabled {
             </item>
             <item>
              <widget class="QPushButton" name="search_btn">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover {
+    background-color: #f0ffed; /* Teal color */
+}
+</string>
+              </property>
               <property name="text">
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
-                <normaloff>:/icon/icon/search-13-48.ico</normaloff>:/icon/icon/search-13-48.ico</iconset>
+               <iconset>
+                <normaloff>icon/icons8-search-128 (1).png</normaloff>icon/icons8-search-128 (1).png</iconset>
               </property>
               <property name="iconSize">
                <size>
-                <width>22</width>
-                <height>22</height>
+                <width>28</width>
+                <height>29</height>
                </size>
               </property>
              </widget>
@@ -461,8 +480,13 @@ QPushButton:hover {
        </item>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -604,7 +628,7 @@ border-radius: 5px;
           <widget class="QWidget" name="verticalLayoutWidget">
            <property name="geometry">
             <rect>
-             <x>310</x>
+             <x>300</x>
              <y>330</y>
              <width>391</width>
              <height>101</height>
@@ -675,7 +699,7 @@ QPushButton:hover {
           <widget class="QWidget" name="verticalLayoutWidget_3">
            <property name="geometry">
             <rect>
-             <x>310</x>
+             <x>300</x>
              <y>160</y>
              <width>391</width>
              <height>101</height>
@@ -837,8 +861,8 @@ QPushButton:hover {
           <widget class="QLabel" name="logo_label_2">
            <property name="minimumSize">
             <size>
-             <width>40</width>
-             <height>40</height>
+             <width>44</width>
+             <height>44</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -851,7 +875,7 @@ QPushButton:hover {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>icon/book.png</pixmap>
+            <pixmap>icon/online-library (1).png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -862,11 +886,13 @@ QPushButton:hover {
           <widget class="QLabel" name="logo_label_3">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>18</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
-            <string>QLibrery</string>
+            <string>QLibrary</string>
            </property>
           </widget>
          </item>
@@ -879,6 +905,13 @@ QPushButton:hover {
          </property>
          <item>
           <widget class="QPushButton" name="home_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>DASHBOARD</string>
            </property>
@@ -903,13 +936,20 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QPushButton" name="dashborad_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>SCANNER</string>
            </property>
            <property name="icon">
             <iconset>
              <normaloff>icon/icons8-qr-code-24 (1).png</normaloff>
-             <normalon>D:/Downloaded Files/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
+             <normalon>icon/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -927,6 +967,13 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QPushButton" name="orders_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
             <string>UPLOADS</string>
            </property>
@@ -950,14 +997,21 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="products_btn_2">
+          <widget class="QPushButton" name="customers_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
-            <string>MESSAGES</string>
+            <string>BORROW</string>
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+             <normaloff>icon/icons8-knowledge-sharing-48.png</normaloff>
+             <normalon>icon/icons8-knowledge-sharing-48 (1).png</normalon>icon/icons8-knowledge-sharing-48.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -974,14 +1028,21 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="customers_btn_2">
+          <widget class="QPushButton" name="products_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="text">
-            <string>BORROW</string>
+            <string>MESSAGES</string>
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>D:/Downloaded Files/icons8-knowledge-sharing-48.png</normaloff>
-             <normalon>D:/Downloaded Files/icons8-knowledge-sharing-48 (1).png</normalon>D:/Downloaded Files/icons8-knowledge-sharing-48.png</iconset>
+             <normaloff>icon/icons8-message-24.png</normaloff>
+             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
            </property>
            <property name="iconSize">
             <size>

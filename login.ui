@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
-    <height>711</height>
+    <width>997</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -27,10 +27,10 @@
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
-     <width>721</width>
-     <height>591</height>
+     <x>110</x>
+     <y>70</y>
+     <width>791</width>
+     <height>651</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -54,8 +54,8 @@ background-color:rgba(255,107,107,255);
      <rect>
       <x>300</x>
       <y>60</y>
-      <width>381</width>
-      <height>471</height>
+      <width>411</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -80,8 +80,8 @@ QLabel {
      <rect>
       <x>40</x>
       <y>25</y>
-      <width>341</width>
-      <height>541</height>
+      <width>351</width>
+      <height>591</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -114,8 +114,8 @@ QLabel:pressed {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>130</y>
+      <x>470</x>
+      <y>160</y>
       <width>171</width>
       <height>81</height>
      </rect>
@@ -139,10 +139,10 @@ QLabel:pressed {
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>240</y>
-      <width>211</width>
-      <height>40</height>
+      <x>430</x>
+      <y>270</y>
+      <width>241</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -167,10 +167,10 @@ padding-bottom:7px;</string>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>320</y>
-      <width>211</width>
-      <height>40</height>
+      <x>430</x>
+      <y>350</y>
+      <width>241</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -198,10 +198,10 @@ padding-bottom:7px;</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>430</y>
-      <width>181</width>
-      <height>41</height>
+      <x>450</x>
+      <y>450</y>
+      <width>201</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -216,10 +216,10 @@ QPushButton {
     background-color: #0000A5; /* Solid blue background color */
     color: #FFFFFF; /* Text color (white) */
     border: 1px solid #333333; /* Border style */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     padding: 10px 20px; /* Padding around the content */
     font-family: Arial, sans-serif; /* Font family */
-    font-size: 18px; /* Font size */
+    font-size: 20px; /* Font size */
 }
 
 /* QPushButton when hovered */
@@ -238,14 +238,14 @@ QPushButton:hover {
      <rect>
       <x>60</x>
       <y>110</y>
-      <width>281</width>
-      <height>81</height>
+      <width>321</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Century Gothic</family>
-      <pointsize>34</pointsize>
+      <pointsize>36</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -264,8 +264,8 @@ margin-right:center;</string>
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>220</y>
-      <width>261</width>
+      <y>240</y>
+      <width>271</width>
       <height>281</height>
      </rect>
     </property>
@@ -303,7 +303,7 @@ border-radius:10px;</string>
      <enum>Qt::AutoText</enum>
     </property>
     <property name="pixmap">
-     <pixmap>D:/Downloaded Files/books (2).png</pixmap>
+     <pixmap>icon/online-library (2).png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
