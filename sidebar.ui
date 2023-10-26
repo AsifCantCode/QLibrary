@@ -486,7 +486,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -549,31 +549,7 @@ QLabel:pressed {
 </string>
               </property>
               <property name="text">
-               <string>QR SCANNER:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="qrbtn">
-              <property name="styleSheet">
-               <string notr="true">/* Style for QPushButton */
-QPushButton {
-    background-color: #FFA500; /* Orange background color */
-    color: #000000; /* Black text color */
-    border: 1px solid #000000; /* Black border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
-	font-size: 14px;
-}
-
-/* QPushButton when hovered */
-QPushButton:hover {
-    background-color: #FFD700; /* Lighter orange on hover */
-}
-</string>
-              </property>
-              <property name="text">
-               <string>SCAN</string>
+               <string>BOOK ITEMS:</string>
               </property>
              </widget>
             </item>
@@ -602,6 +578,96 @@ QListView::item:selected {
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QLabel" name="borrowerlabel">
+              <property name="styleSheet">
+               <string notr="true">/* Style for QLabel */
+QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 18px; /* Font size */
+    border: 2px solid #CCCCCC; /* Border */
+    padding: 5px; /* Padding around the content */
+    background-color: #FFFFFF; /* Background color */
+}
+
+/* QLabel when it's disabled */
+QLabel:disabled {
+    color: #999999; /* Text color for disabled state */
+    background-color: #F5F5F5; /* Background color for disabled state */
+}
+
+/* QLabel with hover effect */
+QLabel:hover {
+    background-color: #86fefff5; /* Background color on hover */
+}
+
+/* QLabel when clicked (pressed) */
+QLabel:pressed {
+    background-color: #CCCCCC; /* Background color when clicked */
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Borrowed By :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QPushButton" name="serportclose">
+                <property name="styleSheet">
+                 <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 14px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Open Port</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="initborrow">
+                <property name="styleSheet">
+                 <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 14px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Register Borrow</string>
+                </property>
+                <property name="flat">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
            </layout>
           </widget>
           <widget class="QLabel" name="image_label">
@@ -621,6 +687,19 @@ border-radius: 5px;
            </property>
            <property name="text">
             <string>image</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="scannedlabel">
+           <property name="geometry">
+            <rect>
+             <x>370</x>
+             <y>550</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>scannedlabel</string>
            </property>
           </widget>
          </widget>
@@ -1125,8 +1204,8 @@ QPushButton:hover {
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>197</x>
-     <y>23</y>
+     <x>247</x>
+     <y>25</y>
     </hint>
     <hint type="destinationlabel">
      <x>50</x>
@@ -1189,12 +1268,12 @@ QPushButton:hover {
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>33</x>
-     <y>123</y>
+     <x>34</x>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
-     <x>69</x>
-     <y>125</y>
+     <x>131</x>
+     <y>157</y>
     </hint>
    </hints>
   </connection>
@@ -1206,11 +1285,11 @@ QPushButton:hover {
    <hints>
     <hint type="sourcelabel">
      <x>25</x>
-     <y>184</y>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
-     <x>72</x>
-     <y>148</y>
+     <x>134</x>
+     <y>221</y>
     </hint>
    </hints>
   </connection>
@@ -1222,7 +1301,7 @@ QPushButton:hover {
    <hints>
     <hint type="sourcelabel">
      <x>34</x>
-     <y>217</y>
+     <y>197</y>
     </hint>
     <hint type="destinationlabel">
      <x>67</x>
@@ -1285,12 +1364,12 @@ QPushButton:hover {
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>162</x>
-     <y>142</y>
+     <x>195</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
      <x>44</x>
-     <y>184</y>
+     <y>233</y>
     </hint>
    </hints>
   </connection>
@@ -1301,12 +1380,12 @@ QPushButton:hover {
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>181</x>
-     <y>194</y>
+     <x>195</x>
+     <y>189</y>
     </hint>
     <hint type="destinationlabel">
      <x>40</x>
-     <y>217</y>
+     <y>197</y>
     </hint>
    </hints>
   </connection>
