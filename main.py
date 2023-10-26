@@ -29,5 +29,7 @@ if __name__ == "__main__":
     style_stream = QTextStream(style_file)
     app.setStyleSheet(style_stream.readAll())   
     window = MyMainWindow()
+    window.setWindowFlags(Qt.FramelessWindowHint)
+    window.setAttribute(Qt.WA_TranslucentBackground)
     window.show()    
     sys.exit(app.exec_())
