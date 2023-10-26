@@ -1,15 +1,17 @@
 import requests
 from requests.auth import HTTPBasicAuth
+import json
 
 class librarianApi:
     def __init__(self):
         self.start=0
 
     @classmethod
-    def insert_book(self , title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,username , password):
+    def insert_book(self , id ,  title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,username , password):
         url="http://localhost:8081/librarian/book-entry"
 
         payload={
+            "id":id,
             "title":title,
             "isbn":isbn,
             "year":year,
@@ -38,8 +40,21 @@ class librarianApi:
         response= requests.post(url , params=payload , auth=HTTPBasicAuth(username,password))
 
         print(response.status_code)
+    
+    @classmethod
+    def book_info(self,bookid , username , password):
+        url="http://localhost:8081/librarian/book-info/"+str(bookid)
 
+        
+
+        response= requests.get(url , auth=HTTPBasicAuth(username,password))
+
+        print(response.text)
+
+        data = json.loads(response.text)
+
+        return data
 
 
 if __name__ == "__main__":
-    librarianApi.insert_book("BAJE BOI" , 12345 ,"2014" , "CSE" , 26 ,15 ,0,0,0,  "1234" ,"abcd")
+    print(librarianApi.book_info(1 , '1234' , 'abcd'))
