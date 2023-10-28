@@ -512,14 +512,22 @@ QPushButton:hover {
            <property name="geometry">
             <rect>
              <x>20</x>
-             <y>190</y>
+             <y>120</y>
              <width>331</width>
-             <height>251</height>
+             <height>411</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_6">
             <item>
              <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <family>Arial,sans-serif</family>
+                <pointsize>-1</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">/* Style for QLabel */
 QLabel {
@@ -527,7 +535,7 @@ QLabel {
     font-family: Arial, sans-serif; /* Font family */
     font-size: 18px; /* Font size */
     border: 2px solid #CCCCCC; /* Border */
-    padding: 5px; /* Padding around the content */
+    padding: 8px; /* Padding around the content */
     background-color: #FFFFFF; /* Background color */
 }
 
@@ -549,7 +557,7 @@ QLabel:pressed {
 </string>
               </property>
               <property name="text">
-               <string>BOOK ITEMS:</string>
+               <string>                   BOOK  ITEMS</string>
               </property>
              </widget>
             </item>
@@ -587,7 +595,7 @@ QLabel {
     font-family: Arial, sans-serif; /* Font family */
     font-size: 18px; /* Font size */
     border: 2px solid #CCCCCC; /* Border */
-    padding: 5px; /* Padding around the content */
+    padding: 8px; /* Padding around the content */
     background-color: #FFFFFF; /* Background color */
 }
 
@@ -624,8 +632,9 @@ QPushButton {
     color: #000000; /* Black text color */
     border: 1px solid #000000; /* Black border */
     border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
-	font-size: 14px;
+    padding: 8px 10px; /* Padding around the button text */
+	font-size: 15px;
+	font-weight: 500;
 }
 
 /* QPushButton when hovered */
@@ -648,8 +657,9 @@ QPushButton {
     color: #000000; /* Black text color */
     border: 1px solid #000000; /* Black border */
     border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
-	font-size: 14px;
+    padding: 8px 10px; /* Padding around the button text */
+	font-size: 15px;
+	font-weight: 500;
 }
 
 /* QPushButton when hovered */
@@ -679,6 +689,11 @@ QPushButton:hover {
              <height>411</height>
             </rect>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>25</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">border: 3px solid black;
 padding: 2px;
@@ -686,20 +701,44 @@ border-radius: 5px;
 </string>
            </property>
            <property name="text">
-            <string>image</string>
+            <string/>
            </property>
           </widget>
           <widget class="QLabel" name="scannedlabel">
            <property name="geometry">
             <rect>
-             <x>370</x>
-             <y>550</y>
-             <width>101</width>
-             <height>31</height>
+             <x>560</x>
+             <y>530</y>
+             <width>171</width>
+             <height>41</height>
             </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Sitka</family>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
            <property name="text">
             <string>scannedlabel</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="loadingLabel">
+           <property name="geometry">
+            <rect>
+             <x>570</x>
+             <y>260</y>
+             <width>101</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">image: url(:/icon/icon/loadingR.gif);</string>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </widget>
@@ -721,10 +760,11 @@ border-radius: 5px;
 QLabel {
     color: #3700B3; /* Text color */
     font-family: Arial, sans-serif; /* Font family */
-    font-size: 18px; /* Font size */
+    font-size: 22px; /* Font size */
     border: 2px solid #CCCCCC; /* Border */
     padding: 5px; /* Padding around the content */
     background-color: #FFFFFF; /* Background color */
+	font-weight: 500;
 }
 
 /* QLabel when it's disabled */
@@ -745,7 +785,7 @@ QLabel:pressed {
 </string>
               </property>
               <property name="text">
-               <string>Upload List of Books :</string>
+               <string>          Upload List of Books</string>
               </property>
              </widget>
             </item>
@@ -758,8 +798,9 @@ QPushButton {
     color: #000000; /* Black text color */
     border: 1px solid #000000; /* Black border */
     border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
+    padding: 7px 10px; /* Padding around the button text */
 	font-size: 14px;
+	font-weight: 500;
 }
 
 /* QPushButton when hovered */
@@ -792,10 +833,12 @@ QPushButton:hover {
 QLabel {
     color: #3700B3; /* Text color */
     font-family: Arial, sans-serif; /* Font family */
-    font-size: 18px; /* Font size */
+    font-size: 22px; /* Font size */
     border: 2px solid #CCCCCC; /* Border */
     padding: 5px; /* Padding around the content */
     background-color: #FFFFFF; /* Background color */
+	font-weight: 500;
+
 }
 
 /* QLabel when it's disabled */
@@ -816,7 +859,7 @@ QLabel:pressed {
 </string>
               </property>
               <property name="text">
-               <string>Upload List of Authors :</string>
+               <string>         Upload List of Authors</string>
               </property>
              </widget>
             </item>
@@ -829,8 +872,9 @@ QPushButton {
     color: #000000; /* Black text color */
     border: 1px solid #000000; /* Black border */
     border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
+    padding: 7px 10px; /* Padding around the button text */
 	font-size: 14px;
+	font-weight: 500;
 }
 
 /* QPushButton when hovered */
@@ -1193,7 +1237,6 @@ QPushButton:hover {
   </widget>
  </widget>
  <resources>
-  <include location="resource.qrc"/>
   <include location="resource.qrc"/>
  </resources>
  <connections>

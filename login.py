@@ -43,29 +43,19 @@ class CameraInitializer(threading.Thread):
 
 class MainWindow(QMainWindow):
 
-
-    
-
-
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.camera = None
+        self.timer = None
         
-
         #variables for the book borrow section
-
         self.booklistmodel = QStandardItemModel()
         self.items_set = set()
         self.bookitem_names = []
 
         #Variables for the homepage
 
-
-
         #variables for the author and book csv upload section
-
-
-
-
 
         #constructor execution
         self.ui=loadUi('sidebar.ui', self)
@@ -81,7 +71,11 @@ class MainWindow(QMainWindow):
         
         #construction script for the other parts
 
-
+    def closeCamera(self):
+        if self.camera is not None:
+            self.timer.stop()
+            self.camera.release()
+            self.camera = None
 
     ## Function for searching
     def on_search_btn_clicked(self):
@@ -108,14 +102,19 @@ class MainWindow(QMainWindow):
             
     ## functions for changing menu page
     def on_home_btn_1_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(0)
     
     def on_home_btn_2_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(0)
 
     def on_dashborad_btn_1_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(1)
-        self.camera = cv2.VideoCapture(1 ,cv2.CAP_MSMF)
+        loading_label = self.ui.loadingLabel
+        loading_label.show()
+        self.camera = cv2.VideoCapture(0 ,cv2.CAP_MSMF)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
         self.timer.start(50)
@@ -131,32 +130,39 @@ class MainWindow(QMainWindow):
         self.ui.serportclose.clicked.connect(self.closeCardReader)
         self.ui.initborrow.clicked.connect(self.registerBorrow)
         self.refreshBookList()
+        self.timer.timeout.connect(lambda: loading_label.hide())
 
     def on_dashborad_btn_2_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(1)
 
     def on_orders_btn_1_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.bookbtn.clicked.connect(self.uploadBooks)
         self.ui.authbtn.clicked.connect(self.uploadAuthors)
         
     def on_orders_btn_2_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(2)
 
     def on_products_btn_1_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(3)
 
     def on_products_btn_2_toggled(self, ):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(3)
 
     def on_customers_btn_1_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(4)
 
     def on_customers_btn_2_toggled(self):
+        self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(4)
         
-
-
+            
     #author and book upload functions
     
     
@@ -204,7 +210,7 @@ class MainWindow(QMainWindow):
             qImg = QImage(frame.data, width, height, bytesPerLine, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(qImg)
             self.image_label.setPixmap(pixmap)
-            self.scannedlabel.setText('Scanning')
+            self.scannedlabel.setText('Scanning...')
             self.scanQRCode(ret , frame)
     def scanQRCode(self , ret , frame):
         # ret, frame = self.camera.read()
@@ -269,6 +275,7 @@ class MyMainWindow(QtWidgets.QWidget):
         self.ui=loadUi('login.ui', self)
         self.ui.pushButton.clicked.connect(self.login)
         
+        
     def login(self):
         # Get the entered username and password
         global entered_username
@@ -281,10 +288,10 @@ class MyMainWindow(QtWidgets.QWidget):
             window=MainWindow()
             window.show()
         
-    
     def keyPressEvent(self,event):
         if event.key()==Qt.Key_Escape:
             self.close()
+    
 
 
 

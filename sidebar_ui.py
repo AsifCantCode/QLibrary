@@ -260,19 +260,25 @@ class Ui_MainWindow(object):
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.page_2)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(20, 190, 331, 251))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(20, 120, 331, 411))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Arial,sans-serif")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
         self.label_3.setStyleSheet("/* Style for QLabel */\n"
 "QLabel {\n"
 "    color: #3700B3; /* Text color */\n"
 "    font-family: Arial, sans-serif; /* Font family */\n"
 "    font-size: 18px; /* Font size */\n"
 "    border: 2px solid #CCCCCC; /* Border */\n"
-"    padding: 5px; /* Padding around the content */\n"
+"    padding: 8px; /* Padding around the content */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
 "}\n"
 "\n"
@@ -294,24 +300,6 @@ class Ui_MainWindow(object):
 "")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_6.addWidget(self.label_3)
-        self.qrbtn = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
-        self.qrbtn.setStyleSheet("/* Style for QPushButton */\n"
-"QPushButton {\n"
-"    background-color: #FFA500; /* Orange background color */\n"
-"    color: #000000; /* Black text color */\n"
-"    border: 1px solid #000000; /* Black border */\n"
-"    border-radius: 5px; /* Rounded corners */\n"
-"    padding: 5px 10px; /* Padding around the button text */\n"
-"    font-size: 14px;\n"
-"}\n"
-"\n"
-"/* QPushButton when hovered */\n"
-"QPushButton:hover {\n"
-"    background-color: #FFD700; /* Lighter orange on hover */\n"
-"}\n"
-"")
-        self.qrbtn.setObjectName("qrbtn")
-        self.verticalLayout_6.addWidget(self.qrbtn)
         self.booklist = QtWidgets.QListView(self.verticalLayoutWidget_2)
         self.booklist.setStyleSheet("    background-color: #f4fdff; /* Background color */\n"
 "    border: 1px solid #000000; /* Border */\n"
@@ -334,13 +322,102 @@ class Ui_MainWindow(object):
 "")
         self.booklist.setObjectName("booklist")
         self.verticalLayout_6.addWidget(self.booklist)
+        self.borrowerlabel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.borrowerlabel.setStyleSheet("/* Style for QLabel */\n"
+"QLabel {\n"
+"    color: #3700B3; /* Text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 18px; /* Font size */\n"
+"    border: 2px solid #CCCCCC; /* Border */\n"
+"    padding: 8px; /* Padding around the content */\n"
+"    background-color: #FFFFFF; /* Background color */\n"
+"}\n"
+"\n"
+"/* QLabel when it\'s disabled */\n"
+"QLabel:disabled {\n"
+"    color: #999999; /* Text color for disabled state */\n"
+"    background-color: #F5F5F5; /* Background color for disabled state */\n"
+"}\n"
+"\n"
+"/* QLabel with hover effect */\n"
+"QLabel:hover {\n"
+"    background-color: #86fefff5; /* Background color on hover */\n"
+"}\n"
+"\n"
+"/* QLabel when clicked (pressed) */\n"
+"QLabel:pressed {\n"
+"    background-color: #CCCCCC; /* Background color when clicked */\n"
+"}\n"
+"")
+        self.borrowerlabel.setObjectName("borrowerlabel")
+        self.verticalLayout_6.addWidget(self.borrowerlabel)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.serportclose = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
+        self.serportclose.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 8px 10px; /* Padding around the button text */\n"
+"    font-size: 15px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
+        self.serportclose.setObjectName("serportclose")
+        self.horizontalLayout_6.addWidget(self.serportclose)
+        self.initborrow = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
+        self.initborrow.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 8px 10px; /* Padding around the button text */\n"
+"    font-size: 15px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
+        self.initborrow.setFlat(False)
+        self.initborrow.setObjectName("initborrow")
+        self.horizontalLayout_6.addWidget(self.initborrow)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_6)
         self.image_label = QtWidgets.QLabel(self.page_2)
         self.image_label.setGeometry(QtCore.QRect(370, 120, 501, 411))
+        font = QtGui.QFont()
+        font.setPointSize(25)
+        self.image_label.setFont(font)
         self.image_label.setStyleSheet("border: 3px solid black;\n"
 "padding: 2px;\n"
 "border-radius: 5px;\n"
 "")
+        self.image_label.setText("")
         self.image_label.setObjectName("image_label")
+        self.scannedlabel = QtWidgets.QLabel(self.page_2)
+        self.scannedlabel.setGeometry(QtCore.QRect(560, 530, 171, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.scannedlabel.setFont(font)
+        self.scannedlabel.setObjectName("scannedlabel")
+        self.loadingLabel = QtWidgets.QLabel(self.page_2)
+        self.loadingLabel.setGeometry(QtCore.QRect(570, 260, 101, 111))
+        self.loadingLabel.setStyleSheet("image: url(:/icon/icon/loadingR.gif);")
+        self.loadingLabel.setText("")
+        self.loadingLabel.setObjectName("loadingLabel")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -355,10 +432,11 @@ class Ui_MainWindow(object):
 "QLabel {\n"
 "    color: #3700B3; /* Text color */\n"
 "    font-family: Arial, sans-serif; /* Font family */\n"
-"    font-size: 18px; /* Font size */\n"
+"    font-size: 22px; /* Font size */\n"
 "    border: 2px solid #CCCCCC; /* Border */\n"
 "    padding: 5px; /* Padding around the content */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "/* QLabel when it\'s disabled */\n"
@@ -386,8 +464,9 @@ class Ui_MainWindow(object):
 "    color: #000000; /* Black text color */\n"
 "    border: 1px solid #000000; /* Black border */\n"
 "    border-radius: 5px; /* Rounded corners */\n"
-"    padding: 5px 10px; /* Padding around the button text */\n"
+"    padding: 7px 10px; /* Padding around the button text */\n"
 "    font-size: 14px;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "/* QPushButton when hovered */\n"
@@ -408,10 +487,12 @@ class Ui_MainWindow(object):
 "QLabel {\n"
 "    color: #3700B3; /* Text color */\n"
 "    font-family: Arial, sans-serif; /* Font family */\n"
-"    font-size: 18px; /* Font size */\n"
+"    font-size: 22px; /* Font size */\n"
 "    border: 2px solid #CCCCCC; /* Border */\n"
 "    padding: 5px; /* Padding around the content */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
+"    font-weight: 500;\n"
+"\n"
 "}\n"
 "\n"
 "/* QLabel when it\'s disabled */\n"
@@ -439,8 +520,9 @@ class Ui_MainWindow(object):
 "    color: #000000; /* Black text color */\n"
 "    border: 1px solid #000000; /* Black border */\n"
 "    border-radius: 5px; /* Rounded corners */\n"
-"    padding: 5px 10px; /* Padding around the button text */\n"
+"    padding: 7px 10px; /* Padding around the button text */\n"
 "    font-size: 14px;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "/* QPushButton when hovered */\n"
@@ -615,7 +697,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.change_btn.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.change_btn.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.home_btn_1.toggled['bool'].connect(self.home_btn_2.setChecked) # type: ignore
@@ -637,12 +719,14 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.search_input.setPlaceholderText(_translate("MainWindow", "Search..."))
         self.label_4.setText(_translate("MainWindow", "Home Page"))
-        self.label_3.setText(_translate("MainWindow", "QR SCANNER:"))
-        self.qrbtn.setText(_translate("MainWindow", "SCAN"))
-        self.image_label.setText(_translate("MainWindow", "image"))
-        self.label.setText(_translate("MainWindow", "Upload List of Books :"))
+        self.label_3.setText(_translate("MainWindow", "                   BOOK  ITEMS"))
+        self.borrowerlabel.setText(_translate("MainWindow", "Borrowed By :"))
+        self.serportclose.setText(_translate("MainWindow", "Open Port"))
+        self.initborrow.setText(_translate("MainWindow", "Register Borrow"))
+        self.scannedlabel.setText(_translate("MainWindow", "scannedlabel"))
+        self.label.setText(_translate("MainWindow", "          Upload List of Books"))
         self.bookbtn.setText(_translate("MainWindow", "SELECT CSV"))
-        self.label_2.setText(_translate("MainWindow", "Upload List of Authors :"))
+        self.label_2.setText(_translate("MainWindow", "         Upload List of Authors"))
         self.authbtn.setText(_translate("MainWindow", "SELECT CSV"))
         self.label_7.setText(_translate("MainWindow", "Product Page"))
         self.label_8.setText(_translate("MainWindow", "Customers Page"))
