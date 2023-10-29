@@ -486,7 +486,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>5</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -524,8 +524,6 @@ QPushButton:hover {
                <font>
                 <family>Arial,sans-serif</family>
                 <pointsize>-1</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -966,6 +964,66 @@ QPushButton:hover {
             </widget>
            </item>
           </layout>
+         </widget>
+         <widget class="QWidget" name="page_8">
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>40</y>
+             <width>711</width>
+             <height>511</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #efefef;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="regbtn">
+           <property name="geometry">
+            <rect>
+             <x>380</x>
+             <y>580</y>
+             <width>161</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>13</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Register Member</string>
+           </property>
+          </widget>
+          <widget class="QSplitter" name="splitter">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>139</y>
+             <width>541</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Name: </string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit"/>
+          </widget>
          </widget>
         </widget>
        </item>

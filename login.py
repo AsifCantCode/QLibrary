@@ -114,7 +114,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(1)
         loading_label = self.ui.loadingLabel
         loading_label.show()
-        self.camera = cv2.VideoCapture(0 ,cv2.CAP_MSMF)
+        self.camera = cv2.VideoCapture(0)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
         self.timer.start(50)
