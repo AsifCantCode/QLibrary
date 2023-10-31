@@ -486,7 +486,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -745,7 +745,7 @@ border-radius: 5px;
            <property name="geometry">
             <rect>
              <x>300</x>
-             <y>330</y>
+             <y>370</y>
              <width>391</width>
              <height>101</height>
             </rect>
@@ -818,7 +818,7 @@ QPushButton:hover {
            <property name="geometry">
             <rect>
              <x>300</x>
-             <y>160</y>
+             <y>200</y>
              <width>391</width>
              <height>101</height>
             </rect>
@@ -888,6 +888,28 @@ QPushButton:hover {
             </item>
            </layout>
           </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>100</y>
+             <width>621</width>
+             <height>461</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #f4fdff; /* Light violet background with partial transparency */
+    border: 2px solid #CCC;                      /* Add a subtle border */
+    border-radius: 20px;                         /* Rounded corners */
+    padding: 10px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <zorder>label_12</zorder>
+          <zorder>verticalLayoutWidget</zorder>
+          <zorder>verticalLayoutWidget_3</zorder>
          </widget>
          <widget class="QWidget" name="page_4">
           <layout class="QGridLayout" name="gridLayout_5">
@@ -912,10 +934,10 @@ QPushButton:hover {
           <widget class="QLabel" name="label_8">
            <property name="geometry">
             <rect>
-             <x>40</x>
-             <y>40</y>
-             <width>821</width>
-             <height>521</height>
+             <x>90</x>
+             <y>70</y>
+             <width>791</width>
+             <height>501</height>
             </rect>
            </property>
            <property name="font">
@@ -924,8 +946,10 @@ QPushButton:hover {
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #ef5900d6;
-border: 2px solid black;</string>
+            <string notr="true">background-color: #f4fdff; /* Light violet background with partial transparency */
+    border: 2px solid #CCC;                      /* Add a subtle border */
+    border-radius: 20px;                         /* Rounded corners */
+    padding: 10px;</string>
            </property>
            <property name="text">
             <string/>
@@ -937,10 +961,10 @@ border: 2px solid black;</string>
           <widget class="QWidget" name="layoutWidget_2">
            <property name="geometry">
             <rect>
-             <x>160</x>
-             <y>180</y>
+             <x>190</x>
+             <y>170</y>
              <width>601</width>
-             <height>261</height>
+             <height>301</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -955,17 +979,46 @@ border: 2px solid black;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color:white;</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>Name: </string>
+                 <string>Name        :  </string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QLineEdit" name="regName_2">
                 <property name="styleSheet">
-                 <string notr="true">border: 1px solid black;</string>
+                 <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
                 </property>
                </widget>
               </item>
@@ -982,17 +1035,46 @@ border: 2px solid black;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color:white;</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>ID:       </string>
+                 <string>ID               :  </string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QLineEdit" name="regId_2">
                 <property name="styleSheet">
-                 <string notr="true">border: 1px solid black;</string>
+                 <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
                 </property>
                </widget>
               </item>
@@ -1009,18 +1091,46 @@ border: 2px solid black;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color:white;
-</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>Email:  </string>
+                 <string>Email         :  </string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QLineEdit" name="regEmail_2">
                 <property name="styleSheet">
-                 <string notr="true">border: 1px solid black;</string>
+                 <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
                 </property>
                </widget>
               </item>
@@ -1037,17 +1147,46 @@ border: 2px solid black;</string>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color:white;</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>Username:</string>
+                 <string>Username :  </string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QLineEdit" name="username_2">
                 <property name="styleSheet">
-                 <string notr="true">border: 1px solid black;</string>
+                 <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
                 </property>
                </widget>
               </item>
@@ -1059,18 +1198,55 @@ border: 2px solid black;</string>
            <property name="geometry">
             <rect>
              <x>400</x>
-             <y>580</y>
-             <width>161</width>
+             <y>500</y>
+             <width>201</width>
              <height>41</height>
             </rect>
            </property>
            <property name="font">
             <font>
-             <pointsize>13</pointsize>
+             <pointsize>-1</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 18px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
            </property>
            <property name="text">
             <string>Register Member</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>300</x>
+             <y>100</y>
+             <width>401</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>LIBRARY MEMBER REGISTRATION</string>
            </property>
           </widget>
          </widget>
@@ -1229,7 +1405,7 @@ border: 2px solid black;</string>
              <x>0</x>
              <y>80</y>
              <width>891</width>
-             <height>38</height>
+             <height>44</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -1447,7 +1623,7 @@ border: 2px solid black;</string>
             </font>
            </property>
            <property name="text">
-            <string>MEMBER REG</string>
+            <string>REGISTRATION</string>
            </property>
            <property name="icon">
             <iconset>
