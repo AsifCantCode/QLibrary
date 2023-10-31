@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1105, 700)
+        MainWindow.resize(1133, 720)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -74,18 +74,17 @@ class Ui_MainWindow(object):
         self.orders_btn_1.setAutoExclusive(True)
         self.orders_btn_1.setObjectName("orders_btn_1")
         self.verticalLayout.addWidget(self.orders_btn_1)
-        self.verticalLayout_3.addLayout(self.verticalLayout)
-        self.customers_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
-        self.customers_btn_1.setText("")
+        self.memberRegSection_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
+        self.memberRegSection_btn_1.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.customers_btn_1.setIcon(icon3)
-        self.customers_btn_1.setIconSize(QtCore.QSize(22, 28))
-        self.customers_btn_1.setCheckable(True)
-        self.customers_btn_1.setAutoExclusive(True)
-        self.customers_btn_1.setObjectName("customers_btn_1")
-        self.verticalLayout_3.addWidget(self.customers_btn_1)
+        self.memberRegSection_btn_1.setIcon(icon3)
+        self.memberRegSection_btn_1.setIconSize(QtCore.QSize(22, 28))
+        self.memberRegSection_btn_1.setCheckable(True)
+        self.memberRegSection_btn_1.setAutoExclusive(True)
+        self.memberRegSection_btn_1.setObjectName("memberRegSection_btn_1")
+        self.verticalLayout.addWidget(self.memberRegSection_btn_1)
         self.products_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.products_btn_1.setText("")
         icon4 = QtGui.QIcon()
@@ -96,7 +95,8 @@ class Ui_MainWindow(object):
         self.products_btn_1.setCheckable(True)
         self.products_btn_1.setAutoExclusive(True)
         self.products_btn_1.setObjectName("products_btn_1")
-        self.verticalLayout_3.addWidget(self.products_btn_1)
+        self.verticalLayout.addWidget(self.products_btn_1)
+        self.verticalLayout_3.addLayout(self.verticalLayout)
         spacerItem = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_3.addItem(spacerItem)
         self.exit_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
@@ -557,7 +557,7 @@ class Ui_MainWindow(object):
         self.page_5 = QtWidgets.QWidget()
         self.page_5.setObjectName("page_5")
         self.label_8 = QtWidgets.QLabel(self.page_5)
-        self.label_8.setGeometry(QtCore.QRect(90, 70, 791, 501))
+        self.label_8.setGeometry(QtCore.QRect(90, 30, 791, 571))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_8.setFont(font)
@@ -569,7 +569,7 @@ class Ui_MainWindow(object):
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
         self.layoutWidget_2 = QtWidgets.QWidget(self.page_5)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(190, 170, 601, 301))
+        self.layoutWidget_2.setGeometry(QtCore.QRect(190, 140, 601, 341))
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -628,8 +628,8 @@ class Ui_MainWindow(object):
         self.label_18.setStyleSheet("")
         self.label_18.setObjectName("label_18")
         self.horizontalLayout_13.addWidget(self.label_18)
-        self.regId_2 = QtWidgets.QLineEdit(self.layoutWidget_2)
-        self.regId_2.setStyleSheet("QLineEdit {\n"
+        self.regID = QtWidgets.QLineEdit(self.layoutWidget_2)
+        self.regID.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
 "    padding: 6px;                 /* Add some padding for spacing */\n"
@@ -659,8 +659,8 @@ class Ui_MainWindow(object):
 "    background-color: #EEE;      /* Light gray background for disabled state */\n"
 "}\n"
 "")
-        self.regId_2.setObjectName("regId_2")
-        self.horizontalLayout_13.addWidget(self.regId_2)
+        self.regID.setObjectName("regID")
+        self.horizontalLayout_13.addWidget(self.regID)
         self.verticalLayout_10.addLayout(self.horizontalLayout_13)
         self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_19.setObjectName("horizontalLayout_19")
@@ -706,18 +706,18 @@ class Ui_MainWindow(object):
         self.regEmail_2.setObjectName("regEmail_2")
         self.horizontalLayout_19.addWidget(self.regEmail_2)
         self.verticalLayout_10.addLayout(self.horizontalLayout_19)
-        self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
-        self.label_26 = QtWidgets.QLabel(self.layoutWidget_2)
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.label_27 = QtWidgets.QLabel(self.layoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
-        self.label_26.setFont(font)
-        self.label_26.setStyleSheet("")
-        self.label_26.setObjectName("label_26")
-        self.horizontalLayout_20.addWidget(self.label_26)
-        self.username_2 = QtWidgets.QLineEdit(self.layoutWidget_2)
-        self.username_2.setStyleSheet("QLineEdit {\n"
+        self.label_27.setFont(font)
+        self.label_27.setStyleSheet("")
+        self.label_27.setObjectName("label_27")
+        self.horizontalLayout_21.addWidget(self.label_27)
+        self.regPhone = QtWidgets.QLineEdit(self.layoutWidget_2)
+        self.regPhone.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
 "    padding: 6px;                 /* Add some padding for spacing */\n"
@@ -747,15 +747,59 @@ class Ui_MainWindow(object):
 "    background-color: #EEE;      /* Light gray background for disabled state */\n"
 "}\n"
 "")
-        self.username_2.setObjectName("username_2")
-        self.horizontalLayout_20.addWidget(self.username_2)
+        self.regPhone.setObjectName("regPhone")
+        self.horizontalLayout_21.addWidget(self.regPhone)
+        self.verticalLayout_10.addLayout(self.horizontalLayout_21)
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.label_26 = QtWidgets.QLabel(self.layoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_26.setFont(font)
+        self.label_26.setStyleSheet("")
+        self.label_26.setObjectName("label_26")
+        self.horizontalLayout_20.addWidget(self.label_26)
+        self.regUsername = QtWidgets.QLineEdit(self.layoutWidget_2)
+        self.regUsername.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regUsername.setObjectName("regUsername")
+        self.horizontalLayout_20.addWidget(self.regUsername)
         self.verticalLayout_10.addLayout(self.horizontalLayout_20)
-        self.regbtn_2 = QtWidgets.QPushButton(self.page_5)
-        self.regbtn_2.setGeometry(QtCore.QRect(400, 500, 201, 41))
+        self.regMemberBtn = QtWidgets.QPushButton(self.page_5)
+        self.regMemberBtn.setGeometry(QtCore.QRect(400, 500, 201, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
-        self.regbtn_2.setFont(font)
-        self.regbtn_2.setStyleSheet("/* Style for QPushButton */\n"
+        self.regMemberBtn.setFont(font)
+        self.regMemberBtn.setStyleSheet("/* Style for QPushButton */\n"
 "QPushButton {\n"
 "    background-color: #FFA500; /* Orange background color */\n"
 "    color: #000000; /* Black text color */\n"
@@ -770,9 +814,9 @@ class Ui_MainWindow(object):
 "    background-color: #FFD700; /* Lighter orange on hover */\n"
 "}\n"
 "")
-        self.regbtn_2.setObjectName("regbtn_2")
+        self.regMemberBtn.setObjectName("regMemberBtn")
         self.label_5 = QtWidgets.QLabel(self.page_5)
-        self.label_5.setGeometry(QtCore.QRect(300, 100, 401, 41))
+        self.label_5.setGeometry(QtCore.QRect(300, 70, 401, 41))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -959,18 +1003,18 @@ class Ui_MainWindow(object):
         self.orders_btn_2.setAutoExclusive(True)
         self.orders_btn_2.setObjectName("orders_btn_2")
         self.verticalLayout_2.addWidget(self.orders_btn_2)
-        self.customers_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        self.memberRegSection_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(False)
         font.setWeight(50)
-        self.customers_btn_2.setFont(font)
-        self.customers_btn_2.setIcon(icon3)
-        self.customers_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.customers_btn_2.setCheckable(True)
-        self.customers_btn_2.setAutoExclusive(True)
-        self.customers_btn_2.setObjectName("customers_btn_2")
-        self.verticalLayout_2.addWidget(self.customers_btn_2)
+        self.memberRegSection_btn_2.setFont(font)
+        self.memberRegSection_btn_2.setIcon(icon3)
+        self.memberRegSection_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.memberRegSection_btn_2.setCheckable(True)
+        self.memberRegSection_btn_2.setAutoExclusive(True)
+        self.memberRegSection_btn_2.setObjectName("memberRegSection_btn_2")
+        self.verticalLayout_2.addWidget(self.memberRegSection_btn_2)
         self.products_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1010,19 +1054,19 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(4)
         self.change_btn.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.change_btn.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.home_btn_1.toggled['bool'].connect(self.home_btn_2.setChecked) # type: ignore
         self.dashborad_btn_1.toggled['bool'].connect(self.dashborad_btn_2.setChecked) # type: ignore
         self.orders_btn_1.toggled['bool'].connect(self.orders_btn_2.setChecked) # type: ignore
         self.products_btn_1.toggled['bool'].connect(self.products_btn_2.setChecked) # type: ignore
-        self.customers_btn_1.toggled['bool'].connect(self.customers_btn_2.setChecked) # type: ignore
+        self.memberRegSection_btn_1.toggled['bool'].connect(self.memberRegSection_btn_2.setChecked) # type: ignore
         self.home_btn_2.toggled['bool'].connect(self.home_btn_1.setChecked) # type: ignore
         self.dashborad_btn_2.toggled['bool'].connect(self.dashborad_btn_1.setChecked) # type: ignore
         self.orders_btn_2.toggled['bool'].connect(self.orders_btn_1.setChecked) # type: ignore
         self.products_btn_2.toggled['bool'].connect(self.products_btn_1.setChecked) # type: ignore
-        self.customers_btn_2.toggled['bool'].connect(self.customers_btn_1.setChecked) # type: ignore
+        self.memberRegSection_btn_2.toggled['bool'].connect(self.memberRegSection_btn_1.setChecked) # type: ignore
         self.exit_btn_2.clicked.connect(MainWindow.close) # type: ignore
         self.exit_btn_1.clicked.connect(MainWindow.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -1045,8 +1089,9 @@ class Ui_MainWindow(object):
         self.label_11.setText(_translate("MainWindow", "Name        :  "))
         self.label_18.setText(_translate("MainWindow", "ID               :  "))
         self.label_25.setText(_translate("MainWindow", "Email         :  "))
+        self.label_27.setText(_translate("MainWindow", "Phone No. :  "))
         self.label_26.setText(_translate("MainWindow", "Username :  "))
-        self.regbtn_2.setText(_translate("MainWindow", "Register Member"))
+        self.regMemberBtn.setText(_translate("MainWindow", "Register Member"))
         self.label_5.setText(_translate("MainWindow", "LIBRARY MEMBER REGISTRATION"))
         self.label_9.setText(_translate("MainWindow", "Search Page"))
         self.label_10.setText(_translate("MainWindow", "User Page"))
@@ -1060,7 +1105,7 @@ class Ui_MainWindow(object):
         self.home_btn_2.setText(_translate("MainWindow", "DASHBOARD"))
         self.dashborad_btn_2.setText(_translate("MainWindow", "SCANNER"))
         self.orders_btn_2.setText(_translate("MainWindow", "UPLOADS"))
-        self.customers_btn_2.setText(_translate("MainWindow", "REGISTRATION"))
+        self.memberRegSection_btn_2.setText(_translate("MainWindow", "REGISTRATION"))
         self.products_btn_2.setText(_translate("MainWindow", "MESSAGES"))
         self.exit_btn_2.setText(_translate("MainWindow", "EXIT"))
 import resource_rc

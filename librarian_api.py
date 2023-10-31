@@ -42,7 +42,7 @@ class librarianApi:
         print(response.status_code)
     
     @classmethod
-    def book_info(self,bookid , username , password):
+    def book_info(self, bookid , username , password):
         url="http://localhost:8081/librarian/book-info/"+str(bookid)
 
         
@@ -54,6 +54,20 @@ class librarianApi:
         data = json.loads(response.text)
 
         return data
+    
+    @classmethod
+    def insert_member(self, name, studentId, email, phoneNo, memUsername, username, password):
+        url = "http://localhost:8081/librarian/member-registration"
+
+        payload = {
+        "name": name,
+        "memberid": studentId,
+        "email": email,
+        "contactNumber": phoneNo,
+        "username": memUsername,
+        }
+        response = requests.post(url, params=payload, auth=HTTPBasicAuth(username, password))
+        print(response.status_code)
 
 
 if __name__ == "__main__":

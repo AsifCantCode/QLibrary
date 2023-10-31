@@ -150,17 +150,21 @@ class MainWindow(QMainWindow):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(3)
 
-    def on_products_btn_2_toggled(self, ):
+    def on_products_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(3)
 
-    def on_customers_btn_1_toggled(self):
+    def on_memberRegSection_btn_1_toggled(self):
         self.closeCamera()
+        print('reg Section')
         self.ui.stackedWidget.setCurrentIndex(4)
+        self.regMemberBtn.clicked.connect(self.registerMember)
 
-    def on_customers_btn_2_toggled(self):
+
+    def on_on_memberRegSection_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(4)
+        
         
             
     #author and book upload functions
@@ -262,6 +266,14 @@ class MainWindow(QMainWindow):
             self.booklistmodel.appendRow(QStandardItem(boiInfo['title']+'-'+boiInfo['publishedon']))
 
         
+    def registerMember(self):
+        name = self.regName_2.text()
+        studentId = self.regID.text()
+        email = self.regEmail_2.text()
+        phoneNo = self.regPhone.text()
+        memUsername = self.regUsername.text()
+        librarianApi.insert_member(name, studentId, email, phoneNo, memUsername, entered_username, entered_password)
+        QtWidgets.QMessageBox.information(self, "Member Registration", "Member registered successfully.")
 
 
 
