@@ -93,12 +93,40 @@ class MainWindow(QMainWindow):
         self.ui.full_menu_widget.hide()
         self.ui.stackedWidget.setCurrentIndex(0)
         self.ui.home_btn_2.setChecked(True)
-
+        self.ui.profile_picture_label = self.ui.findChild(QLabel, 'profile_picture_label')
+        self.ui.changeDpButton = self.ui.findChild(QPushButton, 'changeDp')
+        self.ui.changeDpButton.clicked.connect(self.update_profile_picture)
 
         #construction script for the borrow part
         
         #construction script for the other parts
 
+    def update_profile_picture(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        file_dialog = QFileDialog()
+        file_dialog.setOptions(options)
+        file_dialog.setNameFilter("Images (*.png *.jpg *.bmp)")
+        file_dialog.setWindowTitle("Select Profile Picture")
+
+        if file_dialog.exec_():
+            selected_files = file_dialog.selectedFiles()
+            if selected_files:
+                selected_file = selected_files[0]
+                self.load_profile_picture(selected_file)
+
+    def load_profile_picture(self, image_path: str):
+        new_pixmap = QPixmap(image_path)
+
+        if new_pixmap.isNull():
+            print(f"Error loading image: {image_path}")
+            return
+
+        # Set the new pixmap to the QLabel
+        self.ui.profile_picture_label.setPixmap(new_pixmap)
+
+        # Optionally, you can adjust the size to fit the QLabel
+        self.ui.profile_picture_label.setScaledContents(True)
     def closeCamera(self):
         if self.camera is not None:
             self.timer.stop()
