@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./student_dash.css">
+</head>
+    <body>
+        <div>
+            <ul class="nav navbar-nav">
+                <li>&nbsp;</li>
+                <li class="text-center"><h2 class="nav-text text-center pl-5 ml-5 mb-3 display-4 text-light"><b>STUDENT DASHBOARD</b></h2></li>
+                <li class="text-right"><div class="logout-container">
+                    <a class="mr-5" id="logoutButton" href="login.html">
+                        <img class="mb-3" src="./images/logout.jpg" alt="Logout">
+                    </a>
+            </div></li>
+            </ul>
+        </div>
+        <div class="container_main">
+            <div class="p_container">
+                <div class="sidebar">
+                    <center>
+                        <img class="circular--square" src ="https://th.bing.com/th/id/OIP.eU8MYLNMRBadK-YgTT6FJQHaHw?pid=ImgDet&rs=1" id="profilePicture" style="width:260px;height:260px;"><br><br>
+                    </center>
+                    <h2 id="s_name">Student Name</h2>
+                    <h2 id="s_id">Student ID</h2>
+                    <h2 id="s_mail">mail@gmail.com</h2>
+                    <br>
+                    <ul>
+                        <li class="active" data-target="#attendanceChartSection">SECTION 1</li>
+                        <li data-target="#myProfileSection">UPDATE PROFILE</li>
+                        <li data-target="#courseRegSection">SECTION 3</li>
+                    </ul>
+                </div>
+                <div class="main">
+                    <div class="section active" id="attendanceChartSection">
+                        <h1>Section 1</h1> <br>
+                    </div>
+                    <div class="section" id="myProfileSection">
+                        <h1>STUDENT PROFILE UPDATE</h1> <br>
+                        <div id="myProfile">
+                            <form class="form_ctrl" id="updateStudentForm">                            
+                                <label for="email_student">Email Address:</label>
+                                <input class="form-control" type="email" id="email_student" name="email_student" required>
+                            
+                                <label for="address_student">Address:</label>
+                                <input class="form-control" type="text" id="address_student" name="address_student" required>
+                            
+                                <label for="phone_student">Phone Number:</label>
+                                <input class="form-control" type="text" id="phone_student" name="phone_student" maxlength="14" minlength="11" required>
+
+                                <div class="file-container text-center">
+                                    <input class="file-input" type="file" id="profile_image" name="profile_image" accept=".jpg, .jpeg, .png">
+                                </div>
+
+                                <button type="submit" id="updateProfileButton">UPDATE</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section" id="courseRegSection">
+                            <div class="cReg">
+                                <h1>Section 3</h1> <br><hr>
+                            </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src = "./student_dash.js"></script>
+    </body>
+</html>
