@@ -19,7 +19,34 @@ from serialreader import read_number_from_serial
 import threading
 
 
+class ProfilePictureUpdater(QWidget):
+    def __init__(self):
+        super().__init__()
 
+    def update_profile_picture(self, image_path: str) -> None:
+        new_pixmap = QPixmap(image_path)
+
+        if new_pixmap.isNull():
+            print(f"Error loading image: {image_path}")
+            return
+
+        self.profile_picture_label.setPixmap(new_pixmap)
+        self.profile_picture_label.setScaledContents(True)
+
+    def choose_profile_picture(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        file_dialog = QFileDialog()
+        file_dialog.setOptions(options)
+        file_dialog.setNameFilter("Images (*.png *.jpg *.bmp)")
+        file_dialog.setWindowTitle("Select Profile Picture")
+
+        if file_dialog.exec_():
+            selected_files = file_dialog.selectedFiles()
+            if selected_files:
+                selected_file = selected_files[0]
+                # self.update_profile_picture(selected_file)
+                return selected_file
 
 class CameraInitializer(threading.Thread):
     def __init__(self, camera_index):
@@ -54,6 +81,7 @@ class MainWindow(QMainWindow):
         self.bookitem_names = []
 
         #Variables for the homepage
+        self.profile_picture_updater = ProfilePictureUpdater()
 
         #variables for the author and book csv upload section
 
@@ -87,6 +115,7 @@ class MainWindow(QMainWindow):
     ## Function for changing page to user page
     def on_user_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(6)
+        file = self.ui.changeDp.clicked.connect(self.profile_picture_updater.choose_profile_picture)
 
     ## Change QPushButton Checkable status when stackedWidget index changed
     def on_stackedWidget_currentChanged(self, index):
@@ -274,7 +303,6 @@ class MainWindow(QMainWindow):
         memUsername = self.regUsername.text()
         librarianApi.insert_member(name, studentId, email, phoneNo, memUsername, entered_username, entered_password)
         QtWidgets.QMessageBox.information(self, "Member Registration", "Member registered successfully.")
-
 
 
 
