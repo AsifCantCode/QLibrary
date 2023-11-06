@@ -233,7 +233,7 @@ class MainWindow(QMainWindow):
     def closeCardReader(self):
         
         if self.ser == None : 
-            self.ser = serial.Serial('COM3', 115200, timeout=1)
+            self.ser = serial.Serial('COM4', 115200, timeout=1)
             self.ui.serportclose.setText('Port Open !')
             self.timer2.start(200)
         elif self.ser.is_open:
