@@ -54,7 +54,7 @@ class librarianApi:
         data = json.loads(response.text)
 
         return data
-    
+
     @classmethod
     def insert_member(self, name, studentId, email, phoneNo, memUsername, username, password):
         url = "http://localhost:8081/librarian/member-registration"
@@ -68,6 +68,19 @@ class librarianApi:
         }
         response = requests.post(url, params=payload, auth=HTTPBasicAuth(username, password))
         print(response.status_code)
+
+    @classmethod
+    def bookborrow(self,  Id, books , username , password):
+        url = "http://localhost:8081/librarian/book-borrow/"+str(Id)
+
+        booklist = list(books)
+        print(booklist)
+        payload = {
+            "bookids": booklist
+        }
+        response = requests.post(url, params=payload, auth=HTTPBasicAuth(username, password))
+        print(response.status_code)
+
 
 
 if __name__ == "__main__":

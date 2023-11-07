@@ -2,10 +2,10 @@ import sys
 import PyQt5
 import time
 import cv2
-from PyQt5 import QtGui, QtWidgets , QtCore 
+from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap ,QStandardItemModel , QStandardItem
 from PyQt5.QtCore import Qt , QTimer
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog ,QWidget, QVBoxLayout, QPushButton, QLabel ,QListView 
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog ,QWidget, QVBoxLayout, QPushButton, QLabel ,QListView
 from PyQt5.uic import loadUi
 from scene2 import Scene2
 import login_api
@@ -17,6 +17,7 @@ import qr
 import serial
 from serialreader import read_number_from_serial
 import threading
+import serial.tools.list_ports
 
 
 class ProfilePictureUpdater(QWidget):
@@ -74,7 +75,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.camera = None
         self.timer = None
-        
+
         #variables for the book borrow section
         self.booklistmodel = QStandardItemModel()
         self.items_set = set()
@@ -98,7 +99,7 @@ class MainWindow(QMainWindow):
         self.ui.changeDpButton.clicked.connect(self.update_profile_picture)
 
         #construction script for the borrow part
-        
+
         #construction script for the other parts
 
     def update_profile_picture(self):
@@ -149,38 +150,43 @@ class MainWindow(QMainWindow):
     def on_stackedWidget_currentChanged(self, index):
         btn_list = self.ui.icon_only_widget.findChildren(QPushButton) \
                     + self.ui.full_menu_widget.findChildren(QPushButton)
-        
+
         for btn in btn_list:
             if index in [5, 6]:
                 btn.setAutoExclusive(False)
                 btn.setChecked(False)
             else:
                 btn.setAutoExclusive(True)
-            
+
     ## functions for changing menu page
     def on_home_btn_1_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(0)
-    
+
     def on_home_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(0)
 
     def on_dashborad_btn_1_toggled(self):
-        self.closeCamera()
+
+
         self.ui.stackedWidget.setCurrentIndex(1)
         loading_label = self.ui.loadingLabel
         loading_label.show()
-        self.camera = cv2.VideoCapture(0)
+
+        self.ui.camerabutton.clicked.connect(self.openCamera)
+
+
+        print('borrow menu')
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateFrame)
-        self.timer.start(50)
-        
+
+
         self.ser = None
-        print('borrow menu')
+
         self.timer2 = QTimer(self)
         self.timer2.timeout.connect(self.getMemberID)
-        
+
 
 
         self.ui.booklist.setModel(self.booklistmodel)
@@ -198,7 +204,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.bookbtn.clicked.connect(self.uploadBooks)
         self.ui.authbtn.clicked.connect(self.uploadAuthors)
-        
+
     def on_orders_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(2)
@@ -221,20 +227,20 @@ class MainWindow(QMainWindow):
     def on_on_memberRegSection_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(4)
-        
-        
-            
+
+
+
     #author and book upload functions
-    
-    
+
+
     def uploadBooks(self):
             options = QFileDialog.Options()
             # Show the file dialog and get the selected file path
             filePath, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files ();;Text Files (.txt)", options=options)
-            
+
             if filePath:
-                print(f'Selected File: {filePath}')   
-                with open(filePath, mode ='r')as file:
+                print(f'Selected File: {filePath}')
+                with open(filePath, mode='r')as file:
 
                     # reading the CSV file
                     csvFile = csv.reader(file)
@@ -247,9 +253,9 @@ class MainWindow(QMainWindow):
             options = QFileDialog.Options()
             # Show the file dialog and get the selected file path
             filePath, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files ();;Text Files (.txt)", options=options)
-            
+
             if filePath:
-                print(f'Selected File: {filePath}')   
+                print(f'Selected File: {filePath}')
                 with open(filePath, mode ='r')as file:
 
                     # reading the CSV file
@@ -260,8 +266,8 @@ class MainWindow(QMainWindow):
 
 
     #qr scanning and book borrow functions
-    
-    
+
+
     def updateFrame(self):
         ret, frame = self.camera.read()
         if ret:
@@ -285,21 +291,30 @@ class MainWindow(QMainWindow):
                     self.items_set.add(qr_data)
                 self.scannedlabel.setText('Scanned')
                 self.refreshBookList()
-                
+
                 # time.sleep(2)
     def closeCardReader(self):
-        
-        if self.ser == None : 
-            self.ser = serial.Serial('COM4', 115200, timeout=1)
+
+        available_ports = list(serial.tools.list_ports.comports())
+
+        if len(available_ports) > 0:
+            print("Available serial ports:")
+            for port in available_ports:
+                print(port.device)
+
+        if self.ser is None and len(available_ports) == 2:
+            self.ser = serial.Serial(available_ports[1].device, 115200, timeout=1)
             self.ui.serportclose.setText('Port Open !')
             self.timer2.start(200)
         elif self.ser.is_open:
+            print('closing')
+            print(self.ser)
             self.timer2.stop()
             self.ser.close()
             self.ui.serportclose.setText('Port Closed !')
             time.sleep(2)
             self.ser=None
-        
+
     def registerBorrow(self):
         print('book and member data sent to backend:\n')
         print(self.items_set)
@@ -307,13 +322,25 @@ class MainWindow(QMainWindow):
         print(self.memberid)
 
 
+
+        librarianApi.bookborrow(self.memberid, self.items_set, entered_username, entered_password)
+
+    def openCamera(self):
+        if self.camera is None:
+           self.camera = cv2.VideoCapture(0)
+           self.timer.start(50)
+        else:
+           self.camera.release()
+           self.timer.stop()
+           self.camera = None
+
     def getMemberID(self):
-        readdata=read_number_from_serial( self.ser) 
+        readdata=read_number_from_serial( self.ser)
         if readdata > 0 :
             self.memberid=readdata
-            self.borrowerlabel.setText('Borrowed By: ' + str(self.memberid))            
-                    
-        
+            self.borrowerlabel.setText('Borrowed By: ' + str(self.memberid))
+
+
 
     def refreshBookList(self):
         items = list(self.items_set)
@@ -322,7 +349,7 @@ class MainWindow(QMainWindow):
             boiInfo=librarianApi.book_info(book , entered_username , entered_password)
             self.booklistmodel.appendRow(QStandardItem(boiInfo['title']+'-'+boiInfo['publishedon']))
 
-        
+
     def registerMember(self):
         name = self.regName_2.text()
         studentId = self.regID.text()
@@ -342,24 +369,24 @@ class MyMainWindow(QtWidgets.QWidget):
         # Load the UI from the .ui file dynamically
         self.ui=loadUi('login.ui', self)
         self.ui.pushButton.clicked.connect(self.login)
-        
-        
+
+
     def login(self):
         # Get the entered username and password
         global entered_username
         entered_username = self.ui.lineEdit.text()
-        global entered_password 
+        global entered_password
         entered_password = self.ui.lineEdit_2.text()
         state=login_api.loginController.librarian_login(entered_username, entered_password)
         if(state):
             self.close()
             window=MainWindow()
             window.show()
-        
+
     def keyPressEvent(self,event):
         if event.key()==Qt.Key_Escape:
             self.close()
-    
+
 
 
 
