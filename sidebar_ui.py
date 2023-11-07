@@ -21,6 +21,134 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
+        self.full_menu_widget = QtWidgets.QWidget(self.centralwidget)
+        self.full_menu_widget.setObjectName("full_menu_widget")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.full_menu_widget)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.logo_label_2 = QtWidgets.QLabel(self.full_menu_widget)
+        self.logo_label_2.setMinimumSize(QtCore.QSize(44, 44))
+        self.logo_label_2.setMaximumSize(QtCore.QSize(40, 40))
+        self.logo_label_2.setText("")
+        self.logo_label_2.setPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/online-library (1).png"))
+        self.logo_label_2.setScaledContents(True)
+        self.logo_label_2.setObjectName("logo_label_2")
+        self.horizontalLayout_2.addWidget(self.logo_label_2)
+        self.logo_label_3 = QtWidgets.QLabel(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.logo_label_3.setFont(font)
+        self.logo_label_3.setObjectName("logo_label_3")
+        self.horizontalLayout_2.addWidget(self.logo_label_3)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.home_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.home_btn_2.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-home-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-home-50 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.home_btn_2.setIcon(icon)
+        self.home_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.home_btn_2.setCheckable(True)
+        self.home_btn_2.setAutoExclusive(True)
+        self.home_btn_2.setObjectName("home_btn_2")
+        self.verticalLayout_2.addWidget(self.home_btn_2)
+        self.dashborad_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.dashborad_btn_2.setFont(font)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-qr-code-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-qr-code-64 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.dashborad_btn_2.setIcon(icon1)
+        self.dashborad_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.dashborad_btn_2.setCheckable(True)
+        self.dashborad_btn_2.setAutoExclusive(True)
+        self.dashborad_btn_2.setObjectName("dashborad_btn_2")
+        self.verticalLayout_2.addWidget(self.dashborad_btn_2)
+        self.orders_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.orders_btn_2.setFont(font)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-upload-to-ftp-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-upload-to-ftp-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.orders_btn_2.setIcon(icon2)
+        self.orders_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.orders_btn_2.setCheckable(True)
+        self.orders_btn_2.setAutoExclusive(True)
+        self.orders_btn_2.setObjectName("orders_btn_2")
+        self.verticalLayout_2.addWidget(self.orders_btn_2)
+        self.memberRegSection_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.memberRegSection_btn_2.setFont(font)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.memberRegSection_btn_2.setIcon(icon3)
+        self.memberRegSection_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.memberRegSection_btn_2.setCheckable(True)
+        self.memberRegSection_btn_2.setAutoExclusive(True)
+        self.memberRegSection_btn_2.setObjectName("memberRegSection_btn_2")
+        self.verticalLayout_2.addWidget(self.memberRegSection_btn_2)
+        self.products_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.products_btn_2.setFont(font)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-message-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-message-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.products_btn_2.setIcon(icon4)
+        self.products_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.products_btn_2.setCheckable(True)
+        self.products_btn_2.setAutoExclusive(True)
+        self.products_btn_2.setObjectName("products_btn_2")
+        self.verticalLayout_2.addWidget(self.products_btn_2)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
+        spacerItem = QtWidgets.QSpacerItem(20, 373, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_4.addItem(spacerItem)
+        self.exit_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
+        self.exit_btn_2.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px 10px; /* Padding around the button text */\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-imac-exit-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn_2.setIcon(icon5)
+        self.exit_btn_2.setIconSize(QtCore.QSize(18, 24))
+        self.exit_btn_2.setObjectName("exit_btn_2")
+        self.verticalLayout_4.addWidget(self.exit_btn_2)
+        self.gridLayout.addWidget(self.full_menu_widget, 0, 1, 1, 1)
         self.icon_only_widget = QtWidgets.QWidget(self.centralwidget)
         self.icon_only_widget.setObjectName("icon_only_widget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.icon_only_widget)
@@ -43,9 +171,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.home_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.home_btn_1.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-home-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-home-50 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.home_btn_1.setIcon(icon)
         self.home_btn_1.setIconSize(QtCore.QSize(22, 28))
         self.home_btn_1.setCheckable(True)
@@ -54,9 +179,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.home_btn_1)
         self.dashborad_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.dashborad_btn_1.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-qr-code-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-qr-code-64 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.dashborad_btn_1.setIcon(icon1)
         self.dashborad_btn_1.setIconSize(QtCore.QSize(22, 28))
         self.dashborad_btn_1.setCheckable(True)
@@ -65,9 +187,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.dashborad_btn_1)
         self.orders_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.orders_btn_1.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-upload-to-ftp-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon2.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-upload-to-ftp-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.orders_btn_1.setIcon(icon2)
         self.orders_btn_1.setIconSize(QtCore.QSize(22, 28))
         self.orders_btn_1.setCheckable(True)
@@ -76,9 +195,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.orders_btn_1)
         self.memberRegSection_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.memberRegSection_btn_1.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon3.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-knowledge-sharing-48 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.memberRegSection_btn_1.setIcon(icon3)
         self.memberRegSection_btn_1.setIconSize(QtCore.QSize(22, 28))
         self.memberRegSection_btn_1.setCheckable(True)
@@ -87,9 +203,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.memberRegSection_btn_1)
         self.products_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.products_btn_1.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-message-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon4.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-message-24 (1).png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.products_btn_1.setIcon(icon4)
         self.products_btn_1.setIconSize(QtCore.QSize(21, 28))
         self.products_btn_1.setCheckable(True)
@@ -97,8 +210,8 @@ class Ui_MainWindow(object):
         self.products_btn_1.setObjectName("products_btn_1")
         self.verticalLayout.addWidget(self.products_btn_1)
         self.verticalLayout_3.addLayout(self.verticalLayout)
-        spacerItem = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem1)
         self.exit_btn_1 = QtWidgets.QPushButton(self.icon_only_widget)
         self.exit_btn_1.setStyleSheet("/* Style for QPushButton */\n"
 "QPushButton {\n"
@@ -114,8 +227,6 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.exit_btn_1.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/icons8-imac-exit-24.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.exit_btn_1.setIcon(icon5)
         self.exit_btn_1.setIconSize(QtCore.QSize(22, 24))
         self.exit_btn_1.setObjectName("exit_btn_1")
@@ -162,8 +273,8 @@ class Ui_MainWindow(object):
         self.change_btn.setChecked(False)
         self.change_btn.setObjectName("change_btn")
         self.horizontalLayout_4.addWidget(self.change_btn)
-        spacerItem1 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem1)
+        spacerItem2 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -211,8 +322,8 @@ class Ui_MainWindow(object):
         self.search_btn.setObjectName("search_btn")
         self.horizontalLayout.addWidget(self.search_btn)
         self.horizontalLayout_4.addLayout(self.horizontalLayout)
-        spacerItem2 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_4.addItem(spacerItem2)
+        spacerItem3 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem3)
         self.user_btn = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setPointSize(-1)
@@ -247,15 +358,304 @@ class Ui_MainWindow(object):
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.page)
-        self.gridLayout_2.setObjectName("gridLayout_2")
         self.label_4 = QtWidgets.QLabel(self.page)
+        self.label_4.setGeometry(QtCore.QRect(50, 10, 861, 651))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_4.setFont(font)
+        self.label_4.setStyleSheet("background-color: #f4fdff; /* Light violet background with partial transparency */\n"
+"    border: 2px solid #CCC;                      /* Add a subtle border */\n"
+"    border-radius: 20px;                         /* Rounded corners */\n"
+"    padding: 10px;")
+        self.label_4.setText("")
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
-        self.gridLayout_2.addWidget(self.label_4, 0, 0, 1, 1)
+        self.listView = QtWidgets.QListView(self.page)
+        self.listView.setGeometry(QtCore.QRect(90, 190, 521, 431))
+        self.listView.setObjectName("listView")
+        self.checkBox = QtWidgets.QCheckBox(self.page)
+        self.checkBox.setGeometry(QtCore.QRect(630, 210, 231, 21))
+        self.checkBox.setStyleSheet("QCheckBox {\n"
+"    spacing: 5px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"    border: 2px solid black;\n"
+"    background-color: #ffffff;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    border: 2px solid black;\n"
+"    background-color:  #FFA500;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked:hover, QCheckBox::indicator:checked:hover {\n"
+"    border: 2px solid #4caf50;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked:pressed, QCheckBox::indicator:checked:pressed {\n"
+"    border: 2px solid #388e3c;\n"
+"    background-color: #388e3c;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled, QCheckBox::indicator:unchecked:disabled {\n"
+"    background-color: #e0e0e0;\n"
+"    border: 2px solid #e0e0e0;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled:hover, QCheckBox::indicator:unchecked:disabled:hover {\n"
+"    border: 2px solid #bdbdbd;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled:pressed, QCheckBox::indicator:unchecked:disabled:pressed {\n"
+"    border: 2px solid #b0b0b0;\n"
+"    background-color: #b0b0b0;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate {\n"
+"    border: 2px solid #999999;\n"
+"    background-color: #ffffff;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate:hover {\n"
+"    border: 2px solid #4caf50;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate:pressed {\n"
+"    border: 2px solid #388e3c;\n"
+"    background-color: #388e3c;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate:disabled {\n"
+"    background-color: #e0e0e0;\n"
+"    border: 2px solid #e0e0e0;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate:disabled:hover {\n"
+"    border: 2px solid #bdbdbd;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:indeterminate:disabled:pressed {\n"
+"    border: 2px solid #b0b0b0;\n"
+"    background-color: #b0b0b0;\n"
+"}\n"
+"")
+        self.checkBox.setObjectName("checkBox")
+        self.label_19 = QtWidgets.QLabel(self.page)
+        self.label_19.setGeometry(QtCore.QRect(310, 30, 361, 51))
+        self.label_19.setStyleSheet("font-family: berlin sans fb;\n"
+"background-color:  #FFA500;\n"
+"border: 2px solid black;\n"
+"border-radius: 20px;\n"
+"font-size:25px;\n"
+"padding: 5px;")
+        self.label_19.setObjectName("label_19")
+        self.splitter_2 = QtWidgets.QSplitter(self.page)
+        self.splitter_2.setGeometry(QtCore.QRect(70, 100, 831, 71))
+        self.splitter_2.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter_2.setObjectName("splitter_2")
+        self.layoutWidget = QtWidgets.QWidget(self.splitter_2)
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.label_13 = QtWidgets.QLabel(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(12)
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet("border: 1px solid;\n"
+"background-color: #efefef;")
+        self.label_13.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_13.setObjectName("label_13")
+        self.verticalLayout_11.addWidget(self.label_13)
+        self.comboBox = QtWidgets.QComboBox(self.layoutWidget)
+        self.comboBox.setStyleSheet("QComboBox#comboBox {\n"
+"    /* Set the background color */\n"
+"    background-color: #ffffff;\n"
+"    \n"
+"    /* Set the border style and color */\n"
+"    border: 1px solid black;\n"
+"    border-radius: 5px;\n"
+"    \n"
+"    /* Set the padding */\n"
+"    padding: 5px;\n"
+"\n"
+"    /* Set the text color */\n"
+"    color: #333333;\n"
+"\n"
+"    /* Set the font */\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 12px;\n"
+"\n"
+"    /* Set the drop-down arrow color */\n"
+"    QComboBox::down-arrow {\n"
+"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
+"        width: 12px;\n"
+"        height: 12px;\n"
+"    }\n"
+"\n"
+"    /* Set the background color of the drop-down list */\n"
+"    QComboBox QAbstractItemView {\n"
+"        background-color: #ffffff;\n"
+"        border: 1px solid #999999;\n"
+"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
+"    }\n"
+"}\n"
+"")
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.verticalLayout_11.addWidget(self.comboBox)
+        self.layoutWidget_3 = QtWidgets.QWidget(self.splitter_2)
+        self.layoutWidget_3.setObjectName("layoutWidget_3")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.layoutWidget_3)
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.label_15 = QtWidgets.QLabel(self.layoutWidget_3)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(12)
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet("border: 1px solid;\n"
+"background-color: #efefef;")
+        self.label_15.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_15.setObjectName("label_15")
+        self.verticalLayout_13.addWidget(self.label_15)
+        self.comboBox_3 = QtWidgets.QComboBox(self.layoutWidget_3)
+        self.comboBox_3.setStyleSheet("QComboBox#comboBox_3 {\n"
+"    /* Set the background color */\n"
+"    background-color: #ffffff;\n"
+"    \n"
+"    /* Set the border style and color */\n"
+"    border: 1px solid black;\n"
+"    border-radius: 5px;\n"
+"    \n"
+"    /* Set the padding */\n"
+"    padding: 5px;\n"
+"\n"
+"    /* Set the text color */\n"
+"    color: #333333;\n"
+"\n"
+"    /* Set the font */\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 12px;\n"
+"\n"
+"    /* Set the drop-down arrow color */\n"
+"    QComboBox::down-arrow {\n"
+"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
+"        width: 12px;\n"
+"        height: 12px;\n"
+"    }\n"
+"\n"
+"    /* Set the background color of the drop-down list */\n"
+"    QComboBox QAbstractItemView {\n"
+"        background-color: #ffffff;\n"
+"        border: 1px solid #999999;\n"
+"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
+"    }\n"
+"}\n"
+"")
+        self.comboBox_3.setObjectName("comboBox_3")
+        self.comboBox_3.addItem("")
+        self.comboBox_3.addItem("")
+        self.comboBox_3.addItem("")
+        self.verticalLayout_13.addWidget(self.comboBox_3)
+        self.layoutWidget_4 = QtWidgets.QWidget(self.splitter_2)
+        self.layoutWidget_4.setObjectName("layoutWidget_4")
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.layoutWidget_4)
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.label_16 = QtWidgets.QLabel(self.layoutWidget_4)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(12)
+        self.label_16.setFont(font)
+        self.label_16.setStyleSheet("border: 1px solid;\n"
+"background-color: #efefef;\n"
+"padding: 0px;\n"
+"")
+        self.label_16.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_16.setObjectName("label_16")
+        self.verticalLayout_14.addWidget(self.label_16)
+        self.comboBox_4 = QtWidgets.QComboBox(self.layoutWidget_4)
+        self.comboBox_4.setStyleSheet("QComboBox#comboBox_4 {\n"
+"    /* Set the background color */\n"
+"    background-color: #ffffff;\n"
+"    \n"
+"    /* Set the border style and color */\n"
+"    border: 1px solid black;\n"
+"    border-radius: 5px;\n"
+"    \n"
+"    /* Set the padding */\n"
+"    padding: 5px;\n"
+"\n"
+"    /* Set the text color */\n"
+"    color: #333333;\n"
+"\n"
+"    /* Set the font */\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 12px;\n"
+"\n"
+"    /* Set the drop-down arrow color */\n"
+"    QComboBox::down-arrow {\n"
+"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
+"        width: 12px;\n"
+"        height: 12px;\n"
+"    }\n"
+"\n"
+"    /* Set the background color of the drop-down list */\n"
+"    QComboBox QAbstractItemView {\n"
+"        background-color: #ffffff;\n"
+"        border: 1px solid #999999;\n"
+"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
+"    }\n"
+"}\n"
+"QComboBox#comboBox_3 {\n"
+"    /* Set the background color */\n"
+"    background-color: #ffffff;\n"
+"    \n"
+"    /* Set the border style and color */\n"
+"    border: 1px solid #999999;\n"
+"    border-radius: 5px;\n"
+"    \n"
+"    /* Set the padding */\n"
+"    padding: 5px;\n"
+"\n"
+"    /* Set the text color */\n"
+"    color: #333333;\n"
+"\n"
+"    /* Set the font */\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 12px;\n"
+"\n"
+"    /* Set the drop-down arrow color */\n"
+"    QComboBox::down-arrow {\n"
+"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
+"        width: 12px;\n"
+"        height: 12px;\n"
+"    }\n"
+"\n"
+"    /* Set the background color of the drop-down list */\n"
+"    QComboBox QAbstractItemView {\n"
+"        background-color: #ffffff;\n"
+"        border: 1px solid #999999;\n"
+"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
+"    }\n"
+"}\n"
+"")
+        self.comboBox_4.setObjectName("comboBox_4")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.verticalLayout_14.addWidget(self.comboBox_4)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -838,200 +1238,21 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_6)
         self.page_7 = QtWidgets.QWidget()
         self.page_7.setObjectName("page_7")
-        self.gridLayout_8 = QtWidgets.QGridLayout(self.page_7)
-        self.gridLayout_8.setObjectName("gridLayout_8")
         self.label_10 = QtWidgets.QLabel(self.page_7)
+        self.label_10.setGeometry(QtCore.QRect(60, 20, 811, 591))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_10.setFont(font)
+        self.label_10.setStyleSheet("background-color: #f4fdff; /* Light violet background with partial transparency */\n"
+"    border: 2px solid #CCC;                      /* Add a subtle border */\n"
+"    border-radius: 20px;                         /* Rounded corners */\n"
+"    padding: 10px;")
+        self.label_10.setText("")
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
-        self.gridLayout_8.addWidget(self.label_10, 0, 0, 1, 1)
-        self.stackedWidget.addWidget(self.page_7)
-        self.page_8 = QtWidgets.QWidget()
-        self.page_8.setObjectName("page_8")
-        self.regbtn = QtWidgets.QPushButton(self.page_8)
-        self.regbtn.setGeometry(QtCore.QRect(380, 580, 161, 41))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.regbtn.setFont(font)
-        self.regbtn.setObjectName("regbtn")
-        self.layoutWidget = QtWidgets.QWidget(self.page_8)
-        self.layoutWidget.setGeometry(QtCore.QRect(160, 180, 601, 261))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_6 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
-        self.horizontalLayout_5.addWidget(self.label_6)
-        self.regName = QtWidgets.QLineEdit(self.layoutWidget)
-        self.regName.setObjectName("regName")
-        self.horizontalLayout_5.addWidget(self.regName)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_5)
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.label_17 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_17.setFont(font)
-        self.label_17.setObjectName("label_17")
-        self.horizontalLayout_12.addWidget(self.label_17)
-        self.regId = QtWidgets.QLineEdit(self.layoutWidget)
-        self.regId.setObjectName("regId")
-        self.horizontalLayout_12.addWidget(self.regId)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_12)
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.label_22 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_22.setFont(font)
-        self.label_22.setObjectName("label_22")
-        self.horizontalLayout_17.addWidget(self.label_22)
-        self.regEmail = QtWidgets.QLineEdit(self.layoutWidget)
-        self.regEmail.setObjectName("regEmail")
-        self.horizontalLayout_17.addWidget(self.regEmail)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_17)
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_23 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_23.setFont(font)
-        self.label_23.setObjectName("label_23")
-        self.horizontalLayout_18.addWidget(self.label_23)
-        self.username = QtWidgets.QLineEdit(self.layoutWidget)
-        self.username.setObjectName("username")
-        self.horizontalLayout_18.addWidget(self.username)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_18)
-        self.layoutWidget1 = QtWidgets.QWidget(self.page_8)
-        self.layoutWidget1.setGeometry(QtCore.QRect(0, 80, 891, 44))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem3)
-        self.splitter = QtWidgets.QSplitter(self.layoutWidget1)
-        self.splitter.setOrientation(QtCore.Qt.Horizontal)
-        self.splitter.setObjectName("splitter")
-        self.label_24 = QtWidgets.QLabel(self.splitter)
-        font = QtGui.QFont()
-        font.setFamily("Calibri")
-        font.setPointSize(22)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_24.setFont(font)
-        self.label_24.setStyleSheet("")
-        self.label_24.setObjectName("label_24")
-        self.horizontalLayout_7.addWidget(self.splitter)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem4)
-        self.stackedWidget.addWidget(self.page_8)
-        self.verticalLayout_5.addWidget(self.stackedWidget)
-        self.gridLayout.addWidget(self.widget_3, 0, 2, 1, 1)
-        self.full_menu_widget = QtWidgets.QWidget(self.centralwidget)
-        self.full_menu_widget.setObjectName("full_menu_widget")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.full_menu_widget)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.logo_label_2 = QtWidgets.QLabel(self.full_menu_widget)
-        self.logo_label_2.setMinimumSize(QtCore.QSize(44, 44))
-        self.logo_label_2.setMaximumSize(QtCore.QSize(40, 40))
-        self.logo_label_2.setText("")
-        self.logo_label_2.setPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/online-library (1).png"))
-        self.logo_label_2.setScaledContents(True)
-        self.logo_label_2.setObjectName("logo_label_2")
-        self.horizontalLayout_2.addWidget(self.logo_label_2)
-        self.logo_label_3 = QtWidgets.QLabel(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        font.setBold(False)
-        font.setWeight(50)
-        self.logo_label_3.setFont(font)
-        self.logo_label_3.setObjectName("logo_label_3")
-        self.horizontalLayout_2.addWidget(self.logo_label_3)
-        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.home_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.home_btn_2.setFont(font)
-        self.home_btn_2.setIcon(icon)
-        self.home_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.home_btn_2.setCheckable(True)
-        self.home_btn_2.setAutoExclusive(True)
-        self.home_btn_2.setObjectName("home_btn_2")
-        self.verticalLayout_2.addWidget(self.home_btn_2)
-        self.dashborad_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.dashborad_btn_2.setFont(font)
-        self.dashborad_btn_2.setIcon(icon1)
-        self.dashborad_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.dashborad_btn_2.setCheckable(True)
-        self.dashborad_btn_2.setAutoExclusive(True)
-        self.dashborad_btn_2.setObjectName("dashborad_btn_2")
-        self.verticalLayout_2.addWidget(self.dashborad_btn_2)
-        self.orders_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.orders_btn_2.setFont(font)
-        self.orders_btn_2.setIcon(icon2)
-        self.orders_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.orders_btn_2.setCheckable(True)
-        self.orders_btn_2.setAutoExclusive(True)
-        self.orders_btn_2.setObjectName("orders_btn_2")
-        self.verticalLayout_2.addWidget(self.orders_btn_2)
-        self.memberRegSection_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.memberRegSection_btn_2.setFont(font)
-        self.memberRegSection_btn_2.setIcon(icon3)
-        self.memberRegSection_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.memberRegSection_btn_2.setCheckable(True)
-        self.memberRegSection_btn_2.setAutoExclusive(True)
-        self.memberRegSection_btn_2.setObjectName("memberRegSection_btn_2")
-        self.verticalLayout_2.addWidget(self.memberRegSection_btn_2)
-        self.products_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.products_btn_2.setFont(font)
-        self.products_btn_2.setIcon(icon4)
-        self.products_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.products_btn_2.setCheckable(True)
-        self.products_btn_2.setAutoExclusive(True)
-        self.products_btn_2.setObjectName("products_btn_2")
-        self.verticalLayout_2.addWidget(self.products_btn_2)
-        self.verticalLayout_4.addLayout(self.verticalLayout_2)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 373, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem5)
-        self.exit_btn_2 = QtWidgets.QPushButton(self.full_menu_widget)
-        self.exit_btn_2.setStyleSheet("/* Style for QPushButton */\n"
+        self.saveBtn = QtWidgets.QPushButton(self.page_7)
+        self.saveBtn.setGeometry(QtCore.QRect(430, 620, 151, 31))
+        self.saveBtn.setStyleSheet("/* Style for QPushButton */\n"
 "QPushButton {\n"
 "    background-color: #FFA500; /* Orange background color */\n"
 "    color: #000000; /* Black text color */\n"
@@ -1046,15 +1267,411 @@ class Ui_MainWindow(object):
 "    background-color: #FFD700; /* Lighter orange on hover */\n"
 "}\n"
 "")
-        self.exit_btn_2.setIcon(icon5)
-        self.exit_btn_2.setIconSize(QtCore.QSize(18, 24))
-        self.exit_btn_2.setObjectName("exit_btn_2")
-        self.verticalLayout_4.addWidget(self.exit_btn_2)
-        self.gridLayout.addWidget(self.full_menu_widget, 0, 1, 1, 1)
+        self.saveBtn.setObjectName("saveBtn")
+        self.profile_picture_label = QtWidgets.QLabel(self.page_7)
+        self.profile_picture_label.setGeometry(QtCore.QRect(400, 50, 161, 141))
+        self.profile_picture_label.setStyleSheet("border: 2px solid black;\n"
+"\n"
+"border-radius: 10px;\n"
+"background-color: cyan;\n"
+"content-align:center;\n"
+"")
+        self.profile_picture_label.setText("")
+        self.profile_picture_label.setPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\user.png"))
+        self.profile_picture_label.setScaledContents(True)
+        self.profile_picture_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.profile_picture_label.setWordWrap(False)
+        self.profile_picture_label.setObjectName("profile_picture_label")
+        self.changeDp = QtWidgets.QPushButton(self.page_7)
+        self.changeDp.setGeometry(QtCore.QRect(580, 100, 121, 31))
+        self.changeDp.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px 5px; /* Padding around the button text */\n"
+"    font-size: 10px;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
+        self.changeDp.setObjectName("changeDp")
+        self.splitter_3 = QtWidgets.QSplitter(self.page_7)
+        self.splitter_3.setGeometry(QtCore.QRect(220, 220, 571, 271))
+        self.splitter_3.setOrientation(QtCore.Qt.Vertical)
+        self.splitter_3.setObjectName("splitter_3")
+        self.layoutWidget_5 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget_5.setObjectName("layoutWidget_5")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.layoutWidget_5)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.label_20 = QtWidgets.QLabel(self.layoutWidget_5)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_20.setFont(font)
+        self.label_20.setStyleSheet("")
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_9.addWidget(self.label_20)
+        self.regName_3 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regName_3.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regName_3.setObjectName("regName_3")
+        self.horizontalLayout_9.addWidget(self.regName_3)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_9)
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.label_21 = QtWidgets.QLabel(self.layoutWidget_5)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_21.setFont(font)
+        self.label_21.setStyleSheet("")
+        self.label_21.setObjectName("label_21")
+        self.horizontalLayout_14.addWidget(self.label_21)
+        self.regID_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regID_2.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regID_2.setObjectName("regID_2")
+        self.horizontalLayout_14.addWidget(self.regID_2)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_14)
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.label_28 = QtWidgets.QLabel(self.layoutWidget_5)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_28.setFont(font)
+        self.label_28.setStyleSheet("")
+        self.label_28.setObjectName("label_28")
+        self.horizontalLayout_22.addWidget(self.label_28)
+        self.regEmail_3 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regEmail_3.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regEmail_3.setObjectName("regEmail_3")
+        self.horizontalLayout_22.addWidget(self.regEmail_3)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_22)
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.label_29 = QtWidgets.QLabel(self.layoutWidget_5)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_29.setFont(font)
+        self.label_29.setStyleSheet("")
+        self.label_29.setObjectName("label_29")
+        self.horizontalLayout_23.addWidget(self.label_29)
+        self.regPhone_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regPhone_2.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regPhone_2.setObjectName("regPhone_2")
+        self.horizontalLayout_23.addWidget(self.regPhone_2)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_23)
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.label_30 = QtWidgets.QLabel(self.layoutWidget_5)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_30.setFont(font)
+        self.label_30.setStyleSheet("")
+        self.label_30.setObjectName("label_30")
+        self.horizontalLayout_24.addWidget(self.label_30)
+        self.regUsername_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regUsername_2.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regUsername_2.setObjectName("regUsername_2")
+        self.horizontalLayout_24.addWidget(self.regUsername_2)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_24)
+        self.layoutWidget_6 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget_6.setObjectName("layoutWidget_6")
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.layoutWidget_6)
+        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.label_31 = QtWidgets.QLabel(self.layoutWidget_6)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_31.setFont(font)
+        self.label_31.setStyleSheet("")
+        self.label_31.setObjectName("label_31")
+        self.horizontalLayout_25.addWidget(self.label_31)
+        self.regUsername_3 = QtWidgets.QLineEdit(self.layoutWidget_6)
+        self.regUsername_3.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid #FFA500;    /* Add a light orange border */\n"
+"    border-radius: 4px;            /* Rounded corners */\n"
+"    padding: 6px;                 /* Add some padding for spacing */\n"
+"    font-size: 14px;              /* Set font size */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border-color: #4CAF50;        /* Change border color to light green on hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #2980B9;        /* Change border color when focused */\n"
+"}\n"
+"\n"
+"/* Placeholder text */\n"
+"QLineEdit::placeholder {\n"
+"    color: #555;                 /* Set placeholder text color */\n"
+"}\n"
+"\n"
+"/* Text inside QLineEdit */\n"
+"QLineEdit:!enabled, QLineEdit[readOnly=\"true\"] {\n"
+"    color: #333;                 /* Set text color */\n"
+"}\n"
+"\n"
+"/* Disabled state */\n"
+"QLineEdit:!enabled {\n"
+"    background-color: #EEE;      /* Light gray background for disabled state */\n"
+"}\n"
+"")
+        self.regUsername_3.setObjectName("regUsername_3")
+        self.horizontalLayout_25.addWidget(self.regUsername_3)
+        self.stackedWidget.addWidget(self.page_7)
+        self.page_8 = QtWidgets.QWidget()
+        self.page_8.setObjectName("page_8")
+        self.regbtn = QtWidgets.QPushButton(self.page_8)
+        self.regbtn.setGeometry(QtCore.QRect(380, 580, 161, 41))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.regbtn.setFont(font)
+        self.regbtn.setObjectName("regbtn")
+        self.layoutWidget1 = QtWidgets.QWidget(self.page_8)
+        self.layoutWidget1.setGeometry(QtCore.QRect(160, 180, 601, 261))
+        self.layoutWidget1.setObjectName("layoutWidget1")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.layoutWidget1)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.label_6 = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.horizontalLayout_5.addWidget(self.label_6)
+        self.regName = QtWidgets.QLineEdit(self.layoutWidget1)
+        self.regName.setObjectName("regName")
+        self.horizontalLayout_5.addWidget(self.regName)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_5)
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.label_17 = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_17.setFont(font)
+        self.label_17.setObjectName("label_17")
+        self.horizontalLayout_12.addWidget(self.label_17)
+        self.regId = QtWidgets.QLineEdit(self.layoutWidget1)
+        self.regId.setObjectName("regId")
+        self.horizontalLayout_12.addWidget(self.regId)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_12)
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.label_22 = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_22.setFont(font)
+        self.label_22.setObjectName("label_22")
+        self.horizontalLayout_17.addWidget(self.label_22)
+        self.regEmail = QtWidgets.QLineEdit(self.layoutWidget1)
+        self.regEmail.setObjectName("regEmail")
+        self.horizontalLayout_17.addWidget(self.regEmail)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_17)
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.label_23 = QtWidgets.QLabel(self.layoutWidget1)
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        self.label_23.setFont(font)
+        self.label_23.setObjectName("label_23")
+        self.horizontalLayout_18.addWidget(self.label_23)
+        self.username = QtWidgets.QLineEdit(self.layoutWidget1)
+        self.username.setObjectName("username")
+        self.horizontalLayout_18.addWidget(self.username)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_18)
+        self.layoutWidget2 = QtWidgets.QWidget(self.page_8)
+        self.layoutWidget2.setGeometry(QtCore.QRect(0, 80, 891, 44))
+        self.layoutWidget2.setObjectName("layoutWidget2")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.layoutWidget2)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem4)
+        self.splitter = QtWidgets.QSplitter(self.layoutWidget2)
+        self.splitter.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter.setObjectName("splitter")
+        self.label_24 = QtWidgets.QLabel(self.splitter)
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_24.setFont(font)
+        self.label_24.setStyleSheet("")
+        self.label_24.setObjectName("label_24")
+        self.horizontalLayout_7.addWidget(self.splitter)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem5)
+        self.stackedWidget.addWidget(self.page_8)
+        self.verticalLayout_5.addWidget(self.stackedWidget)
+        self.gridLayout.addWidget(self.widget_3, 0, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(6)
         self.change_btn.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.change_btn.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.home_btn_1.toggled['bool'].connect(self.home_btn_2.setChecked) # type: ignore
@@ -1074,8 +1691,28 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.logo_label_3.setText(_translate("MainWindow", "QLibrary"))
+        self.home_btn_2.setText(_translate("MainWindow", "DASHBOARD"))
+        self.dashborad_btn_2.setText(_translate("MainWindow", "SCANNER"))
+        self.orders_btn_2.setText(_translate("MainWindow", "UPLOADS"))
+        self.memberRegSection_btn_2.setText(_translate("MainWindow", "REGISTRATION"))
+        self.products_btn_2.setText(_translate("MainWindow", "MESSAGES"))
+        self.exit_btn_2.setText(_translate("MainWindow", "EXIT"))
         self.search_input.setPlaceholderText(_translate("MainWindow", "Search..."))
-        self.label_4.setText(_translate("MainWindow", "Home Page"))
+        self.checkBox.setText(_translate("MainWindow", "Show only available books"))
+        self.label_19.setText(_translate("MainWindow", "FIND ALL YOUR BOOKS HERE"))
+        self.label_13.setText(_translate("MainWindow", "Genre:"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "Author"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "Genre"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "Academics"))
+        self.label_15.setText(_translate("MainWindow", "Author:"))
+        self.comboBox_3.setItemText(0, _translate("MainWindow", "Author"))
+        self.comboBox_3.setItemText(1, _translate("MainWindow", "Genre"))
+        self.comboBox_3.setItemText(2, _translate("MainWindow", "Academics"))
+        self.label_16.setText(_translate("MainWindow", "Academics:"))
+        self.comboBox_4.setItemText(0, _translate("MainWindow", "Author"))
+        self.comboBox_4.setItemText(1, _translate("MainWindow", "Genre"))
+        self.comboBox_4.setItemText(2, _translate("MainWindow", "Academics"))
         self.label_3.setText(_translate("MainWindow", "                   BOOK  ITEMS"))
         self.borrowerlabel.setText(_translate("MainWindow", "Borrowed By :"))
         self.serportclose.setText(_translate("MainWindow", "Open Port"))
@@ -1094,18 +1731,18 @@ class Ui_MainWindow(object):
         self.regMemberBtn.setText(_translate("MainWindow", "Register Member"))
         self.label_5.setText(_translate("MainWindow", "LIBRARY MEMBER REGISTRATION"))
         self.label_9.setText(_translate("MainWindow", "Search Page"))
-        self.label_10.setText(_translate("MainWindow", "User Page"))
+        self.saveBtn.setText(_translate("MainWindow", "Save"))
+        self.changeDp.setText(_translate("MainWindow", "+ Change Profile Picture"))
+        self.label_20.setText(_translate("MainWindow", "Name        :   "))
+        self.label_21.setText(_translate("MainWindow", "Employee ID:"))
+        self.label_28.setText(_translate("MainWindow", "Email         :   "))
+        self.label_29.setText(_translate("MainWindow", "Phone No. :   "))
+        self.label_30.setText(_translate("MainWindow", "Username :   "))
+        self.label_31.setText(_translate("MainWindow", "Password:     "))
         self.regbtn.setText(_translate("MainWindow", "Register Member"))
         self.label_6.setText(_translate("MainWindow", "Name: "))
         self.label_17.setText(_translate("MainWindow", "ID:       "))
         self.label_22.setText(_translate("MainWindow", "Email: "))
         self.label_23.setText(_translate("MainWindow", "Username:"))
         self.label_24.setText(_translate("MainWindow", "   Member Registration"))
-        self.logo_label_3.setText(_translate("MainWindow", "QLibrary"))
-        self.home_btn_2.setText(_translate("MainWindow", "DASHBOARD"))
-        self.dashborad_btn_2.setText(_translate("MainWindow", "SCANNER"))
-        self.orders_btn_2.setText(_translate("MainWindow", "UPLOADS"))
-        self.memberRegSection_btn_2.setText(_translate("MainWindow", "REGISTRATION"))
-        self.products_btn_2.setText(_translate("MainWindow", "MESSAGES"))
-        self.exit_btn_2.setText(_translate("MainWindow", "EXIT"))
 import resource_rc

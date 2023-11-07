@@ -30,6 +30,267 @@
     <property name="spacing">
      <number>0</number>
     </property>
+    <item row="0" column="1">
+     <widget class="QWidget" name="full_menu_widget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="logo_label_2">
+           <property name="minimumSize">
+            <size>
+             <width>44</width>
+             <height>44</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>icon/online-library (1).png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="logo_label_3">
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>QLibrary</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="home_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>DASHBOARD</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-home-50.png</normaloff>
+             <normalon>icon/icons8-home-50 (1).png</normalon>icon/icons8-home-50.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dashborad_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>SCANNER</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-qr-code-24 (1).png</normaloff>
+             <normalon>icon/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="orders_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>UPLOADS</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-upload-to-ftp-24.png</normaloff>
+             <normalon>icon/icons8-upload-to-ftp-24 (1).png</normalon>icon/icons8-upload-to-ftp-24.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="memberRegSection_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>REGISTRATION</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-knowledge-sharing-48.png</normaloff>
+             <normalon>icon/icons8-knowledge-sharing-48 (1).png</normalon>icon/icons8-knowledge-sharing-48.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="products_btn_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>MESSAGES</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-message-24.png</normaloff>
+             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>373</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exit_btn_2">
+         <property name="styleSheet">
+          <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 14px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>EXIT</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icon/icons8-imac-exit-24.png</normaloff>icon/icons8-imac-exit-24.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>18</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QWidget" name="icon_only_widget" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -486,7 +747,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QLabel" name="label_4">
@@ -645,7 +906,7 @@ padding: 5px;</string>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <layout class="QVBoxLayout" name="verticalLayout_11">
              <item>
               <widget class="QLabel" name="label_13">
@@ -1734,23 +1995,482 @@ QPushButton:hover {
           </layout>
          </widget>
          <widget class="QWidget" name="page_7">
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="font">
-              <font>
-               <pointsize>20</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>User Page</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QLabel" name="label_10">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>20</y>
+             <width>811</width>
+             <height>591</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #f4fdff; /* Light violet background with partial transparency */
+    border: 2px solid #CCC;                      /* Add a subtle border */
+    border-radius: 20px;                         /* Rounded corners */
+    padding: 10px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="saveBtn">
+           <property name="geometry">
+            <rect>
+             <x>430</x>
+             <y>620</y>
+             <width>151</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 14px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="profile_picture_label">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>50</y>
+             <width>161</width>
+             <height>141</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid black;
+
+border-radius: 10px;
+background-color: cyan;
+content-align:center;
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>user.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="changeDp">
+           <property name="geometry">
+            <rect>
+             <x>580</x>
+             <y>100</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 5px; /* Padding around the button text */
+	font-size: 10px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>+ Change Profile Picture</string>
+           </property>
+          </widget>
+          <widget class="QSplitter" name="splitter_3">
+           <property name="geometry">
+            <rect>
+             <x>220</x>
+             <y>220</y>
+             <width>571</width>
+             <height>271</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <widget class="QWidget" name="layoutWidget_5">
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QLabel" name="label_20">
+                 <property name="font">
+                  <font>
+                   <family>Berlin Sans FB</family>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Name        :   </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="regName_3">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
+               <item>
+                <widget class="QLabel" name="label_21">
+                 <property name="font">
+                  <font>
+                   <family>Berlin Sans FB</family>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Employee ID:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="regID_2">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+               <item>
+                <widget class="QLabel" name="label_28">
+                 <property name="font">
+                  <font>
+                   <family>Berlin Sans FB</family>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Email         :   </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="regEmail_3">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_23">
+               <item>
+                <widget class="QLabel" name="label_29">
+                 <property name="font">
+                  <font>
+                   <family>Berlin Sans FB</family>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Phone No. :   </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="regPhone_2">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24">
+               <item>
+                <widget class="QLabel" name="label_30">
+                 <property name="font">
+                  <font>
+                   <family>Berlin Sans FB</family>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Username :   </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="regUsername_2">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget_6">
+            <layout class="QHBoxLayout" name="horizontalLayout_25">
+             <item>
+              <widget class="QLabel" name="label_31">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Password:     </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="regUsername_3">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
          </widget>
          <widget class="QWidget" name="page_8">
           <widget class="QPushButton" name="regbtn">
@@ -1925,267 +2645,6 @@ QPushButton:hover {
            </layout>
           </widget>
          </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QWidget" name="full_menu_widget" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="logo_label_2">
-           <property name="minimumSize">
-            <size>
-             <width>44</width>
-             <height>44</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>40</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>icon/online-library (1).png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="logo_label_3">
-           <property name="font">
-            <font>
-             <pointsize>18</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>QLibrary</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="home_btn_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>DASHBOARD</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-home-50.png</normaloff>
-             <normalon>icon/icons8-home-50 (1).png</normalon>icon/icons8-home-50.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="dashborad_btn_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>SCANNER</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-qr-code-24 (1).png</normaloff>
-             <normalon>icon/icons8-qr-code-64 (1).png</normalon>icon/icons8-qr-code-24 (1).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="orders_btn_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>UPLOADS</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-upload-to-ftp-24.png</normaloff>
-             <normalon>icon/icons8-upload-to-ftp-24 (1).png</normalon>icon/icons8-upload-to-ftp-24.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="memberRegSection_btn_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>REGISTRATION</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-knowledge-sharing-48.png</normaloff>
-             <normalon>icon/icons8-knowledge-sharing-48 (1).png</normalon>icon/icons8-knowledge-sharing-48.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="products_btn_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>MESSAGES</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>373</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="exit_btn_2">
-         <property name="styleSheet">
-          <string notr="true">/* Style for QPushButton */
-QPushButton {
-    background-color: #FFA500; /* Orange background color */
-    color: #000000; /* Black text color */
-    border: 1px solid #000000; /* Black border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px 10px; /* Padding around the button text */
-	font-size: 14px;
-}
-
-/* QPushButton when hovered */
-QPushButton:hover {
-    background-color: #FFD700; /* Lighter orange on hover */
-}
-</string>
-         </property>
-         <property name="text">
-          <string>EXIT</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>icon/icons8-imac-exit-24.png</normaloff>icon/icons8-imac-exit-24.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>18</width>
-           <height>24</height>
-          </size>
-         </property>
         </widget>
        </item>
       </layout>
