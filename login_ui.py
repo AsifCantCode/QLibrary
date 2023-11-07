@@ -113,7 +113,7 @@ class Ui_Form(object):
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setGeometry(QtCore.QRect(450, 450, 201, 51))
+        self.pushButton.setGeometry(QtCore.QRect(450, 470, 201, 51))
         font = QtGui.QFont()
         font.setFamily("Arial,sans-serif")
         font.setPointSize(-1)
@@ -169,6 +169,17 @@ class Ui_Form(object):
         self.label_5.setPixmap(QtGui.QPixmap("c:\\Users\\Radib Bin Kabir\\OneDrive\\Desktop\\RDBMS\\Project\\FrontendQLib\\QLibrary\\icon/online-library (2).png"))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
+        self.invalidLabel = QtWidgets.QLabel(self.widget)
+        self.invalidLabel.setGeometry(QtCore.QRect(450, 420, 201, 31))
+        self.invalidLabel.setStyleSheet("    color: red;\n"
+"    font-size: 15px; /* Change the font size to 16 pixels */\n"
+"    font-weight: 400; /* Make the text bold */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px; /* Add some padding around the content */\n"
+"    border: 1px solid red;\n"
+"    text-align: center;")
+        self.invalidLabel.setText("")
+        self.invalidLabel.setObjectName("invalidLabel")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

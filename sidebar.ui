@@ -747,7 +747,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QLabel" name="label_4">
@@ -912,16 +912,44 @@ padding: 5px;</string>
               <widget class="QLabel" name="label_13">
                <property name="font">
                 <font>
-                 <family>Berlin Sans FB</family>
-                 <pointsize>12</pointsize>
+                 <family>Arial,sans-serif</family>
+                 <pointsize>-1</pointsize>
+                 <weight>62</weight>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border: 1px solid;
-background-color: #efefef;</string>
+                <string notr="true">/* Style for QLabel */
+QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 22px; /* Font size */
+    border: 2px solid #CCCCCC; /* Border */
+    padding: 5px; /* Padding around the content */
+    background-color: #FFF7FF; /* Background color */
+	font-weight: 500;
+
+}
+
+/* QLabel when it's disabled */
+QLabel:disabled {
+    color: #999999; /* Text color for disabled state */
+    background-color: #F5F5F5; /* Background color for disabled state */
+}
+
+/* QLabel with hover effect */
+QLabel:hover {
+    background-color: #86fefff5; /* Background color on hover */
+}
+
+/* QLabel when clicked (pressed) */
+QLabel:pressed {
+    background-color: #CCCCCC; /* Background color when clicked */
+}
+</string>
                </property>
                <property name="text">
-                <string>Department:</string>
+                <string>Department</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -931,37 +959,47 @@ background-color: #efefef;</string>
              <item>
               <widget class="QComboBox" name="comboBox">
                <property name="styleSheet">
-                <string notr="true">QComboBox#comboBox {
-    /* Set the background color */
-    background-color: #ffffff;
-    
-    /* Set the border style and color */
-    border: 1px solid black;
-    border-radius: 5px;
-    
-    /* Set the padding */
-    padding: 5px;
+                <string notr="true">/* Style for the QComboBox */
+QComboBox {
+    background-color: #FFFFFF; /* White background color */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the content */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
+}
 
-    /* Set the text color */
-    color: #333333;
+/* Style for the QComboBox when it's in a dropped-down state */
+QComboBox::drop-down {
+    width: 20px; /* Width of the dropdown arrow */
+    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */
+}
 
-    /* Set the font */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 12px;
+/* Style for the QComboBox when it's in a dropped-down state and the mouse is over it */
+QComboBox::drop-down:hover {
+    background-color: #ADD8E6; /* Light blue background color when hovered */
+}
 
-    /* Set the drop-down arrow color */
-    QComboBox::down-arrow {
-        image: url(down_arrow.png); /* Replace with your arrow image */
-        width: 12px;
-        height: 12px;
-    }
+/* Style for the list view of the QComboBox */
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF; /* White background color of the list view */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
+}
 
-    /* Set the background color of the drop-down list */
-    QComboBox QAbstractItemView {
-        background-color: #ffffff;
-        border: 1px solid #999999;
-        selection-background-color: #e0e0e0; /* Color when an item is selected */
-    }
+/* Style for list view items of the QComboBox */
+QComboBox QAbstractItemView::item {
+    padding: 5px; /* Padding around each item */
+}
+
+/* Style for list view items when selected */
+QComboBox QAbstractItemView::item:selected {
+    background-color: #ADD8E6; /* Light blue background color when selected */
+    color: #000000; /* Black text color when selected */
 }
 </string>
                </property>
@@ -990,16 +1028,44 @@ background-color: #efefef;</string>
               <widget class="QLabel" name="label_15">
                <property name="font">
                 <font>
-                 <family>Berlin Sans FB</family>
-                 <pointsize>12</pointsize>
+                 <family>Arial,sans-serif</family>
+                 <pointsize>-1</pointsize>
+                 <weight>62</weight>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border: 1px solid;
-background-color: #efefef;</string>
+                <string notr="true">/* Style for QLabel */
+QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 22px; /* Font size */
+    border: 2px solid #CCCCCC; /* Border */
+    padding: 5px; /* Padding around the content */
+    background-color: #FFF7FF; /* Background color */
+	font-weight: 500;
+
+}
+
+/* QLabel when it's disabled */
+QLabel:disabled {
+    color: #999999; /* Text color for disabled state */
+    background-color: #F5F5F5; /* Background color for disabled state */
+}
+
+/* QLabel with hover effect */
+QLabel:hover {
+    background-color: #86fefff5; /* Background color on hover */
+}
+
+/* QLabel when clicked (pressed) */
+QLabel:pressed {
+    background-color: #CCCCCC; /* Background color when clicked */
+}
+</string>
                </property>
                <property name="text">
-                <string>Author:</string>
+                <string>Author</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1009,37 +1075,47 @@ background-color: #efefef;</string>
              <item>
               <widget class="QComboBox" name="comboBox_3">
                <property name="styleSheet">
-                <string notr="true">QComboBox#comboBox_3 {
-    /* Set the background color */
-    background-color: #ffffff;
-    
-    /* Set the border style and color */
-    border: 1px solid black;
-    border-radius: 5px;
-    
-    /* Set the padding */
-    padding: 5px;
+                <string notr="true">/* Style for the QComboBox */
+QComboBox {
+    background-color: #FFFFFF; /* White background color */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the content */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
+}
 
-    /* Set the text color */
-    color: #333333;
+/* Style for the QComboBox when it's in a dropped-down state */
+QComboBox::drop-down {
+    width: 20px; /* Width of the dropdown arrow */
+    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */
+}
 
-    /* Set the font */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 12px;
+/* Style for the QComboBox when it's in a dropped-down state and the mouse is over it */
+QComboBox::drop-down:hover {
+    background-color: #ADD8E6; /* Light blue background color when hovered */
+}
 
-    /* Set the drop-down arrow color */
-    QComboBox::down-arrow {
-        image: url(down_arrow.png); /* Replace with your arrow image */
-        width: 12px;
-        height: 12px;
-    }
+/* Style for the list view of the QComboBox */
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF; /* White background color of the list view */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
+}
 
-    /* Set the background color of the drop-down list */
-    QComboBox QAbstractItemView {
-        background-color: #ffffff;
-        border: 1px solid #999999;
-        selection-background-color: #e0e0e0; /* Color when an item is selected */
-    }
+/* Style for list view items of the QComboBox */
+QComboBox QAbstractItemView::item {
+    padding: 5px; /* Padding around each item */
+}
+
+/* Style for list view items when selected */
+QComboBox QAbstractItemView::item:selected {
+    background-color: #ADD8E6; /* Light blue background color when selected */
+    color: #000000; /* Black text color when selected */
 }
 </string>
                </property>
@@ -1068,18 +1144,44 @@ background-color: #efefef;</string>
               <widget class="QLabel" name="label_16">
                <property name="font">
                 <font>
-                 <family>Berlin Sans FB</family>
-                 <pointsize>12</pointsize>
+                 <family>Arial,sans-serif</family>
+                 <pointsize>-1</pointsize>
+                 <weight>62</weight>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border: 1px solid;
-background-color: #efefef;
-padding: 0px;
+                <string notr="true">/* Style for QLabel */
+QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 22px; /* Font size */
+    border: 2px solid #CCCCCC; /* Border */
+    padding: 5px; /* Padding around the content */
+    background-color: #FFF7FF; /* Background color */
+	font-weight: 500;
+
+}
+
+/* QLabel when it's disabled */
+QLabel:disabled {
+    color: #999999; /* Text color for disabled state */
+    background-color: #F5F5F5; /* Background color for disabled state */
+}
+
+/* QLabel with hover effect */
+QLabel:hover {
+    background-color: #86fefff5; /* Background color on hover */
+}
+
+/* QLabel when clicked (pressed) */
+QLabel:pressed {
+    background-color: #CCCCCC; /* Background color when clicked */
+}
 </string>
                </property>
                <property name="text">
-                <string>Academics:</string>
+                <string>Academics</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1089,69 +1191,47 @@ padding: 0px;
              <item>
               <widget class="QComboBox" name="comboBox_4">
                <property name="styleSheet">
-                <string notr="true">QComboBox#comboBox_4 {
-    /* Set the background color */
-    background-color: #ffffff;
-    
-    /* Set the border style and color */
-    border: 1px solid black;
-    border-radius: 5px;
-    
-    /* Set the padding */
-    padding: 5px;
-
-    /* Set the text color */
-    color: #333333;
-
-    /* Set the font */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 12px;
-
-    /* Set the drop-down arrow color */
-    QComboBox::down-arrow {
-        image: url(down_arrow.png); /* Replace with your arrow image */
-        width: 12px;
-        height: 12px;
-    }
-
-    /* Set the background color of the drop-down list */
-    QComboBox QAbstractItemView {
-        background-color: #ffffff;
-        border: 1px solid #999999;
-        selection-background-color: #e0e0e0; /* Color when an item is selected */
-    }
+                <string notr="true">/* Style for the QComboBox */
+QComboBox {
+    background-color: #FFFFFF; /* White background color */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the content */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
 }
-QComboBox#comboBox_3 {
-    /* Set the background color */
-    background-color: #ffffff;
-    
-    /* Set the border style and color */
-    border: 1px solid #999999;
-    border-radius: 5px;
-    
-    /* Set the padding */
-    padding: 5px;
 
-    /* Set the text color */
-    color: #333333;
+/* Style for the QComboBox when it's in a dropped-down state */
+QComboBox::drop-down {
+    width: 20px; /* Width of the dropdown arrow */
+    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */
+}
 
-    /* Set the font */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 12px;
+/* Style for the QComboBox when it's in a dropped-down state and the mouse is over it */
+QComboBox::drop-down:hover {
+    background-color: #ADD8E6; /* Light blue background color when hovered */
+}
 
-    /* Set the drop-down arrow color */
-    QComboBox::down-arrow {
-        image: url(down_arrow.png); /* Replace with your arrow image */
-        width: 12px;
-        height: 12px;
-    }
+/* Style for the list view of the QComboBox */
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF; /* White background color of the list view */
+    border: 1px solid #B0C4DE; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    color: #000000; /* Black text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 12px; /* Font size */
+}
 
-    /* Set the background color of the drop-down list */
-    QComboBox QAbstractItemView {
-        background-color: #ffffff;
-        border: 1px solid #999999;
-        selection-background-color: #e0e0e0; /* Color when an item is selected */
-    }
+/* Style for list view items of the QComboBox */
+QComboBox QAbstractItemView::item {
+    padding: 5px; /* Padding around each item */
+}
+
+/* Style for list view items when selected */
+QComboBox QAbstractItemView::item:selected {
+    background-color: #ADD8E6; /* Light blue background color when selected */
+    color: #000000; /* Black text color when selected */
 }
 </string>
                </property>
@@ -1180,10 +1260,10 @@ QComboBox#comboBox_3 {
           <widget class="QWidget" name="verticalLayoutWidget_2">
            <property name="geometry">
             <rect>
-             <x>20</x>
-             <y>120</y>
+             <x>40</x>
+             <y>110</y>
              <width>331</width>
-             <height>411</height>
+             <height>471</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1191,7 +1271,7 @@ QComboBox#comboBox_3 {
              <widget class="QLabel" name="label_3">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <family>Arial,sans-serif</family>
                 <pointsize>-1</pointsize>
                </font>
               </property>
@@ -1350,15 +1430,21 @@ QPushButton:hover {
           <widget class="QLabel" name="image_label">
            <property name="geometry">
             <rect>
-             <x>370</x>
-             <y>120</y>
-             <width>461</width>
-             <height>361</height>
+             <x>390</x>
+             <y>112</y>
+             <width>511</width>
+             <height>423</height>
             </rect>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
            </property>
            <property name="font">
             <font>
-             <pointsize>25</pointsize>
+             <pointsize>39</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -1374,8 +1460,8 @@ border-radius: 5px;
           <widget class="QLabel" name="scannedlabel">
            <property name="geometry">
             <rect>
-             <x>710</x>
-             <y>490</y>
+             <x>580</x>
+             <y>70</y>
              <width>171</width>
              <height>41</height>
             </rect>
@@ -1389,20 +1475,46 @@ border-radius: 5px;
             </font>
            </property>
            <property name="text">
-            <string>scannedlabel</string>
+            <string/>
            </property>
           </widget>
           <widget class="QLabel" name="loadingLabel">
            <property name="geometry">
             <rect>
-             <x>550</x>
-             <y>250</y>
-             <width>101</width>
-             <height>111</height>
+             <x>560</x>
+             <y>260</y>
+             <width>171</width>
+             <height>121</height>
             </rect>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>10</width>
+             <height>5</height>
+            </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>5</width>
+             <height>6</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>4</width>
+             <height>5</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">image: url(:/icon/icon/loadingR.gif);</string>
+            <string notr="true">image: url(:/icon/icon/circle_loading.jpg);
+border-radius: 25px;
+font-size: 39px;
+border: 1px solid white;</string>
            </property>
            <property name="text">
             <string/>
@@ -1411,10 +1523,10 @@ border-radius: 5px;
           <widget class="QPushButton" name="camerabutton">
            <property name="geometry">
             <rect>
-             <x>370</x>
-             <y>489</y>
+             <x>570</x>
+             <y>545</y>
              <width>161</width>
-             <height>41</height>
+             <height>38</height>
             </rect>
            </property>
            <property name="font">
@@ -1443,14 +1555,14 @@ QPushButton:hover {
 </string>
            </property>
            <property name="text">
-            <string>Open Camera</string>
+            <string>Toggle Camera</string>
            </property>
           </widget>
+          <zorder>image_label</zorder>
           <zorder>verticalLayoutWidget_2</zorder>
           <zorder>scannedlabel</zorder>
           <zorder>loadingLabel</zorder>
           <zorder>camerabutton</zorder>
-          <zorder>image_label</zorder>
          </widget>
          <widget class="QWidget" name="page_3">
           <widget class="QWidget" name="verticalLayoutWidget">
@@ -2042,7 +2154,7 @@ QPushButton:hover {
            <property name="geometry">
             <rect>
              <x>60</x>
-             <y>20</y>
+             <y>50</y>
              <width>811</width>
              <height>591</height>
             </rect>
@@ -2068,8 +2180,8 @@ QPushButton:hover {
           <widget class="QPushButton" name="saveBtn">
            <property name="geometry">
             <rect>
-             <x>430</x>
-             <y>620</y>
+             <x>410</x>
+             <y>590</y>
              <width>151</width>
              <height>31</height>
             </rect>
@@ -2099,15 +2211,14 @@ QPushButton:hover {
            <property name="geometry">
             <rect>
              <x>400</x>
-             <y>50</y>
+             <y>60</y>
              <width>161</width>
-             <height>141</height>
+             <height>161</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 2px solid black;
-
-border-radius: 10px;
+            <string notr="true">border: 3px solid black;
+border-radius: 5px;
 background-color: cyan;
 content-align:center;
 </string>
@@ -2134,8 +2245,8 @@ content-align:center;
           <widget class="QPushButton" name="changeDp">
            <property name="geometry">
             <rect>
-             <x>580</x>
-             <y>100</y>
+             <x>420</x>
+             <y>230</y>
              <width>121</width>
              <height>31</height>
             </rect>
@@ -2164,95 +2275,37 @@ QPushButton:hover {
           <widget class="QSplitter" name="splitter_3">
            <property name="geometry">
             <rect>
-             <x>220</x>
-             <y>220</y>
-             <width>571</width>
-             <height>271</height>
+             <x>210</x>
+             <y>270</y>
+             <width>521</width>
+             <height>311</height>
             </rect>
            </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
-           <widget class="QWidget" name="layoutWidget_5">
-            <layout class="QVBoxLayout" name="verticalLayout_12">
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_9">
-               <item>
-                <widget class="QLabel" name="label_20">
-                 <property name="font">
-                  <font>
-                   <family>Berlin Sans FB</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>Name        :   </string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="regName_3">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
-    border: 2px solid #FFA500;    /* Add a light orange border */
-    border-radius: 4px;            /* Rounded corners */
-    padding: 6px;                 /* Add some padding for spacing */
-    font-size: 14px;              /* Set font size */
-}
-
-QLineEdit:hover {
-    border-color: #4CAF50;        /* Change border color to light green on hover */
-}
-
-QLineEdit:focus {
-    border-color: #2980B9;        /* Change border color when focused */
-}
-
-/* Placeholder text */
-QLineEdit::placeholder {
-    color: #555;                 /* Set placeholder text color */
-}
-
-/* Text inside QLineEdit */
-QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
-    color: #333;                 /* Set text color */
-}
-
-/* Disabled state */
-QLineEdit:!enabled {
-    background-color: #EEE;      /* Light gray background for disabled state */
-}
-</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QLabel" name="label_20">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Name           : </string>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_14">
-               <item>
-                <widget class="QLabel" name="label_21">
-                 <property name="font">
-                  <font>
-                   <family>Berlin Sans FB</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>Employee ID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="regID_2">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
+              <widget class="QLineEdit" name="regName_3">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
     border: 2px solid #FFA500;    /* Add a light orange border */
     border-radius: 4px;            /* Rounded corners */
     padding: 6px;                 /* Add some padding for spacing */
@@ -2282,33 +2335,33 @@ QLineEdit:!enabled {
     background-color: #EEE;      /* Light gray background for disabled state */
 }
 </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QLabel" name="label_21">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Employee Id : </string>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
-               <item>
-                <widget class="QLabel" name="label_28">
-                 <property name="font">
-                  <font>
-                   <family>Berlin Sans FB</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>Email         :   </string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="regEmail_3">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
+              <widget class="QLineEdit" name="regID_2">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
     border: 2px solid #FFA500;    /* Add a light orange border */
     border-radius: 4px;            /* Rounded corners */
     padding: 6px;                 /* Add some padding for spacing */
@@ -2338,33 +2391,33 @@ QLineEdit:!enabled {
     background-color: #EEE;      /* Light gray background for disabled state */
 }
 </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item>
+              <widget class="QLabel" name="label_28">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Email            : </string>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_23">
-               <item>
-                <widget class="QLabel" name="label_29">
-                 <property name="font">
-                  <font>
-                   <family>Berlin Sans FB</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>Phone No. :   </string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="regPhone_2">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
+              <widget class="QLineEdit" name="regEmail_3">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
     border: 2px solid #FFA500;    /* Add a light orange border */
     border-radius: 4px;            /* Rounded corners */
     padding: 6px;                 /* Add some padding for spacing */
@@ -2394,33 +2447,33 @@ QLineEdit:!enabled {
     background-color: #EEE;      /* Light gray background for disabled state */
 }
 </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_23">
+             <item>
+              <widget class="QLabel" name="label_29">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Phone No.    : </string>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_24">
-               <item>
-                <widget class="QLabel" name="label_30">
-                 <property name="font">
-                  <font>
-                   <family>Berlin Sans FB</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>Username :   </string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="regUsername_2">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
+              <widget class="QLineEdit" name="regPhone_2">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
     border: 2px solid #FFA500;    /* Add a light orange border */
     border-radius: 4px;            /* Rounded corners */
     padding: 6px;                 /* Add some padding for spacing */
@@ -2450,10 +2503,64 @@ QLineEdit:!enabled {
     background-color: #EEE;      /* Light gray background for disabled state */
 }
 </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_24">
+             <item>
+              <widget class="QLabel" name="label_30">
+               <property name="font">
+                <font>
+                 <family>Berlin Sans FB</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Username    : </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="regUsername_2">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid #FFA500;    /* Add a light orange border */
+    border-radius: 4px;            /* Rounded corners */
+    padding: 6px;                 /* Add some padding for spacing */
+    font-size: 14px;              /* Set font size */
+}
+
+QLineEdit:hover {
+    border-color: #4CAF50;        /* Change border color to light green on hover */
+}
+
+QLineEdit:focus {
+    border-color: #2980B9;        /* Change border color when focused */
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: #555;                 /* Set placeholder text color */
+}
+
+/* Text inside QLineEdit */
+QLineEdit:!enabled, QLineEdit[readOnly=&quot;true&quot;] {
+    color: #333;                 /* Set text color */
+}
+
+/* Disabled state */
+QLineEdit:!enabled {
+    background-color: #EEE;      /* Light gray background for disabled state */
+}
+</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -2471,7 +2578,7 @@ QLineEdit:!enabled {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Password:     </string>
+                <string>Password     : </string>
                </property>
               </widget>
              </item>
@@ -2516,176 +2623,25 @@ QLineEdit:!enabled {
           </widget>
          </widget>
          <widget class="QWidget" name="page_8">
-          <widget class="QPushButton" name="regbtn">
+          <widget class="QLabel" name="label_6">
            <property name="geometry">
             <rect>
-             <x>380</x>
-             <y>580</y>
-             <width>161</width>
-             <height>41</height>
+             <x>410</x>
+             <y>290</y>
+             <width>141</width>
+             <height>61</height>
             </rect>
            </property>
            <property name="font">
             <font>
-             <pointsize>13</pointsize>
+             <pointsize>17</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
-            <string>Register Member</string>
+            <string>page 8</string>
            </property>
-          </widget>
-          <widget class="QWidget" name="layoutWidget">
-           <property name="geometry">
-            <rect>
-             <x>160</x>
-             <y>180</y>
-             <width>601</width>
-             <height>261</height>
-            </rect>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_9">
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_5">
-              <item>
-               <widget class="QLabel" name="label_6">
-                <property name="font">
-                 <font>
-                  <family>Berlin Sans FB</family>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Name: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="regName"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_12">
-              <item>
-               <widget class="QLabel" name="label_17">
-                <property name="font">
-                 <font>
-                  <family>Berlin Sans FB</family>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>ID:       </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="regId"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_17">
-              <item>
-               <widget class="QLabel" name="label_22">
-                <property name="font">
-                 <font>
-                  <family>Berlin Sans FB</family>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Email: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="regEmail"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_18">
-              <item>
-               <widget class="QLabel" name="label_23">
-                <property name="font">
-                 <font>
-                  <family>Berlin Sans FB</family>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Username:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="username"/>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="layoutWidget">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>80</y>
-             <width>891</width>
-             <height>44</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QSplitter" name="splitter">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <widget class="QLabel" name="label_24">
-               <property name="font">
-                <font>
-                 <family>Calibri</family>
-                 <pointsize>22</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string>   Member Registration</string>
-               </property>
-              </widget>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
           </widget>
          </widget>
         </widget>

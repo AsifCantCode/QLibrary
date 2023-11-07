@@ -467,46 +467,84 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.label_13 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(12)
+        font.setFamily("Arial,sans-serif")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(62)
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet("border: 1px solid;\n"
-"background-color: #efefef;")
+        self.label_13.setStyleSheet("/* Style for QLabel */\n"
+"QLabel {\n"
+"    color: #3700B3; /* Text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 22px; /* Font size */\n"
+"    border: 2px solid #CCCCCC; /* Border */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    background-color: #FFF7FF; /* Background color */\n"
+"    font-weight: 500;\n"
+"\n"
+"}\n"
+"\n"
+"/* QLabel when it\'s disabled */\n"
+"QLabel:disabled {\n"
+"    color: #999999; /* Text color for disabled state */\n"
+"    background-color: #F5F5F5; /* Background color for disabled state */\n"
+"}\n"
+"\n"
+"/* QLabel with hover effect */\n"
+"QLabel:hover {\n"
+"    background-color: #86fefff5; /* Background color on hover */\n"
+"}\n"
+"\n"
+"/* QLabel when clicked (pressed) */\n"
+"QLabel:pressed {\n"
+"    background-color: #CCCCCC; /* Background color when clicked */\n"
+"}\n"
+"")
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self.verticalLayout_11.addWidget(self.label_13)
         self.comboBox = QtWidgets.QComboBox(self.layoutWidget)
-        self.comboBox.setStyleSheet("QComboBox#comboBox {\n"
-"    /* Set the background color */\n"
-"    background-color: #ffffff;\n"
-"    \n"
-"    /* Set the border style and color */\n"
-"    border: 1px solid black;\n"
-"    border-radius: 5px;\n"
-"    \n"
-"    /* Set the padding */\n"
-"    padding: 5px;\n"
+        self.comboBox.setStyleSheet("/* Style for the QComboBox */\n"
+"QComboBox {\n"
+"    background-color: #FFFFFF; /* White background color */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
+"}\n"
 "\n"
-"    /* Set the text color */\n"
-"    color: #333333;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state */\n"
+"QComboBox::drop-down {\n"
+"    width: 20px; /* Width of the dropdown arrow */\n"
+"    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */\n"
+"}\n"
 "\n"
-"    /* Set the font */\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 12px;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state and the mouse is over it */\n"
+"QComboBox::drop-down:hover {\n"
+"    background-color: #ADD8E6; /* Light blue background color when hovered */\n"
+"}\n"
 "\n"
-"    /* Set the drop-down arrow color */\n"
-"    QComboBox::down-arrow {\n"
-"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
-"        width: 12px;\n"
-"        height: 12px;\n"
-"    }\n"
+"/* Style for the list view of the QComboBox */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF; /* White background color of the list view */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
+"}\n"
 "\n"
-"    /* Set the background color of the drop-down list */\n"
-"    QComboBox QAbstractItemView {\n"
-"        background-color: #ffffff;\n"
-"        border: 1px solid #999999;\n"
-"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
-"    }\n"
+"/* Style for list view items of the QComboBox */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 5px; /* Padding around each item */\n"
+"}\n"
+"\n"
+"/* Style for list view items when selected */\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+"    background-color: #ADD8E6; /* Light blue background color when selected */\n"
+"    color: #000000; /* Black text color when selected */\n"
 "}\n"
 "")
         self.comboBox.setObjectName("comboBox")
@@ -521,46 +559,84 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.label_15 = QtWidgets.QLabel(self.layoutWidget_3)
         font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(12)
+        font.setFamily("Arial,sans-serif")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(62)
         self.label_15.setFont(font)
-        self.label_15.setStyleSheet("border: 1px solid;\n"
-"background-color: #efefef;")
+        self.label_15.setStyleSheet("/* Style for QLabel */\n"
+"QLabel {\n"
+"    color: #3700B3; /* Text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 22px; /* Font size */\n"
+"    border: 2px solid #CCCCCC; /* Border */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    background-color: #FFF7FF; /* Background color */\n"
+"    font-weight: 500;\n"
+"\n"
+"}\n"
+"\n"
+"/* QLabel when it\'s disabled */\n"
+"QLabel:disabled {\n"
+"    color: #999999; /* Text color for disabled state */\n"
+"    background-color: #F5F5F5; /* Background color for disabled state */\n"
+"}\n"
+"\n"
+"/* QLabel with hover effect */\n"
+"QLabel:hover {\n"
+"    background-color: #86fefff5; /* Background color on hover */\n"
+"}\n"
+"\n"
+"/* QLabel when clicked (pressed) */\n"
+"QLabel:pressed {\n"
+"    background-color: #CCCCCC; /* Background color when clicked */\n"
+"}\n"
+"")
         self.label_15.setAlignment(QtCore.Qt.AlignCenter)
         self.label_15.setObjectName("label_15")
         self.verticalLayout_13.addWidget(self.label_15)
         self.comboBox_3 = QtWidgets.QComboBox(self.layoutWidget_3)
-        self.comboBox_3.setStyleSheet("QComboBox#comboBox_3 {\n"
-"    /* Set the background color */\n"
-"    background-color: #ffffff;\n"
-"    \n"
-"    /* Set the border style and color */\n"
-"    border: 1px solid black;\n"
-"    border-radius: 5px;\n"
-"    \n"
-"    /* Set the padding */\n"
-"    padding: 5px;\n"
+        self.comboBox_3.setStyleSheet("/* Style for the QComboBox */\n"
+"QComboBox {\n"
+"    background-color: #FFFFFF; /* White background color */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
+"}\n"
 "\n"
-"    /* Set the text color */\n"
-"    color: #333333;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state */\n"
+"QComboBox::drop-down {\n"
+"    width: 20px; /* Width of the dropdown arrow */\n"
+"    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */\n"
+"}\n"
 "\n"
-"    /* Set the font */\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 12px;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state and the mouse is over it */\n"
+"QComboBox::drop-down:hover {\n"
+"    background-color: #ADD8E6; /* Light blue background color when hovered */\n"
+"}\n"
 "\n"
-"    /* Set the drop-down arrow color */\n"
-"    QComboBox::down-arrow {\n"
-"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
-"        width: 12px;\n"
-"        height: 12px;\n"
-"    }\n"
+"/* Style for the list view of the QComboBox */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF; /* White background color of the list view */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
+"}\n"
 "\n"
-"    /* Set the background color of the drop-down list */\n"
-"    QComboBox QAbstractItemView {\n"
-"        background-color: #ffffff;\n"
-"        border: 1px solid #999999;\n"
-"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
-"    }\n"
+"/* Style for list view items of the QComboBox */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 5px; /* Padding around each item */\n"
+"}\n"
+"\n"
+"/* Style for list view items when selected */\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+"    background-color: #ADD8E6; /* Light blue background color when selected */\n"
+"    color: #000000; /* Black text color when selected */\n"
 "}\n"
 "")
         self.comboBox_3.setObjectName("comboBox_3")
@@ -575,80 +651,84 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setObjectName("verticalLayout_14")
         self.label_16 = QtWidgets.QLabel(self.layoutWidget_4)
         font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(12)
+        font.setFamily("Arial,sans-serif")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(62)
         self.label_16.setFont(font)
-        self.label_16.setStyleSheet("border: 1px solid;\n"
-"background-color: #efefef;\n"
-"padding: 0px;\n"
+        self.label_16.setStyleSheet("/* Style for QLabel */\n"
+"QLabel {\n"
+"    color: #3700B3; /* Text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 22px; /* Font size */\n"
+"    border: 2px solid #CCCCCC; /* Border */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    background-color: #FFF7FF; /* Background color */\n"
+"    font-weight: 500;\n"
+"\n"
+"}\n"
+"\n"
+"/* QLabel when it\'s disabled */\n"
+"QLabel:disabled {\n"
+"    color: #999999; /* Text color for disabled state */\n"
+"    background-color: #F5F5F5; /* Background color for disabled state */\n"
+"}\n"
+"\n"
+"/* QLabel with hover effect */\n"
+"QLabel:hover {\n"
+"    background-color: #86fefff5; /* Background color on hover */\n"
+"}\n"
+"\n"
+"/* QLabel when clicked (pressed) */\n"
+"QLabel:pressed {\n"
+"    background-color: #CCCCCC; /* Background color when clicked */\n"
+"}\n"
 "")
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.verticalLayout_14.addWidget(self.label_16)
         self.comboBox_4 = QtWidgets.QComboBox(self.layoutWidget_4)
-        self.comboBox_4.setStyleSheet("QComboBox#comboBox_4 {\n"
-"    /* Set the background color */\n"
-"    background-color: #ffffff;\n"
-"    \n"
-"    /* Set the border style and color */\n"
-"    border: 1px solid black;\n"
-"    border-radius: 5px;\n"
-"    \n"
-"    /* Set the padding */\n"
-"    padding: 5px;\n"
-"\n"
-"    /* Set the text color */\n"
-"    color: #333333;\n"
-"\n"
-"    /* Set the font */\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 12px;\n"
-"\n"
-"    /* Set the drop-down arrow color */\n"
-"    QComboBox::down-arrow {\n"
-"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
-"        width: 12px;\n"
-"        height: 12px;\n"
-"    }\n"
-"\n"
-"    /* Set the background color of the drop-down list */\n"
-"    QComboBox QAbstractItemView {\n"
-"        background-color: #ffffff;\n"
-"        border: 1px solid #999999;\n"
-"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
-"    }\n"
+        self.comboBox_4.setStyleSheet("/* Style for the QComboBox */\n"
+"QComboBox {\n"
+"    background-color: #FFFFFF; /* White background color */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 5px; /* Padding around the content */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
 "}\n"
-"QComboBox#comboBox_3 {\n"
-"    /* Set the background color */\n"
-"    background-color: #ffffff;\n"
-"    \n"
-"    /* Set the border style and color */\n"
-"    border: 1px solid #999999;\n"
-"    border-radius: 5px;\n"
-"    \n"
-"    /* Set the padding */\n"
-"    padding: 5px;\n"
 "\n"
-"    /* Set the text color */\n"
-"    color: #333333;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state */\n"
+"QComboBox::drop-down {\n"
+"    width: 20px; /* Width of the dropdown arrow */\n"
+"    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */\n"
+"}\n"
 "\n"
-"    /* Set the font */\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 12px;\n"
+"/* Style for the QComboBox when it\'s in a dropped-down state and the mouse is over it */\n"
+"QComboBox::drop-down:hover {\n"
+"    background-color: #ADD8E6; /* Light blue background color when hovered */\n"
+"}\n"
 "\n"
-"    /* Set the drop-down arrow color */\n"
-"    QComboBox::down-arrow {\n"
-"        image: url(down_arrow.png); /* Replace with your arrow image */\n"
-"        width: 12px;\n"
-"        height: 12px;\n"
-"    }\n"
+"/* Style for the list view of the QComboBox */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #FFFFFF; /* White background color of the list view */\n"
+"    border: 1px solid #B0C4DE; /* Light blue border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    color: #000000; /* Black text color */\n"
+"    font-family: Arial, sans-serif; /* Font family */\n"
+"    font-size: 12px; /* Font size */\n"
+"}\n"
 "\n"
-"    /* Set the background color of the drop-down list */\n"
-"    QComboBox QAbstractItemView {\n"
-"        background-color: #ffffff;\n"
-"        border: 1px solid #999999;\n"
-"        selection-background-color: #e0e0e0; /* Color when an item is selected */\n"
-"    }\n"
+"/* Style for list view items of the QComboBox */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 5px; /* Padding around each item */\n"
+"}\n"
+"\n"
+"/* Style for list view items when selected */\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+"    background-color: #ADD8E6; /* Light blue background color when selected */\n"
+"    color: #000000; /* Black text color when selected */\n"
 "}\n"
 "")
         self.comboBox_4.setObjectName("comboBox_4")
@@ -660,7 +740,7 @@ class Ui_MainWindow(object):
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.page_2)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(20, 120, 331, 411))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(40, 110, 331, 471))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -792,9 +872,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.initborrow)
         self.verticalLayout_6.addLayout(self.horizontalLayout_6)
         self.image_label = QtWidgets.QLabel(self.page_2)
-        self.image_label.setGeometry(QtCore.QRect(370, 120, 501, 411))
+        self.image_label.setGeometry(QtCore.QRect(390, 112, 511, 423))
+        self.image_label.setBaseSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
-        font.setPointSize(25)
+        font.setPointSize(39)
         self.image_label.setFont(font)
         self.image_label.setStyleSheet("border: 3px solid black;\n"
 "padding: 2px;\n"
@@ -803,19 +884,58 @@ class Ui_MainWindow(object):
         self.image_label.setText("")
         self.image_label.setObjectName("image_label")
         self.scannedlabel = QtWidgets.QLabel(self.page_2)
-        self.scannedlabel.setGeometry(QtCore.QRect(560, 530, 171, 41))
+        self.scannedlabel.setGeometry(QtCore.QRect(580, 70, 171, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
         self.scannedlabel.setFont(font)
+        self.scannedlabel.setText("")
         self.scannedlabel.setObjectName("scannedlabel")
         self.loadingLabel = QtWidgets.QLabel(self.page_2)
-        self.loadingLabel.setGeometry(QtCore.QRect(570, 260, 101, 111))
-        self.loadingLabel.setStyleSheet("image: url(:/icon/icon/loadingR.gif);")
+        self.loadingLabel.setGeometry(QtCore.QRect(560, 260, 171, 121))
+        self.loadingLabel.setMinimumSize(QtCore.QSize(10, 5))
+        self.loadingLabel.setSizeIncrement(QtCore.QSize(5, 6))
+        self.loadingLabel.setBaseSize(QtCore.QSize(4, 5))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.loadingLabel.setFont(font)
+        self.loadingLabel.setStyleSheet("image: url(:/icon/icon/circle_loading.jpg);\n"
+"border-radius: 25px;\n"
+"font-size: 39px;\n"
+"border: 1px solid white;")
         self.loadingLabel.setText("")
         self.loadingLabel.setObjectName("loadingLabel")
+        self.camerabutton = QtWidgets.QPushButton(self.page_2)
+        self.camerabutton.setGeometry(QtCore.QRect(570, 545, 161, 38))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(62)
+        self.camerabutton.setFont(font)
+        self.camerabutton.setStyleSheet("/* Style for QPushButton */\n"
+"QPushButton {\n"
+"    background-color: #FFA500; /* Orange background color */\n"
+"    color: #000000; /* Black text color */\n"
+"    border: 1px solid #000000; /* Black border */\n"
+"    border-radius: 5px; /* Rounded corners */\n"
+"    padding: 8px 10px; /* Padding around the button text */\n"
+"    font-size: 15px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* QPushButton when hovered */\n"
+"QPushButton:hover {\n"
+"    background-color: #FFD700; /* Lighter orange on hover */\n"
+"}\n"
+"")
+        self.camerabutton.setObjectName("camerabutton")
+        self.image_label.raise_()
+        self.verticalLayoutWidget_2.raise_()
+        self.scannedlabel.raise_()
+        self.loadingLabel.raise_()
+        self.camerabutton.raise_()
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -1239,7 +1359,7 @@ class Ui_MainWindow(object):
         self.page_7 = QtWidgets.QWidget()
         self.page_7.setObjectName("page_7")
         self.label_10 = QtWidgets.QLabel(self.page_7)
-        self.label_10.setGeometry(QtCore.QRect(60, 20, 811, 591))
+        self.label_10.setGeometry(QtCore.QRect(60, 50, 811, 591))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_10.setFont(font)
@@ -1251,7 +1371,7 @@ class Ui_MainWindow(object):
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
         self.saveBtn = QtWidgets.QPushButton(self.page_7)
-        self.saveBtn.setGeometry(QtCore.QRect(430, 620, 151, 31))
+        self.saveBtn.setGeometry(QtCore.QRect(410, 590, 151, 31))
         self.saveBtn.setStyleSheet("/* Style for QPushButton */\n"
 "QPushButton {\n"
 "    background-color: #FFA500; /* Orange background color */\n"
@@ -1269,10 +1389,9 @@ class Ui_MainWindow(object):
 "")
         self.saveBtn.setObjectName("saveBtn")
         self.profile_picture_label = QtWidgets.QLabel(self.page_7)
-        self.profile_picture_label.setGeometry(QtCore.QRect(400, 50, 161, 141))
-        self.profile_picture_label.setStyleSheet("border: 2px solid black;\n"
-"\n"
-"border-radius: 10px;\n"
+        self.profile_picture_label.setGeometry(QtCore.QRect(400, 60, 161, 161))
+        self.profile_picture_label.setStyleSheet("border: 3px solid black;\n"
+"border-radius: 5px;\n"
 "background-color: cyan;\n"
 "content-align:center;\n"
 "")
@@ -1283,7 +1402,7 @@ class Ui_MainWindow(object):
         self.profile_picture_label.setWordWrap(False)
         self.profile_picture_label.setObjectName("profile_picture_label")
         self.changeDp = QtWidgets.QPushButton(self.page_7)
-        self.changeDp.setGeometry(QtCore.QRect(580, 100, 121, 31))
+        self.changeDp.setGeometry(QtCore.QRect(420, 230, 121, 31))
         self.changeDp.setStyleSheet("/* Style for QPushButton */\n"
 "QPushButton {\n"
 "    background-color: #FFA500; /* Orange background color */\n"
@@ -1301,17 +1420,15 @@ class Ui_MainWindow(object):
 "")
         self.changeDp.setObjectName("changeDp")
         self.splitter_3 = QtWidgets.QSplitter(self.page_7)
-        self.splitter_3.setGeometry(QtCore.QRect(220, 220, 571, 271))
+        self.splitter_3.setGeometry(QtCore.QRect(210, 270, 521, 311))
         self.splitter_3.setOrientation(QtCore.Qt.Vertical)
         self.splitter_3.setObjectName("splitter_3")
-        self.layoutWidget_5 = QtWidgets.QWidget(self.splitter_3)
-        self.layoutWidget_5.setObjectName("layoutWidget_5")
-        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.layoutWidget_5)
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.layoutWidget1 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget1.setObjectName("layoutWidget1")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.layoutWidget1)
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.label_20 = QtWidgets.QLabel(self.layoutWidget_5)
+        self.label_20 = QtWidgets.QLabel(self.layoutWidget1)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
@@ -1319,7 +1436,7 @@ class Ui_MainWindow(object):
         self.label_20.setStyleSheet("")
         self.label_20.setObjectName("label_20")
         self.horizontalLayout_9.addWidget(self.label_20)
-        self.regName_3 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regName_3 = QtWidgets.QLineEdit(self.layoutWidget1)
         self.regName_3.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
@@ -1352,10 +1469,12 @@ class Ui_MainWindow(object):
 "")
         self.regName_3.setObjectName("regName_3")
         self.horizontalLayout_9.addWidget(self.regName_3)
-        self.verticalLayout_12.addLayout(self.horizontalLayout_9)
-        self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
+        self.layoutWidget2 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget2.setObjectName("layoutWidget2")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.layoutWidget2)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
-        self.label_21 = QtWidgets.QLabel(self.layoutWidget_5)
+        self.label_21 = QtWidgets.QLabel(self.layoutWidget2)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
@@ -1363,7 +1482,7 @@ class Ui_MainWindow(object):
         self.label_21.setStyleSheet("")
         self.label_21.setObjectName("label_21")
         self.horizontalLayout_14.addWidget(self.label_21)
-        self.regID_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regID_2 = QtWidgets.QLineEdit(self.layoutWidget2)
         self.regID_2.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
@@ -1396,10 +1515,12 @@ class Ui_MainWindow(object):
 "")
         self.regID_2.setObjectName("regID_2")
         self.horizontalLayout_14.addWidget(self.regID_2)
-        self.verticalLayout_12.addLayout(self.horizontalLayout_14)
-        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
+        self.layoutWidget3 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget3.setObjectName("layoutWidget3")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.layoutWidget3)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_22.setObjectName("horizontalLayout_22")
-        self.label_28 = QtWidgets.QLabel(self.layoutWidget_5)
+        self.label_28 = QtWidgets.QLabel(self.layoutWidget3)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
@@ -1407,7 +1528,7 @@ class Ui_MainWindow(object):
         self.label_28.setStyleSheet("")
         self.label_28.setObjectName("label_28")
         self.horizontalLayout_22.addWidget(self.label_28)
-        self.regEmail_3 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regEmail_3 = QtWidgets.QLineEdit(self.layoutWidget3)
         self.regEmail_3.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
@@ -1440,10 +1561,12 @@ class Ui_MainWindow(object):
 "")
         self.regEmail_3.setObjectName("regEmail_3")
         self.horizontalLayout_22.addWidget(self.regEmail_3)
-        self.verticalLayout_12.addLayout(self.horizontalLayout_22)
-        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
+        self.layoutWidget4 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget4.setObjectName("layoutWidget4")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.layoutWidget4)
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_23.setObjectName("horizontalLayout_23")
-        self.label_29 = QtWidgets.QLabel(self.layoutWidget_5)
+        self.label_29 = QtWidgets.QLabel(self.layoutWidget4)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
@@ -1451,7 +1574,7 @@ class Ui_MainWindow(object):
         self.label_29.setStyleSheet("")
         self.label_29.setObjectName("label_29")
         self.horizontalLayout_23.addWidget(self.label_29)
-        self.regPhone_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regPhone_2 = QtWidgets.QLineEdit(self.layoutWidget4)
         self.regPhone_2.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
@@ -1484,10 +1607,12 @@ class Ui_MainWindow(object):
 "")
         self.regPhone_2.setObjectName("regPhone_2")
         self.horizontalLayout_23.addWidget(self.regPhone_2)
-        self.verticalLayout_12.addLayout(self.horizontalLayout_23)
-        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
+        self.layoutWidget5 = QtWidgets.QWidget(self.splitter_3)
+        self.layoutWidget5.setObjectName("layoutWidget5")
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.layoutWidget5)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_24.setObjectName("horizontalLayout_24")
-        self.label_30 = QtWidgets.QLabel(self.layoutWidget_5)
+        self.label_30 = QtWidgets.QLabel(self.layoutWidget5)
         font = QtGui.QFont()
         font.setFamily("Berlin Sans FB")
         font.setPointSize(15)
@@ -1495,7 +1620,7 @@ class Ui_MainWindow(object):
         self.label_30.setStyleSheet("")
         self.label_30.setObjectName("label_30")
         self.horizontalLayout_24.addWidget(self.label_30)
-        self.regUsername_2 = QtWidgets.QLineEdit(self.layoutWidget_5)
+        self.regUsername_2 = QtWidgets.QLineEdit(self.layoutWidget5)
         self.regUsername_2.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid #FFA500;    /* Add a light orange border */\n"
 "    border-radius: 4px;            /* Rounded corners */\n"
@@ -1528,7 +1653,6 @@ class Ui_MainWindow(object):
 "")
         self.regUsername_2.setObjectName("regUsername_2")
         self.horizontalLayout_24.addWidget(self.regUsername_2)
-        self.verticalLayout_12.addLayout(self.horizontalLayout_24)
         self.layoutWidget_6 = QtWidgets.QWidget(self.splitter_3)
         self.layoutWidget_6.setObjectName("layoutWidget_6")
         self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.layoutWidget_6)
@@ -1578,100 +1702,21 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_7)
         self.page_8 = QtWidgets.QWidget()
         self.page_8.setObjectName("page_8")
-        self.regbtn = QtWidgets.QPushButton(self.page_8)
-        self.regbtn.setGeometry(QtCore.QRect(380, 580, 161, 41))
+        self.label_6 = QtWidgets.QLabel(self.page_8)
+        self.label_6.setGeometry(QtCore.QRect(410, 290, 141, 61))
         font = QtGui.QFont()
-        font.setPointSize(13)
-        self.regbtn.setFont(font)
-        self.regbtn.setObjectName("regbtn")
-        self.layoutWidget1 = QtWidgets.QWidget(self.page_8)
-        self.layoutWidget1.setGeometry(QtCore.QRect(160, 180, 601, 261))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.layoutWidget1)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_6 = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
-        self.horizontalLayout_5.addWidget(self.label_6)
-        self.regName = QtWidgets.QLineEdit(self.layoutWidget1)
-        self.regName.setObjectName("regName")
-        self.horizontalLayout_5.addWidget(self.regName)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_5)
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.label_17 = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_17.setFont(font)
-        self.label_17.setObjectName("label_17")
-        self.horizontalLayout_12.addWidget(self.label_17)
-        self.regId = QtWidgets.QLineEdit(self.layoutWidget1)
-        self.regId.setObjectName("regId")
-        self.horizontalLayout_12.addWidget(self.regId)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_12)
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.label_22 = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_22.setFont(font)
-        self.label_22.setObjectName("label_22")
-        self.horizontalLayout_17.addWidget(self.label_22)
-        self.regEmail = QtWidgets.QLineEdit(self.layoutWidget1)
-        self.regEmail.setObjectName("regEmail")
-        self.horizontalLayout_17.addWidget(self.regEmail)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_17)
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_23 = QtWidgets.QLabel(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setFamily("Berlin Sans FB")
-        font.setPointSize(15)
-        self.label_23.setFont(font)
-        self.label_23.setObjectName("label_23")
-        self.horizontalLayout_18.addWidget(self.label_23)
-        self.username = QtWidgets.QLineEdit(self.layoutWidget1)
-        self.username.setObjectName("username")
-        self.horizontalLayout_18.addWidget(self.username)
-        self.verticalLayout_9.addLayout(self.horizontalLayout_18)
-        self.layoutWidget2 = QtWidgets.QWidget(self.page_8)
-        self.layoutWidget2.setGeometry(QtCore.QRect(0, 80, 891, 44))
-        self.layoutWidget2.setObjectName("layoutWidget2")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.layoutWidget2)
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem4)
-        self.splitter = QtWidgets.QSplitter(self.layoutWidget2)
-        self.splitter.setOrientation(QtCore.Qt.Horizontal)
-        self.splitter.setObjectName("splitter")
-        self.label_24 = QtWidgets.QLabel(self.splitter)
-        font = QtGui.QFont()
-        font.setFamily("Calibri")
-        font.setPointSize(22)
+        font.setPointSize(17)
         font.setBold(True)
         font.setWeight(75)
-        self.label_24.setFont(font)
-        self.label_24.setStyleSheet("")
-        self.label_24.setObjectName("label_24")
-        self.horizontalLayout_7.addWidget(self.splitter)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_7.addItem(spacerItem5)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
         self.stackedWidget.addWidget(self.page_8)
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.gridLayout.addWidget(self.widget_3, 0, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(7)
         self.change_btn.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.change_btn.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.home_btn_1.toggled['bool'].connect(self.home_btn_2.setChecked) # type: ignore
@@ -1701,15 +1746,15 @@ class Ui_MainWindow(object):
         self.search_input.setPlaceholderText(_translate("MainWindow", "Search..."))
         self.checkBox.setText(_translate("MainWindow", "Show only available books"))
         self.label_19.setText(_translate("MainWindow", "FIND ALL YOUR BOOKS HERE"))
-        self.label_13.setText(_translate("MainWindow", "Genre:"))
+        self.label_13.setText(_translate("MainWindow", "Department"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Author"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Genre"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Academics"))
-        self.label_15.setText(_translate("MainWindow", "Author:"))
+        self.label_15.setText(_translate("MainWindow", "Author"))
         self.comboBox_3.setItemText(0, _translate("MainWindow", "Author"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Genre"))
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Academics"))
-        self.label_16.setText(_translate("MainWindow", "Academics:"))
+        self.label_16.setText(_translate("MainWindow", "Academics"))
         self.comboBox_4.setItemText(0, _translate("MainWindow", "Author"))
         self.comboBox_4.setItemText(1, _translate("MainWindow", "Genre"))
         self.comboBox_4.setItemText(2, _translate("MainWindow", "Academics"))
@@ -1717,7 +1762,7 @@ class Ui_MainWindow(object):
         self.borrowerlabel.setText(_translate("MainWindow", "Borrowed By :"))
         self.serportclose.setText(_translate("MainWindow", "Open Port"))
         self.initborrow.setText(_translate("MainWindow", "Register Borrow"))
-        self.scannedlabel.setText(_translate("MainWindow", "scannedlabel"))
+        self.camerabutton.setText(_translate("MainWindow", "Toggle Camera"))
         self.label.setText(_translate("MainWindow", "          Upload List of Books"))
         self.bookbtn.setText(_translate("MainWindow", "SELECT CSV"))
         self.label_2.setText(_translate("MainWindow", "         Upload List of Authors"))
@@ -1733,16 +1778,11 @@ class Ui_MainWindow(object):
         self.label_9.setText(_translate("MainWindow", "Search Page"))
         self.saveBtn.setText(_translate("MainWindow", "Save"))
         self.changeDp.setText(_translate("MainWindow", "+ Change Profile Picture"))
-        self.label_20.setText(_translate("MainWindow", "Name        :   "))
-        self.label_21.setText(_translate("MainWindow", "Employee ID:"))
-        self.label_28.setText(_translate("MainWindow", "Email         :   "))
-        self.label_29.setText(_translate("MainWindow", "Phone No. :   "))
-        self.label_30.setText(_translate("MainWindow", "Username :   "))
-        self.label_31.setText(_translate("MainWindow", "Password:     "))
-        self.regbtn.setText(_translate("MainWindow", "Register Member"))
-        self.label_6.setText(_translate("MainWindow", "Name: "))
-        self.label_17.setText(_translate("MainWindow", "ID:       "))
-        self.label_22.setText(_translate("MainWindow", "Email: "))
-        self.label_23.setText(_translate("MainWindow", "Username:"))
-        self.label_24.setText(_translate("MainWindow", "   Member Registration"))
+        self.label_20.setText(_translate("MainWindow", "Name           : "))
+        self.label_21.setText(_translate("MainWindow", "Employee Id : "))
+        self.label_28.setText(_translate("MainWindow", "Email            : "))
+        self.label_29.setText(_translate("MainWindow", "Phone No.    : "))
+        self.label_30.setText(_translate("MainWindow", "Username    : "))
+        self.label_31.setText(_translate("MainWindow", "Password     : "))
+        self.label_6.setText(_translate("MainWindow", "page 8"))
 import resource_rc

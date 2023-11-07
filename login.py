@@ -128,6 +128,7 @@ class MainWindow(QMainWindow):
 
         # Optionally, you can adjust the size to fit the QLabel
         self.ui.profile_picture_label.setScaledContents(True)
+        
     def closeCamera(self):
         if self.camera is not None:
             self.timer.stop()
@@ -224,7 +225,7 @@ class MainWindow(QMainWindow):
         self.regMemberBtn.clicked.connect(self.registerMember)
 
 
-    def on_on_memberRegSection_btn_2_toggled(self):
+    def on_memberRegSection_btn_2_toggled(self):
         self.closeCamera()
         self.ui.stackedWidget.setCurrentIndex(4)
 
@@ -329,10 +330,12 @@ class MainWindow(QMainWindow):
         if self.camera is None:
            self.camera = cv2.VideoCapture(0)
            self.timer.start(50)
+           self.scannedlabel.setVisible(True)
         else:
            self.camera.release()
            self.timer.stop()
            self.camera = None
+           self.scannedlabel.setVisible(False)
 
     def getMemberID(self):
         readdata=read_number_from_serial( self.ser)
@@ -369,6 +372,10 @@ class MyMainWindow(QtWidgets.QWidget):
         # Load the UI from the .ui file dynamically
         self.ui=loadUi('login.ui', self)
         self.ui.pushButton.clicked.connect(self.login)
+        self.invalid_credentials_label = self.ui.invalidLabel
+        self.invalid_credentials_label.setVisible(False)
+        self.invalid_credentials_label.setAlignment(QtCore.Qt.AlignCenter)
+
 
 
     def login(self):
@@ -378,10 +385,14 @@ class MyMainWindow(QtWidgets.QWidget):
         global entered_password
         entered_password = self.ui.lineEdit_2.text()
         state=login_api.loginController.librarian_login(entered_username, entered_password)
-        if(state):
+        if state:
             self.close()
-            window=MainWindow()
+            window = MainWindow()
             window.show()
+        else:
+            # Invalid credentials, show an error message
+            self.invalid_credentials_label.setText("Invalid Credentials")
+            self.invalid_credentials_label.setVisible(True)  # Show the label
 
     def keyPressEvent(self,event):
         if event.key()==Qt.Key_Escape:

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
+    <file>icon/circle_loading.jpg</file>
     <file>icon/loadingR.gif</file>
     <file>icon/account-logout-64.ico</file>
     <file>icon/activity-feed-32.ico</file>
