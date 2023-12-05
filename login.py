@@ -4,7 +4,7 @@ import time
 import cv2
 from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap ,QStandardItemModel , QStandardItem
-from PyQt5.QtCore import Qt , QTimer
+from PyQt5.QtCore import Qt, QTimer, QDate
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog ,QWidget, QVBoxLayout, QPushButton, QLabel ,QListView
 from PyQt5.uic import loadUi
 from scene2 import Scene2
@@ -101,6 +101,14 @@ class MainWindow(QMainWindow):
         #construction script for the borrow part
 
         #construction script for the other parts
+        self.ui.SearchButton.clicked.connect(self.SearchOrder)
+        self.ui.orderData.clicked.connect(self.on_orderData_clicked)
+
+        #construction script for the search order part
+
+        self.ui.SearchDate.setCalendarPopup(True)  # Enables the calendar popup
+        self.ui.SearchDate.setDate(QDate.currentDate())
+        self.ui.ReturnBtn.clicked.connect(self.ReturnOrder)
 
     def update_profile_picture(self):
         options = QFileDialog.Options()
@@ -128,7 +136,7 @@ class MainWindow(QMainWindow):
 
         # Optionally, you can adjust the size to fit the QLabel
         self.ui.profile_picture_label.setScaledContents(True)
-        
+
     def closeCamera(self):
         if self.camera is not None:
             self.timer.stop()
@@ -353,6 +361,7 @@ class MainWindow(QMainWindow):
             self.booklistmodel.appendRow(QStandardItem(boiInfo['title']+'-'+boiInfo['publishedon']))
 
 
+    #member register function
     def registerMember(self):
         name = self.regName_2.text()
         studentId = self.regID.text()
@@ -361,6 +370,50 @@ class MainWindow(QMainWindow):
         memUsername = self.regUsername.text()
         librarianApi.insert_member(name, studentId, email, phoneNo, memUsername, entered_username, entered_password)
         QtWidgets.QMessageBox.information(self, "Member Registration", "Member registered successfully.")
+
+    #functions for the order deets
+
+    def on_orderData_clicked(self,index):
+        print("something clicked")
+        details=self.orderDetails[index.row()]
+
+        orderid=str(details['id'])
+        bookid=str(details['bookId'])
+        bookinfo=librarianApi.book_info(bookid,entered_username,entered_password)
+        bookname=bookinfo['title']
+
+        self.ui.OrderIdValue.setText(orderid)
+        self.ui.BookNameVal.setText(bookname)
+
+        fine=librarianApi.fineDeets(orderid,entered_username,entered_password)
+
+        self.ui.FineDueValue.setText(fine)
+        self.returnID=orderid;
+
+    def SearchOrder(self):
+
+        self.ui.OrderIdValue.setText("")
+        self.ui.FineDueValue.setText("N/A")
+        self.ui.BookNameVal.setText("N/A")
+
+        self.orderDataModel = QStandardItemModel()
+        self.ui.orderData.setModel(self.orderDataModel)
+        id=self.ui.SearchId.text()
+
+        if (id==""):
+            return "ajara"
+
+        orders=librarianApi.bookBorrowDeets(id ,entered_username , entered_password)
+        self.orderDetails=orders
+
+        for order in orders:
+            item=QStandardItem(f"Order ID: {order['id']}UserId: {order['userId']}")
+            self.orderDataModel.appendRow(item)
+
+    def ReturnOrder(self):
+        librarianApi.bookreturn(self.returnID,entered_username,entered_password)
+
+
 
 
 

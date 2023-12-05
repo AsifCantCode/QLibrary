@@ -81,6 +81,26 @@ class librarianApi:
         response = requests.post(url, params=payload, auth=HTTPBasicAuth(username, password))
         print(response.status_code)
 
+    @classmethod
+    def bookBorrowDeets(self , memberid,username,password):
+        url="http://localhost:8081/librarian/book-borrow-deets/"+str(memberid)
+        response=requests.get(url, auth=HTTPBasicAuth(username,password))
+        print(response.text)
+        return (json.loads(str(response.text)))
+
+    @classmethod
+    def fineDeets(self , borrowid,username,password):
+        url="http://localhost:8081/librarian/fine-deets/"+str(borrowid)
+        response=requests.get(url, auth=HTTPBasicAuth(username,password))
+        print(response.text)
+        return str(response.text)
+
+    @classmethod
+    def bookreturn(self, borrowid, username, password):
+        url = "http://localhost:8081/librarian/book-return/" + str(borrowid)
+        response = requests.post(url, auth=HTTPBasicAuth(username, password))
+        print(response.text)
+        return str(response.text)
 
 
 if __name__ == "__main__":
