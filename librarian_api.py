@@ -7,7 +7,7 @@ class librarianApi:
         self.start=0
 
     @classmethod
-    def insert_book(self , id ,  title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,username , password):
+    def insert_book(self , id ,  title , isbn , year , subject , totalcopies , availablecopies , auth1 , auth2 , auth3 ,genre , isAcademic ,username , password):
         url="http://localhost:8081/librarian/book-entry"
 
         payload={
@@ -20,7 +20,9 @@ class librarianApi:
             "availablecopies":availablecopies,
             "authorid1":auth1,
             "authorid2":auth2,
-            "authorid3":auth3
+            "authorid3":auth3,
+            "genre":genre,
+            "isAcademic":isAcademic
         }
 
         response= requests.post(url , params=payload , auth=HTTPBasicAuth(username,password))
@@ -54,6 +56,63 @@ class librarianApi:
         data = json.loads(response.text)
 
         return data
+
+    @classmethod
+    def get_genres(self,username,password):
+        url = 'http://localhost:8081/librarian/get-genres'  # Replace with the actual URL
+
+        try:
+            response = requests.get(url,auth=HTTPBasicAuth(username,password))
+            if response.status_code == 200:
+                genre_names = response.json()
+                return genre_names
+            else:
+                print(f"Failed to retrieve genres. Status code: {response.status_code}")
+                return []
+        except requests.RequestException as e:
+            print(f"Request error: {e}")
+            return []
+
+    @classmethod
+    def get_authors(self, genre , username, password):
+        url = 'http://localhost:8081/librarian/get-authors'  # Replace with the actual URL
+
+        payload = {
+            "genreName": genre,
+
+        }
+
+        try:
+            response = requests.get(url,params=payload, auth=HTTPBasicAuth(username, password))
+            if response.status_code == 200:
+                genre_names = response.json()
+                return genre_names
+            else:
+                print(f"Failed to retrieve genres. Status code: {response.status_code}")
+                return []
+        except requests.RequestException as e:
+            print(f"Request error: {e}")
+            return []@classmethod
+    @classmethod
+    def get_books(self, genre ,authorId, username, password):
+        url = 'http://localhost:8081/librarian/get-books'  # Replace with the actual URL
+
+        payload = {
+            "genreName": genre,
+            "authorId":authorId
+        }
+
+        try:
+            response = requests.get(url,params=payload, auth=HTTPBasicAuth(username, password))
+            if response.status_code == 200:
+                genre_names = response.json()
+                return genre_names
+            else:
+                print(f"Failed to retrieve genres. Status code: {response.status_code}")
+                return []
+        except requests.RequestException as e:
+            print(f"Request error: {e}")
+            return []
 
     @classmethod
     def insert_member(self, name, studentId, email, phoneNo, memUsername, username, password):

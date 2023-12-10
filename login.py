@@ -169,11 +169,19 @@ class MainWindow(QMainWindow):
 
     ## functions for changing menu page
     def on_home_btn_1_toggled(self):
-        self.closeCamera()
+
+        self.ui.genreComboBox.clear()
+        self.genres = librarianApi.get_genres(entered_username,entered_password)
+        self.ui.genreComboBox.addItems(self.genres)
+
+        self.ui.genreComboBox.currentIndexChanged.connect(self.on_genreComboBoxClicked)
+        self.ui.authorComboBox.currentIndexChanged.connect(self.on_authorComboBoxClicked)
+
+
         self.ui.stackedWidget.setCurrentIndex(0)
 
     def on_home_btn_2_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(0)
 
     def on_dashborad_btn_1_toggled(self):
@@ -204,40 +212,84 @@ class MainWindow(QMainWindow):
         self.refreshBookList()
         self.timer.timeout.connect(lambda: loading_label.hide())
 
+
+        portListModel=QStandardItemModel()
+        self.ui.portListView.setModel(portListModel)
+
+
+        available_ports = list(serial.tools.list_ports.comports())
+        self.ports = available_ports
+        if len(available_ports) > 0:
+            print("Available serial ports:")
+            for port in available_ports:
+                print(port.device)
+                portListModel.appendRow(QStandardItem(str(port.device)))
     def on_dashborad_btn_2_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(1)
 
     def on_orders_btn_1_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.bookbtn.clicked.connect(self.uploadBooks)
         self.ui.authbtn.clicked.connect(self.uploadAuthors)
 
     def on_orders_btn_2_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(2)
 
     def on_products_btn_1_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(3)
 
     def on_products_btn_2_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(3)
 
     def on_memberRegSection_btn_1_toggled(self):
-        self.closeCamera()
+
         print('reg Section')
         self.ui.stackedWidget.setCurrentIndex(4)
         self.regMemberBtn.clicked.connect(self.registerMember)
 
 
     def on_memberRegSection_btn_2_toggled(self):
-        self.closeCamera()
+
         self.ui.stackedWidget.setCurrentIndex(4)
 
+    def on_ebook_button_s(self):
+        self.ui.stackedWidget.setCurrentIndex(5)
 
+
+    #booklist functions
+
+
+    def on_authorComboBoxClicked(self , index):
+        self.current_author_index=index
+
+        foundBookModel=QStandardItemModel()
+        self.ui.foundBooks.setModel(foundBookModel)
+        self.foundBooksList = librarianApi.get_books(self.genres[self.current_genre_indx],self.authorIds[index],entered_username,entered_password)
+
+        for stuff in self.foundBooksList:
+            foundBookModel.appendRow(QStandardItem(stuff['title']))
+
+
+        return
+
+    def on_genreComboBoxClicked(self,index):
+        print(index)
+        self.current_genre_indx=index
+
+        self.authors=librarianApi.get_authors(self.genres[index],entered_username,entered_password)
+        authorNames =[]
+        self.authorIds=[]
+        for author in self.authors:
+            authorNames.append(author['name'])
+            self.authorIds.append(author['id'])
+        self.ui.authorComboBox.clear()
+        self.ui.authorComboBox.addItems(authorNames)
+        return
 
     #author and book upload functions
 
@@ -255,8 +307,8 @@ class MainWindow(QMainWindow):
                     csvFile = csv.reader(file)
                     # displaying the contents of the CSV file
                     for lines in csvFile:
-                            librarianApi.insert_book(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9]
-                                                    ,entered_username, entered_password)
+                            librarianApi.insert_book(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9],
+                                                    lines[10] , lines[11],entered_username, entered_password)
                             qr.createQR(lines[0] ,lines[1] )
     def uploadAuthors(self):
             options = QFileDialog.Options()
@@ -305,7 +357,7 @@ class MainWindow(QMainWindow):
     def closeCardReader(self):
 
         available_ports = list(serial.tools.list_ports.comports())
-
+        self.ports=available_ports
         if len(available_ports) > 0:
             print("Available serial ports:")
             for port in available_ports:
@@ -315,14 +367,15 @@ class MainWindow(QMainWindow):
             self.ser = serial.Serial(available_ports[1].device, 115200, timeout=1)
             self.ui.serportclose.setText('Port Open !')
             self.timer2.start(200)
-        elif self.ser.is_open:
-            print('closing')
-            print(self.ser)
-            self.timer2.stop()
-            self.ser.close()
-            self.ui.serportclose.setText('Port Closed !')
-            time.sleep(2)
-            self.ser=None
+        elif self.ser is not None:
+            if self.ser.is_open:
+                print('closing')
+                print(self.ser)
+                self.timer2.stop()
+                self.ser.close()
+                self.ui.serportclose.setText('Port Closed !')
+                time.sleep(2)
+                self.ser=None
 
     def registerBorrow(self):
         print('book and member data sent to backend:\n')
@@ -336,7 +389,7 @@ class MainWindow(QMainWindow):
 
     def openCamera(self):
         if self.camera is None:
-           self.camera = cv2.VideoCapture(0)
+           self.camera = cv2.VideoCapture(2)
            self.timer.start(50)
            self.scannedlabel.setVisible(True)
         else:

@@ -239,6 +239,37 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="ebook_button">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Ebook</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-message-24.png</normaloff>
+             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
@@ -441,6 +472,30 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QPushButton" name="products_btn_1">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icon/icons8-message-24.png</normaloff>
+             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>21</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ebook_button_s">
            <property name="text">
             <string/>
            </property>
@@ -747,7 +802,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QLabel" name="label_4">
@@ -777,7 +832,7 @@ QPushButton:hover {
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QListView" name="listView">
+          <widget class="QListView" name="foundBooks">
            <property name="geometry">
             <rect>
              <x>90</x>
@@ -787,11 +842,11 @@ QPushButton:hover {
             </rect>
            </property>
           </widget>
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QCheckBox" name="availableCheckBox">
            <property name="geometry">
             <rect>
              <x>630</x>
-             <y>210</y>
+             <y>100</y>
              <width>231</width>
              <height>21</height>
             </rect>
@@ -899,7 +954,7 @@ padding: 5px;</string>
             <rect>
              <x>70</x>
              <y>100</y>
-             <width>831</width>
+             <width>541</width>
              <height>71</height>
             </rect>
            </property>
@@ -957,7 +1012,7 @@ QLabel:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="comboBox">
+              <widget class="QComboBox" name="genreComboBox">
                <property name="styleSheet">
                 <string notr="true">/* Style for the QComboBox */
 QComboBox {
@@ -1073,7 +1128,7 @@ QLabel:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="comboBox_3">
+              <widget class="QComboBox" name="authorComboBox">
                <property name="styleSheet">
                 <string notr="true">/* Style for the QComboBox */
 QComboBox {
@@ -1138,122 +1193,92 @@ QComboBox QAbstractItemView::item:selected {
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="layoutWidget_4">
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>-1</pointsize>
-                 <weight>62</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/* Style for QLabel */
-QLabel {
-    color: #3700B3; /* Text color */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 22px; /* Font size */
-    border: 2px solid #CCCCCC; /* Border */
-    padding: 5px; /* Padding around the content */
-    background-color: #FFF7FF; /* Background color */
-	font-weight: 500;
-
+          </widget>
+          <widget class="QCheckBox" name="academicCheckBox">
+           <property name="geometry">
+            <rect>
+             <x>630</x>
+             <y>130</y>
+             <width>231</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QCheckBox {
+    spacing: 5px;
+    font-size: 14px;
 }
 
-/* QLabel when it's disabled */
-QLabel:disabled {
-    color: #999999; /* Text color for disabled state */
-    background-color: #F5F5F5; /* Background color for disabled state */
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
 }
 
-/* QLabel with hover effect */
-QLabel:hover {
-    background-color: #86fefff5; /* Background color on hover */
+QCheckBox::indicator:unchecked {
+    border: 2px solid black;
+    background-color: #ffffff;
 }
 
-/* QLabel when clicked (pressed) */
-QLabel:pressed {
-    background-color: #CCCCCC; /* Background color when clicked */
+QCheckBox::indicator:checked {
+    border: 2px solid black;
+    background-color:  #FFA500;
+}
+
+QCheckBox::indicator:unchecked:hover, QCheckBox::indicator:checked:hover {
+    border: 2px solid #4caf50;
+}
+
+QCheckBox::indicator:unchecked:pressed, QCheckBox::indicator:checked:pressed {
+    border: 2px solid #388e3c;
+    background-color: #388e3c;
+}
+
+QCheckBox::indicator:checked:disabled, QCheckBox::indicator:unchecked:disabled {
+    background-color: #e0e0e0;
+    border: 2px solid #e0e0e0;
+}
+
+QCheckBox::indicator:checked:disabled:hover, QCheckBox::indicator:unchecked:disabled:hover {
+    border: 2px solid #bdbdbd;
+}
+
+QCheckBox::indicator:checked:disabled:pressed, QCheckBox::indicator:unchecked:disabled:pressed {
+    border: 2px solid #b0b0b0;
+    background-color: #b0b0b0;
+}
+
+QCheckBox::indicator:indeterminate {
+    border: 2px solid #999999;
+    background-color: #ffffff;
+}
+
+QCheckBox::indicator:indeterminate:hover {
+    border: 2px solid #4caf50;
+}
+
+QCheckBox::indicator:indeterminate:pressed {
+    border: 2px solid #388e3c;
+    background-color: #388e3c;
+}
+
+QCheckBox::indicator:indeterminate:disabled {
+    background-color: #e0e0e0;
+    border: 2px solid #e0e0e0;
+}
+
+QCheckBox::indicator:indeterminate:disabled:hover {
+    border: 2px solid #bdbdbd;
+}
+
+QCheckBox::indicator:indeterminate:disabled:pressed {
+    border: 2px solid #b0b0b0;
+    background-color: #b0b0b0;
 }
 </string>
-               </property>
-               <property name="text">
-                <string>Academics</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="comboBox_4">
-               <property name="styleSheet">
-                <string notr="true">/* Style for the QComboBox */
-QComboBox {
-    background-color: #FFFFFF; /* White background color */
-    border: 1px solid #B0C4DE; /* Light blue border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding around the content */
-    color: #000000; /* Black text color */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 12px; /* Font size */
-}
-
-/* Style for the QComboBox when it's in a dropped-down state */
-QComboBox::drop-down {
-    width: 20px; /* Width of the dropdown arrow */
-    background-color: #B0C4DE; /* Light blue background color of the dropdown arrow area */
-}
-
-/* Style for the QComboBox when it's in a dropped-down state and the mouse is over it */
-QComboBox::drop-down:hover {
-    background-color: #ADD8E6; /* Light blue background color when hovered */
-}
-
-/* Style for the list view of the QComboBox */
-QComboBox QAbstractItemView {
-    background-color: #FFFFFF; /* White background color of the list view */
-    border: 1px solid #B0C4DE; /* Light blue border */
-    border-radius: 5px; /* Rounded corners */
-    color: #000000; /* Black text color */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 12px; /* Font size */
-}
-
-/* Style for list view items of the QComboBox */
-QComboBox QAbstractItemView::item {
-    padding: 5px; /* Padding around each item */
-}
-
-/* Style for list view items when selected */
-QComboBox QAbstractItemView::item:selected {
-    background-color: #ADD8E6; /* Light blue background color when selected */
-    color: #000000; /* Black text color when selected */
-}
-</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Author</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Genre</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Academics</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+           </property>
+           <property name="text">
+            <string>Academic Books</string>
+           </property>
           </widget>
          </widget>
          <widget class="QWidget" name="page_2">
@@ -1432,8 +1457,8 @@ QPushButton:hover {
             <rect>
              <x>390</x>
              <y>112</y>
-             <width>511</width>
-             <height>423</height>
+             <width>391</width>
+             <height>351</height>
             </rect>
            </property>
            <property name="baseSize">
@@ -1481,8 +1506,8 @@ border-radius: 5px;
           <widget class="QLabel" name="loadingLabel">
            <property name="geometry">
             <rect>
-             <x>560</x>
-             <y>260</y>
+             <x>500</x>
+             <y>220</y>
              <width>171</width>
              <height>121</height>
             </rect>
@@ -1523,8 +1548,8 @@ border: 1px solid white;</string>
           <widget class="QPushButton" name="camerabutton">
            <property name="geometry">
             <rect>
-             <x>570</x>
-             <y>545</y>
+             <x>620</x>
+             <y>470</y>
              <width>161</width>
              <height>38</height>
             </rect>
@@ -1558,11 +1583,22 @@ QPushButton:hover {
             <string>Toggle Camera</string>
            </property>
           </widget>
+          <widget class="QListView" name="portListView">
+           <property name="geometry">
+            <rect>
+             <x>390</x>
+             <y>480</y>
+             <width>201</width>
+             <height>101</height>
+            </rect>
+           </property>
+          </widget>
           <zorder>image_label</zorder>
           <zorder>verticalLayoutWidget_2</zorder>
           <zorder>scannedlabel</zorder>
           <zorder>loadingLabel</zorder>
           <zorder>camerabutton</zorder>
+          <zorder>portListView</zorder>
          </widget>
          <widget class="QWidget" name="page_3">
           <widget class="QWidget" name="verticalLayoutWidget">
@@ -2919,8 +2955,8 @@ QLineEdit:!enabled {
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>25</x>
-     <y>233</y>
+     <x>26</x>
+     <y>232</y>
     </hint>
     <hint type="destinationlabel">
      <x>134</x>
@@ -2935,8 +2971,8 @@ QLineEdit:!enabled {
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>34</x>
-     <y>197</y>
+     <x>35</x>
+     <y>196</y>
     </hint>
     <hint type="destinationlabel">
      <x>67</x>
@@ -3003,8 +3039,8 @@ QLineEdit:!enabled {
      <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>44</x>
-     <y>233</y>
+     <x>45</x>
+     <y>232</y>
     </hint>
    </hints>
   </connection>
@@ -3019,8 +3055,8 @@ QLineEdit:!enabled {
      <y>189</y>
     </hint>
     <hint type="destinationlabel">
-     <x>40</x>
-     <y>197</y>
+     <x>41</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -3031,8 +3067,8 @@ QLineEdit:!enabled {
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>664</y>
+     <x>196</x>
+     <y>710</y>
     </hint>
     <hint type="destinationlabel">
      <x>284</x>
@@ -3048,7 +3084,7 @@ QLineEdit:!enabled {
    <hints>
     <hint type="sourcelabel">
      <x>34</x>
-     <y>674</y>
+     <y>719</y>
     </hint>
     <hint type="destinationlabel">
      <x>47</x>
