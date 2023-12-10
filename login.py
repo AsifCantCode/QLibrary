@@ -176,6 +176,7 @@ class MainWindow(QMainWindow):
 
         self.ui.genreComboBox.currentIndexChanged.connect(self.on_genreComboBoxClicked)
         self.ui.authorComboBox.currentIndexChanged.connect(self.on_authorComboBoxClicked)
+        self.ui.foundBooks.clicked.connect(self.on_foundBooksClicked)
 
 
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -291,6 +292,14 @@ class MainWindow(QMainWindow):
         self.ui.authorComboBox.addItems(authorNames)
         return
 
+    def on_foundBooksClicked(self,index):
+
+        self.ui.AvailableCopiesValue.setText(str(self.foundBooksList[index.row()]['availablecopies']))
+        self.ui.ISBNValue.setText(str(self.foundBooksList[index.row()]['isbn']))
+        self.ui.TitleValue.setText(str(self.foundBooksList[index.row()]['title']))
+        self.ui.TotalCopiesValue.setText(str(self.foundBooksList[index.row()]['totalcopies']))
+
+        return
     #author and book upload functions
 
 

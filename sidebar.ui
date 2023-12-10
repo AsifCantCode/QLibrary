@@ -1280,6 +1280,105 @@ QCheckBox::indicator:indeterminate:disabled:pressed {
             <string>Academic Books</string>
            </property>
           </widget>
+          <widget class="QWidget" name="verticalLayoutWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>630</x>
+             <y>310</y>
+             <width>101</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QLabel" name="Title">
+              <property name="text">
+               <string>Title:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="ISBN">
+              <property name="text">
+               <string>ISBN:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="AvailableCopies">
+              <property name="text">
+               <string>AvailableCopies: </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="TotalCopies">
+              <property name="text">
+               <string>TotalCopies:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="verticalLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>740</x>
+             <y>310</y>
+             <width>160</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <item>
+             <widget class="QLabel" name="TitleValue">
+              <property name="text">
+               <string>Title</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="ISBNValue">
+              <property name="text">
+               <string>ISBN</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="AvailableCopiesValue">
+              <property name="text">
+               <string>AvailableCopies</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="TotalCopiesValue">
+              <property name="text">
+               <string>TotalCopies</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>630</x>
+             <y>290</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Roboto</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Book Details:</string>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="page_2">
           <widget class="QWidget" name="verticalLayoutWidget_2">
