@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1133</width>
-    <height>720</height>
+    <width>1191</width>
+    <height>781</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -754,6 +754,9 @@ QLineEdit:disabled {
           </item>
           <item>
            <widget class="QPushButton" name="user_btn">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
             <property name="font">
              <font>
               <pointsize>-1</pointsize>
@@ -785,8 +788,8 @@ QPushButton:hover {
             </property>
             <property name="iconSize">
              <size>
-              <width>24</width>
-              <height>29</height>
+              <width>23</width>
+              <height>27</height>
              </size>
             </property>
            </widget>
@@ -810,7 +813,7 @@ QPushButton:hover {
             <rect>
              <x>50</x>
              <y>10</y>
-             <width>861</width>
+             <width>871</width>
              <height>651</height>
             </rect>
            </property>
@@ -823,7 +826,11 @@ QPushButton:hover {
             <string notr="true">background-color: #f4fdff; /* Light violet background with partial transparency */
     border: 2px solid #CCC;                      /* Add a subtle border */
     border-radius: 20px;                         /* Rounded corners */
-    padding: 10px;</string>
+    padding: 10px;
+
+QVBoxLayout {
+    border: 2px solid #000000;
+}</string>
            </property>
            <property name="text">
             <string/>
@@ -931,22 +938,23 @@ QCheckBox::indicator:indeterminate:disabled:pressed {
           <widget class="QLabel" name="label_19">
            <property name="geometry">
             <rect>
-             <x>310</x>
+             <x>280</x>
              <y>30</y>
-             <width>371</width>
-             <height>51</height>
+             <width>421</width>
+             <height>48</height>
             </rect>
            </property>
            <property name="styleSheet">
             <string notr="true">font-family: berlin sans fb;
-background-color:  #FFA500;
-border: 2px solid black;
-border-radius: 20px;
+background-color: #D03725BF;
+border: 1px solid black;
+border-radius: 10px;
 font-size:25px;
-padding: 5px;</string>
+padding: 5px;
+color: white;</string>
            </property>
            <property name="text">
-            <string>FIND ALL YOUR BOOKS HERE</string>
+            <string>      FIND ALL YOUR BOOKS HERE</string>
            </property>
           </widget>
           <widget class="QSplitter" name="splitter_2">
@@ -967,7 +975,7 @@ padding: 5px;</string>
               <widget class="QLabel" name="label_13">
                <property name="font">
                 <font>
-                 <family>Arial</family>
+                 <family>Arial,sans-serif</family>
                  <pointsize>-1</pointsize>
                  <weight>62</weight>
                  <bold>true</bold>
@@ -1083,7 +1091,7 @@ QComboBox QAbstractItemView::item:selected {
               <widget class="QLabel" name="label_15">
                <property name="font">
                 <font>
-                 <family>Arial</family>
+                 <family>Arial,sans-serif</family>
                  <pointsize>-1</pointsize>
                  <weight>62</weight>
                  <bold>true</bold>
@@ -1283,79 +1291,216 @@ QCheckBox::indicator:indeterminate:disabled:pressed {
           <widget class="QWidget" name="verticalLayoutWidget_4">
            <property name="geometry">
             <rect>
-             <x>630</x>
+             <x>620</x>
              <y>310</y>
-             <width>101</width>
-             <height>80</height>
+             <width>291</width>
+             <height>211</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
-             <widget class="QLabel" name="Title">
-              <property name="text">
-               <string>Title:</string>
+             <widget class="QWidget" name="widget_2" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16767133</height>
+               </size>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="ISBN">
-              <property name="text">
-               <string>ISBN:</string>
+              <property name="styleSheet">
+               <string notr="true">QWidget {
+    background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+}
+
+</string>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="AvailableCopies">
-              <property name="text">
-               <string>AvailableCopies: </string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="TotalCopies">
-              <property name="text">
-               <string>TotalCopies:</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="verticalLayoutWidget_5">
-           <property name="geometry">
-            <rect>
-             <x>740</x>
-             <y>310</y>
-             <width>160</width>
-             <height>80</height>
-            </rect>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_12">
-            <item>
-             <widget class="QLabel" name="TitleValue">
-              <property name="text">
-               <string>Title</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="ISBNValue">
-              <property name="text">
-               <string>ISBN</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="AvailableCopiesValue">
-              <property name="text">
-               <string>AvailableCopies</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="TotalCopiesValue">
-              <property name="text">
-               <string>TotalCopies</string>
-              </property>
+              <widget class="QLabel" name="Title">
+               <property name="geometry">
+                <rect>
+                 <x>2</x>
+                 <y>10</y>
+                 <width>279</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border : none;</string>
+               </property>
+               <property name="text">
+                <string> Title :</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="TitleValue">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>30</y>
+                 <width>275</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Title</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="ISBN">
+               <property name="geometry">
+                <rect>
+                 <x>2</x>
+                 <y>60</y>
+                 <width>279</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string> ISBN :</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="ISBNValue">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>81</y>
+                 <width>271</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>ISBN</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="AvailableCopies">
+               <property name="geometry">
+                <rect>
+                 <x>2</x>
+                 <y>110</y>
+                 <width>279</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string> Available Copies :</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="AvailableCopiesValue">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>130</y>
+                 <width>271</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>AvailableCopies</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="TotalCopies">
+               <property name="geometry">
+                <rect>
+                 <x>2</x>
+                 <y>160</y>
+                 <width>279</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string> Total Copies :</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="TotalCopiesValue">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>180</y>
+                 <width>271</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>TotalCopies</string>
+               </property>
+              </widget>
              </widget>
             </item>
            </layout>
@@ -1363,20 +1508,29 @@ QCheckBox::indicator:indeterminate:disabled:pressed {
           <widget class="QLabel" name="label_7">
            <property name="geometry">
             <rect>
-             <x>630</x>
-             <y>290</y>
-             <width>101</width>
-             <height>21</height>
+             <x>700</x>
+             <y>277</y>
+             <width>131</width>
+             <height>31</height>
             </rect>
            </property>
            <property name="font">
             <font>
-             <family>Roboto</family>
-             <pointsize>12</pointsize>
+             <family>Arial,sans-serif</family>
+             <pointsize>-1</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 18px; /* Font size */
+	border: none;
+    padding: 8px; /* Padding around the content */
+}</string>
+           </property>
            <property name="text">
-            <string>Book Details:</string>
+            <string>Book Details :</string>
            </property>
           </widget>
          </widget>
@@ -1395,7 +1549,7 @@ QCheckBox::indicator:indeterminate:disabled:pressed {
              <widget class="QLabel" name="label_3">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <family>Arial,sans-serif</family>
                 <pointsize>-1</pointsize>
                </font>
               </property>
@@ -1647,8 +1801,8 @@ border: 1px solid white;</string>
           <widget class="QPushButton" name="camerabutton">
            <property name="geometry">
             <rect>
-             <x>620</x>
-             <y>470</y>
+             <x>610</x>
+             <y>510</y>
              <width>161</width>
              <height>38</height>
             </rect>
@@ -1913,11 +2067,14 @@ QPushButton:hover {
              <widget class="QGroupBox" name="groupBox_2">
               <property name="geometry">
                <rect>
-                <x>470</x>
-                <y>180</y>
-                <width>281</width>
-                <height>321</height>
+                <x>490</x>
+                <y>240</y>
+                <width>411</width>
+                <height>211</height>
                </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">backgound-color: white;</string>
               </property>
               <property name="title">
                <string/>
@@ -1925,92 +2082,134 @@ QPushButton:hover {
               <widget class="QLabel" name="OrderId">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>30</y>
-                 <width>47</width>
-                 <height>13</height>
+                 <x>10</x>
+                 <y>70</y>
+                 <width>81</width>
+                 <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
-                <string>Order ID:</string>
+                <string>Order ID    :</string>
                </property>
               </widget>
               <widget class="QLabel" name="FineDue">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>50</y>
-                 <width>47</width>
-                 <height>13</height>
+                 <x>10</x>
+                 <y>100</y>
+                 <width>91</width>
+                 <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
-                <string>Fine Due:</string>
+                <string>Fine Due    :</string>
                </property>
               </widget>
               <widget class="QLabel" name="OrderIdValue">
                <property name="geometry">
                 <rect>
-                 <x>70</x>
-                 <y>30</y>
-                 <width>47</width>
-                 <height>13</height>
+                 <x>100</x>
+                 <y>70</y>
+                 <width>81</width>
+                 <height>16</height>
                 </rect>
                </property>
                <property name="text">
-                <string>Order ID:</string>
+                <string>OrderIdVal</string>
                </property>
               </widget>
               <widget class="QLabel" name="FineDueValue">
                <property name="geometry">
                 <rect>
-                 <x>70</x>
-                 <y>50</y>
-                 <width>47</width>
-                 <height>13</height>
+                 <x>100</x>
+                 <y>100</y>
+                 <width>61</width>
+                 <height>16</height>
                 </rect>
                </property>
                <property name="text">
-                <string>Fine Due:</string>
+                <string>FineVal</string>
                </property>
               </widget>
               <widget class="QLabel" name="BookName">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>70</y>
-                 <width>51</width>
+                 <x>10</x>
+                 <y>130</y>
+                 <width>81</width>
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
-                <string>BookName</string>
+                <string>Book name :</string>
                </property>
               </widget>
               <widget class="QLabel" name="BookNameVal">
                <property name="geometry">
                 <rect>
-                 <x>80</x>
-                 <y>70</y>
-                 <width>191</width>
+                 <x>100</x>
+                 <y>130</y>
+                 <width>301</width>
                  <height>16</height>
                 </rect>
                </property>
                <property name="text">
-                <string/>
+                <string>BookNameVal</string>
                </property>
               </widget>
-              <widget class="QPushButton" name="ReturnBtn">
+              <widget class="QWidget" name="widget_4" native="true">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>130</y>
-                 <width>136</width>
-                 <height>36</height>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>411</width>
+                 <height>211</height>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">/* Style for QPushButton */
+                <string notr="true">background-color: white;
+border: 1px solid black;</string>
+               </property>
+               <widget class="QPushButton" name="ReturnBtn">
+                <property name="geometry">
+                 <rect>
+                  <x>140</x>
+                  <y>170</y>
+                  <width>136</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>-1</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">/* Style for QPushButton */
 QPushButton {
     background-color: #FFA500; /* Orange background color */
     color: #000000; /* Black text color */
@@ -2025,21 +2224,48 @@ QPushButton:hover {
     background-color: #FFD700; /* Lighter orange on hover */
 }
 </string>
-               </property>
-               <property name="text">
-                <string>Return </string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>icon/icons8-imac-exit-24.png</normaloff>icon/icons8-imac-exit-24.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>18</width>
-                 <height>24</height>
-                </size>
-               </property>
+                </property>
+                <property name="text">
+                 <string>Return </string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>18</width>
+                  <height>24</height>
+                 </size>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_14">
+                <property name="geometry">
+                 <rect>
+                  <x>130</x>
+                  <y>8</y>
+                  <width>151</width>
+                  <height>37</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    color: #3700B3; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 18px; /* Font size */
+	border: none;
+    padding: 8px; /* Padding around the content */
+    background-color: #FFFFFF; /* Background color */
+}</string>
+                </property>
+                <property name="text">
+                 <string>Return Details</string>
+                </property>
+               </widget>
               </widget>
+              <zorder>widget_4</zorder>
+              <zorder>OrderId</zorder>
+              <zorder>FineDue</zorder>
+              <zorder>FineDueValue</zorder>
+              <zorder>BookName</zorder>
+              <zorder>BookNameVal</zorder>
+              <zorder>OrderIdValue</zorder>
              </widget>
              <widget class="QDateEdit" name="SearchDate">
               <property name="geometry">
