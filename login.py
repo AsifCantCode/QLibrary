@@ -1,6 +1,8 @@
 import sys
 import PyQt5
+import PyPDF2
 import time
+from PyPDF2 import PdfReader
 import cv2
 from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap ,QStandardItemModel , QStandardItem
@@ -234,6 +236,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.bookbtn.clicked.connect(self.uploadBooks)
         self.ui.authbtn.clicked.connect(self.uploadAuthors)
+        self.ui.pdf_btn.clicked.connect(self.uploadPDFs)
 
     def on_orders_btn_2_toggled(self):
 
@@ -319,6 +322,37 @@ class MainWindow(QMainWindow):
                             librarianApi.insert_book(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7], lines[8], lines[9],
                                                     lines[10] , lines[11],entered_username, entered_password)
                             qr.createQR(lines[0] ,lines[1] )
+
+    def uploadPDFs(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        # Show the file dialog and get the selected file paths
+        file_paths, _ = QFileDialog.getOpenFileNames(self, "Open Files", "", "PDF Files (*.pdf);;All Files (*)",
+                                                     options=options)
+
+        if file_paths:
+            print(f'Selected Files: {file_paths}')
+            for file_path in file_paths:
+                # Check if the file has a PDF extension
+                if file_path.lower().endswith('.pdf'):
+                    # Perform your desired actions with each selected PDF file
+                    with open(file_path, mode='rb') as file:
+                        pdf_reader = PdfReader(file)
+
+                        # Read the first two lines from each PDF
+                        first_two_lines = ""
+                        for page_num in range(min(len(pdf_reader.pages), 2)):
+                            page = pdf_reader.pages[page_num]
+                            first_two_lines += page.extract_text()
+
+                        # Your logic with the first two lines of the PDF
+                        print(f'First two lines of {file_path}: {first_two_lines}')
+                else:
+                    print(f'Error: {file_path} is not a PDF file and will be skipped.')
+
+        else:
+            print('No files selected.')
+
     def uploadAuthors(self):
             options = QFileDialog.Options()
             # Show the file dialog and get the selected file path
