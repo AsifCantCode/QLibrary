@@ -161,9 +161,10 @@ class librarianApi:
         print(response.text)
         return str(response.text)
 
-
     @classmethod
-    def upload_file_to_api(api_url, file_path, username, password):
+    def upload_file_to_api(self, file_path, username, password):
+
+        api_url="http://localhost:8081/file/upload"
         try:
             with open(file_path, 'rb') as file:
                 files = {'file': file}
@@ -173,6 +174,7 @@ class librarianApi:
                 if response.status_code == 200:
                     print("File uploaded successfully!")
                     print("Response:", response.json())  # If the API returns JSON response
+                    return response.json()
                 else:
                     print(f"Failed to upload file. Status code: {response.status_code}")
                     print("Response:", response.text)  # Get the error response text
@@ -180,6 +182,24 @@ class librarianApi:
             print(f"File not found at path: {file_path}")
         except Exception as e:
             print(f"An error occurred: {e}")
+
+    @classmethod
+    def ebook_reg(self , pdfId,photoId):
+            url="http://localhost:8081/ebook/create"
+
+            payload = {
+                "fileId": pdfId,
+                "photoId":photoId
+
+            }
+            response = requests.post(url, params=payload)
+            print(response.status_code)
+
+
+
+
+
+
 
 if __name__ == "__main__":
     print(librarianApi.book_info(1 , '1234' , 'abcd'))
