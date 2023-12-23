@@ -28,6 +28,7 @@ $('#loginButton').click(function() {
         success: function(data) {
             localStorage.setItem("mysession" , data);
             localStorage.setItem("myhash" , hash);
+            localStorage.setItem("myusername" , username);
             alert('Login Successful ' + data);
             window.location.href = "student_dash.html";
         },
