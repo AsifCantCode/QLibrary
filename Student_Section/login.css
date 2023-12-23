@@ -1,6 +1,6 @@
 .login-left {
     color: #ffffff;
-    background: #5b37fa;
+    background: linear-gradient(#7151ff, #3a1d8c);
     height: 200px;
     font-weight: 100;
   }
@@ -18,6 +18,7 @@
     font-weight: 500; /* Increase font weight for thicker text */
     line-height: 1.6;
     font-family: "Arial", sans-serif;
+    margin-bottom: 2rem;
    }
   .login-left .trampolene {
     font-size: 16px;
@@ -34,25 +35,25 @@
   }
   .square {
     position: absolute;
-    background: #2b027e;
+    background: #29007adc;
   }
   .s1 {
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
+    top: 1%;
+    left: 0.5%;
+    width: 100px;
+    height: 100px;
   }
   .s2 {
     top: 29%;
     left: 16%;
-    width: 230px;
-    height: 230px;
+    width: 270px;
+    height: 270px;
   }
   .s3 {
-    top: 75%;
-    left: 38.5%;
-    width: 90px;
-    height: 90px;
+    top: 80%;
+    left: 42%;
+    width: 100px;
+    height: 100px;
   }
   
   .login-form {
@@ -74,11 +75,11 @@
     color: #0009b4;
   }
   .login-form .btn-primary {
-    background: #4c28ff !important;
+    background: #4506bb !important;
     margin: 10px 0 25px;
   }
   .login-form .btn-primary:hover {
-    background: #0612bb !important;
+    background: #5900ff !important;
     color: antiquewhite;
   }
   

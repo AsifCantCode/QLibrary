@@ -30,15 +30,15 @@
                     <h2 id="s_mail">mail@gmail.com</h2>
                     <br>
                     <ul>
-                        <li class="active" data-target="#dashboardSection" onclick="getBorrowedBooks()">Dashboard</li>
+                        <li class="active" data-target="#dashboardSection" onclick="getBorrowedBooks()">HOME</li>
                         <li data-target="#myProfileSection">UPDATE PROFILE</li>
-                        <li data-target="#allBooksSection" onclick="fetchAllBooks()">View All Books</li>
+                        <li data-target="#allBooksSection" onclick="fetchAllBooks()">ALL BOOKS</li>
                         <li data-target="#ebookSection">E-BOOK</li>
                     </ul>
                 </div>
                 <div class="main">
                     <div class="section active" id="dashboardSection">
-                        <h1>Dashboard</h1> <br>
+                        <h1>BORROWED BOOK LIST</h1> <br>
                         <div class="card-body">
                             <table id="borrowedBooksTable">
                                 <thead>
@@ -47,10 +47,10 @@
                                         <th>Author</th>
                                         <th>Genre</th>
                                         <th>Issue Date</th>
-                                        <th>Borrowed Deadline</th>
+                                        <th>Return Deadline</th>
                                         <th>Overdue Days</th>
-                                        <th>Accumulated Fines</th>
-                                        <th>Payment & Return</th>
+                                        <th>Fines</th>
+                                        <th>Payment</th>
                                     </tr>
                                 </thead>
                                 <tbody id="borrowedBooksList">
@@ -66,8 +66,6 @@
                                 <label for="email_student">Email Address:</label>
                                 <input class="form-control" type="email" id="email_student" name="email_student" required>
                             
-                                <label for="address_student">Address:</label>
-                                <input class="form-control" type="text" id="address_student" name="address_student" required>
                             
                                 <label for="phone_student">Phone Number:</label>
                                 <input class="form-control" type="text" id="phone_student" name="phone_student" maxlength="14" minlength="11" required>
@@ -82,7 +80,7 @@
                     </div>
                     <div class="section" id="allBooksSection">
                             <div class="cReg">
-                                <h1>All Books</h1> <br><hr>
+                                <h1>VIEW ALL BOOKS</h1> <br><hr>
                                 <div class="card mb-4">
                                     <div class="card-body">
                                             <div class="form-group">
@@ -112,7 +110,7 @@
                             </div>
                     </div>
                     <div class="section" id="ebookSection">
-                        <h1>E-Book</h1> <br>
+                        <h1>E-BOOK</h1> <br>
                     </div>
                 </div>
         </div>

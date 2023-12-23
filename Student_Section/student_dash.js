@@ -176,7 +176,65 @@ function displayAllBooks(allBooks) {
     });
 }
 
+$('#updateStudentForm').submit(function (event) {
+    event.preventDefault();
+
+    const username = localStorage.getItem("myusername");
+    const updatedEmail = $('#email_student').val();
+    const updatedPhone = $('#phone_student').val();
+
+    const updatedMember = {
+        email: updatedEmail,
+        contactNumber: updatedPhone
+    };
+
+    $.ajax({
+        type: 'PUT',
+        url: `http://${hostaddr}:8081/student/update-member/${username}`,
+        contentType: 'application/json',
+        data: JSON.stringify(updatedMember),
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        success: function (data) {
+            alert('Member information updated successfully.');
+            window.location.reload();
+        },
+        error: function () {
+            // Handle error
+            alert('Error updating member information.');
+        }
+    });
+});
+
+
 // Fetch all books when the page loads
 $(document).ready(function () {
     fetchAllBooks();
+    const username = localStorage.getItem("myusername");
+    $.ajax({
+    type: 'GET',
+    url: `http://${hostaddr}:8081/student/member-info/${username}`,
+    contentType: 'application/json',
+    headers: {
+        'Authorization': 'Basic ' + hash
+    },
+    success: function (data) {
+        // Handle the member information received in the 'data' variable
+        if (data) {
+            console.log('Member Information:', data);
+            $('#s_name').text(data.name);
+            $('#s_id').text(data.memberid);
+            $('#s_mail').text(data.email);
+            $('#email_student').val(data.email);
+            $('#phone_student').val(data.contactNumber);
+        } else {
+            console.log('Member not found.');
+        }
+    },
+    error: function () {
+        // Handle error
+        alert('Error fetching member information.');
+    }
+});
 });

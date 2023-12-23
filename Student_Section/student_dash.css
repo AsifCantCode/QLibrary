@@ -12,7 +12,7 @@ html {
   font-size: 10px;
   font-family: "Josefin Sans", sans-serif;
   min-width: 65rem;
-  background: linear-gradient(#ffffff, #e5e5e5);
+  background: white
 }
 
 :root {
@@ -66,7 +66,7 @@ html {
 .sidebar li.active {
   font-weight: bold;
   color: #e2f6ff;
-  background-color: #1e00ff81;
+  background-color: #5418cc62;
   border-left: #ff0000 solid 0.8rem;
   border-radius: .5rem;
 }
@@ -99,7 +99,7 @@ html {
   margin: auto;
   margin-top: 2rem;
   background-color: #ffffff45;
-  border-radius: 2rem;
+  border-radius: 1rem;
   box-shadow: 0.2rem 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
@@ -111,7 +111,7 @@ label {
   font-size: medium;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border-radius: 2.5rem;
+  border-radius: 1rem;
   border: 1px solid #000000;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
@@ -126,24 +126,25 @@ select {
 
 
 #updateProfileButton:hover {
-  background-color: #fff718d8;
-  color: #030060;
+  background-color: #cccfff;
+  color: #003366;
 }
 
 #updateProfileButton {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-left: auto; /* Remove margin-left */
-  margin-right: auto; /* Add margin-right:auto to center horizontally */
-  width: 20rem;
-  padding: 1rem;
-  border-radius: 2.5rem;
-  border: #ddd;
-  background-color: #ffa600;
-  color: #000;
-  cursor: pointer;
-  box-shadow: 0.5rem 0.6rem 0.8rem rgba(0, 0, 0, 0.268);
+font-size: 1.5rem;
+font-weight: bold;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: 2rem;
+width: 20rem;
+padding: 1rem;
+border-radius: 1rem;
+border: #ddd;
+background-color: #ffca4d;
+color: #000000;
+cursor: pointer;
+box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.268);
 }
 
 .container,
@@ -186,7 +187,7 @@ a {
   height: 7.2rem;
   position: fixed;
   line-height: 5rem;
-  background-color: #0c18c3e7;
+  background-color: #33009aeb;
   justify-content: center;
   z-index: 1;
 }
@@ -270,7 +271,7 @@ a {
     font-size: 1.6rem;
     background: white;
     border-radius: 5rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
     width: 100%;
     cursor: pointer;
     outline: none;
