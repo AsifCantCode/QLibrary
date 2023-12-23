@@ -34,12 +34,13 @@ $('#loginButton').click(function() {
     let hash = btoa(id + ":" + password);
     
 });
+const hash = localStorage.getItem("myhash")
 
 function getBorrowedBooks(){
-  const id = 1;
+  const username = localStorage.getItem("myusername");
   $.ajax({
     type: 'GET',
-    url: 'http://'+hostaddr+':8081/borrowedBooks/'+ id,
+    url: 'http://'+hostaddr+':8081/borrowedBooks/'+ username,
     contentType: 'application/json',
     headers:{
         'Authorization': 'Basic ' + hash
