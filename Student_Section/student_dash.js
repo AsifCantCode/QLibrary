@@ -108,8 +108,9 @@ function filterBooks(searchTerm) {
     allBooksRows.forEach(row => {
         const title = row.querySelector('.title').innerText.toLowerCase();
         const author = row.querySelectorAll('td')[1].innerText.toLowerCase();
+        const genre = row.querySelectorAll('td')[2].innerText.toLowerCase();
 
-        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+        if (title.includes(searchTerm) || author.includes(searchTerm) || genre.includes(searchTerm)) {
             row.style.display = ''; // Show the row
         } else {
             row.style.display = 'none'; // Hide the row
