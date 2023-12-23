@@ -100,11 +100,25 @@ class MainWindow(QMainWindow):
         self.ui.changeDpButton = self.ui.findChild(QPushButton, 'changeDp')
         self.ui.changeDpButton.clicked.connect(self.update_profile_picture)
 
+        #construction script for upload part
+        self.ui.bookbtn.clicked.connect(self.uploadBooks)
+        self.ui.authbtn.clicked.connect(self.uploadAuthors)
+        self.ui.pdf_btn.clicked.connect(self.uploadPDFs)
+
+
         #construction script for the borrow part
+        self.ui.initborrow.clicked.connect(self.registerBorrow)
+        self.ui.camerabutton.clicked.connect(self.openCamera)
+        self.ui.serportclose.clicked.connect(self.closeCardReader)
 
         #construction script for the other parts
         self.ui.SearchButton.clicked.connect(self.SearchOrder)
         self.ui.orderData.clicked.connect(self.on_orderData_clicked)
+
+        self.ui.genreComboBox.currentIndexChanged.connect(self.on_genreComboBoxClicked)
+        self.ui.authorComboBox.currentIndexChanged.connect(self.on_authorComboBoxClicked)
+        self.ui.foundBooks.clicked.connect(self.on_foundBooksClicked)
+        self.regMemberBtn.clicked.connect(self.registerMember)
 
         #construction script for the search order part
 
@@ -176,9 +190,7 @@ class MainWindow(QMainWindow):
         self.genres = librarianApi.get_genres(entered_username,entered_password)
         self.ui.genreComboBox.addItems(self.genres)
 
-        self.ui.genreComboBox.currentIndexChanged.connect(self.on_genreComboBoxClicked)
-        self.ui.authorComboBox.currentIndexChanged.connect(self.on_authorComboBoxClicked)
-        self.ui.foundBooks.clicked.connect(self.on_foundBooksClicked)
+
 
 
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -194,7 +206,6 @@ class MainWindow(QMainWindow):
         loading_label = self.ui.loadingLabel
         loading_label.show()
 
-        self.ui.camerabutton.clicked.connect(self.openCamera)
 
 
         print('borrow menu')
@@ -208,10 +219,10 @@ class MainWindow(QMainWindow):
         self.timer2.timeout.connect(self.getMemberID)
 
 
-
+        self.items_set= set()
         self.ui.booklist.setModel(self.booklistmodel)
-        self.ui.serportclose.clicked.connect(self.closeCardReader)
-        self.ui.initborrow.clicked.connect(self.registerBorrow)
+
+
         self.refreshBookList()
         self.timer.timeout.connect(lambda: loading_label.hide())
 
@@ -234,9 +245,7 @@ class MainWindow(QMainWindow):
     def on_orders_btn_1_toggled(self):
 
         self.ui.stackedWidget.setCurrentIndex(2)
-        self.ui.bookbtn.clicked.connect(self.uploadBooks)
-        self.ui.authbtn.clicked.connect(self.uploadAuthors)
-        self.ui.pdf_btn.clicked.connect(self.uploadPDFs)
+
 
     def on_orders_btn_2_toggled(self):
 
@@ -254,7 +263,7 @@ class MainWindow(QMainWindow):
 
         print('reg Section')
         self.ui.stackedWidget.setCurrentIndex(4)
-        self.regMemberBtn.clicked.connect(self.registerMember)
+
 
 
     def on_memberRegSection_btn_2_toggled(self):
