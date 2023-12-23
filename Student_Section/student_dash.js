@@ -55,6 +55,33 @@ function getBorrowedBooks(){
   });
 }
 
+function fetchAllBorrow(){
+
+
+  const requestBody = {
+    username : localStorage.getItem("myusername"),
+  }
+  $.ajax({
+    type: 'GET',
+    url: 'http://'+hostaddr+':8081/student/get-all-borrow',
+    contentType: 'application/x-www-form-urlencoded',
+    headers:{
+        'Authorization': 'Basic ' + hash
+    },
+    data:requestBody,
+
+
+    success: function(data) {
+        //console.log(data);
+        displayBorrowedBooks(data);
+    },
+    error: function() {
+
+    }
+  });
+}
+
+fetchAllBorrow();
 
 function displayBorrowedBooks(borrowedBooks) {
   const borrowedBooksList = document.getElementById('borrowedBooksList');
@@ -64,29 +91,22 @@ function displayBorrowedBooks(borrowedBooks) {
   borrowedBooks.forEach(book => {
       const row = document.createElement('tr');
 
-      // Calculate overdue days and fines
-      const borrowedDeadline = new Date(book.borrowedDeadline);
-      const randomInteger = Math.floor(Math.random() * 10);
-      const today = new Date();
-      if(randomInteger%2!=0){
-          today.setDate(today.getDate() - 10);
-      }
-      else{
-          today.setDate(today.getDate() + 10);
-      }
-      const overdueDays = Math.max(0, Math.floor((today - borrowedDeadline) / (1000 * 60 * 60 * 24)));
-      const fine = calculateFine(borrowedDeadline,randomInteger);
+
+      const overdueDays = 'test';
+      const fine = 0;
+
+      console.log(book.reservation_date)
 
       // Set button color and text based on the presence of a fine
       const buttonColor = fine > 0 ? 'btn-danger' : 'btn-success';
-      const buttonText = fine > 0 ? `Pay Fine & Return` : `Return`;
+      const buttonText = fine > 0 ? `Pay Fine` : `No Fine`;
 
       row.innerHTML = `
           <td class="title">${book.title}</td>
           <td>${book.author}</td>
           <td>${book.genre}</td>
-          <td>${book.reservation_date}</td>
-          <td>${new Date(book.borrowedDeadline).toLocaleDateString()}</td>
+          <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
+          <td>${book.borrowedDeadline}</td>
           <td>${overdueDays}</td>
           <td>${fine}</td>
           <td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>

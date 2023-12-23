@@ -162,5 +162,24 @@ class librarianApi:
         return str(response.text)
 
 
+    @classmethod
+    def upload_file_to_api(api_url, file_path, username, password):
+        try:
+            with open(file_path, 'rb') as file:
+                files = {'file': file}
+                auth = HTTPBasicAuth(username, password)
+                response = requests.post(api_url, files=files, auth=auth)
+
+                if response.status_code == 200:
+                    print("File uploaded successfully!")
+                    print("Response:", response.json())  # If the API returns JSON response
+                else:
+                    print(f"Failed to upload file. Status code: {response.status_code}")
+                    print("Response:", response.text)  # Get the error response text
+        except FileNotFoundError:
+            print(f"File not found at path: {file_path}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
 if __name__ == "__main__":
     print(librarianApi.book_info(1 , '1234' , 'abcd'))
