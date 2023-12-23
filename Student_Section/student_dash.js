@@ -51,8 +51,6 @@ function getBorrowedBooks(){
         displayBorrowedBooks(data);
     },
     error: function() {
-        // Handle login error
-        alert('Login failed. Please check your credentials.');
     }
   });
 }
