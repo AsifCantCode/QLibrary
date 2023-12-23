@@ -3,6 +3,7 @@ import PyQt5
 import PyPDF2
 import time
 from PyPDF2 import PdfReader
+from pdf2image import convert_from_path
 import cv2
 from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap ,QStandardItemModel , QStandardItem
@@ -345,17 +346,15 @@ class MainWindow(QMainWindow):
                 # Check if the file has a PDF extension
                 if file_path.lower().endswith('.pdf'):
                     # Perform your desired actions with each selected PDF file
-                    with open(file_path, mode='rb') as file:
-                        pdf_reader = PdfReader(file)
 
-                        # Read the first two lines from each PDF
-                        first_two_lines = ""
-                        for page_num in range(min(len(pdf_reader.pages), 2)):
-                            page = pdf_reader.pages[page_num]
-                            first_two_lines += page.extract_text()
 
-                        # Your logic with the first two lines of the PDF
-                        print(f'First two lines of {file_path}: {first_two_lines}')
+
+                    pdfid=librarianApi.upload_file_to_api(file_path,entered_username,entered_password)
+                    #photoid=librarianApi.upload_file_to_api("tempcover.png",entered_username,entered_password)
+                    photoId=54
+
+                    librarianApi.ebook_reg(pdfid,photoId)
+
                 else:
                     print(f'Error: {file_path} is not a PDF file and will be skipped.')
 
