@@ -1,6 +1,6 @@
 .login-left {
     color: #ffffff;
-    background: #3742fa;
+    background: #5b37fa;
     height: 200px;
     font-weight: 100;
   }
@@ -34,7 +34,7 @@
   }
   .square {
     position: absolute;
-    background: #0c17c3;
+    background: #2b027e;
   }
   .s1 {
     top: 0;
@@ -74,7 +74,7 @@
     color: #0009b4;
   }
   .login-form .btn-primary {
-    background: #2832ff !important;
+    background: #4c28ff !important;
     margin: 10px 0 25px;
   }
   .login-form .btn-primary:hover {
