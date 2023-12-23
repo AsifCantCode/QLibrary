@@ -157,6 +157,15 @@ function fetchAllBooks() {
     });
 }
 
+function reserveBook(bookId) {
+    // Implement your logic to handle book reservation
+    // You can use AJAX to send a reservation request to the backend
+    // and update the UI accordingly
+    console.log(`Reserving book with ID: ${bookId}`);
+    // Add your AJAX call or other reservation logic here
+}
+
+
 function displayAllBooks(allBooks) {
     const allBooksList = document.getElementById('allBooksList');
     // Clear existing borrowed books list items
@@ -165,13 +174,15 @@ function displayAllBooks(allBooks) {
     allBooks.forEach(book => {
         const row = document.createElement('tr');
 
-        row.innerHTML = `
-            <td class="title">${book.title}</td>
-            <td>${book.authors}</td>
-            <td>${book.genre}</td>
-            <td>${book.totalCopies}</td>
-            <td>${book.availableCopies}</td>
-        `;
+    row.innerHTML = `
+    <td class="title">${book.title}</td>
+    <td>${book.authors}</td>
+    <td>${book.genre}</td>
+    <td>${book.totalCopies}</td>
+    <td>${book.availableCopies}</td>
+    <td><button class="btn btn-primary" onclick="reserveBook('${book.id}')">Reserve</button></td>
+    `;
+
         allBooksList.appendChild(row);
     });
 }
