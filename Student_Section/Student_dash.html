@@ -30,14 +30,34 @@
                     <h2 id="s_mail">mail@gmail.com</h2>
                     <br>
                     <ul>
-                        <li class="active" data-target="#attendanceChartSection">SECTION 1</li>
+                        <li class="active" data-target="#dashboardSection">Dashboard</li>
                         <li data-target="#myProfileSection">UPDATE PROFILE</li>
-                        <li data-target="#courseRegSection">SECTION 3</li>
+                        <li data-target="#allBooksSection">View All Books</li>
+                        <li data-target="#ebookSection">E-BOOK</li>
                     </ul>
                 </div>
                 <div class="main">
-                    <div class="section active" id="attendanceChartSection">
-                        <h1>Section 1</h1> <br>
+                    <div class="section active" id="dashboardSection">
+                        <h1>Dashboard</h1> <br>
+                        <div class="card-body">
+                            <table id="borrowedBooksTable">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Genre</th>
+                                        <th>Issue Date</th>
+                                        <th>Borrowed Deadline</th>
+                                        <th>Overdue Days</th>
+                                        <th>Accumulated Fines</th>
+                                        <th>Payment & Return</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="borrowedBooksList">
+                                    <!-- Borrowed book items will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="section" id="myProfileSection">
                         <h1>STUDENT PROFILE UPDATE</h1> <br>
@@ -60,10 +80,39 @@
                             </form>
                         </div>
                     </div>
-                    <div class="section" id="courseRegSection">
+                    <div class="section" id="allBooksSection">
                             <div class="cReg">
-                                <h1>Section 3</h1> <br><hr>
+                                <h1>All Books</h1> <br><hr>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="search">Search:</label>
+                                                <input type="text" id="search" name="search" class="form-control" required>
+                                            </div>
+                                            <!-- <button type="button" class="btn btn-primary" onclick="searchBooks()">Search Books</button> -->
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table id="allBooksTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Author</th>
+                                                <th>Genre</th>
+                                                <th>Total Copies</th>
+                                                <th>Available Copies</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="allBooksList">
+                                            <!-- Borrowed book items will be dynamically added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                    </div>
+                    <div class="section" id="ebookSection">
+                        <h1>E-Book</h1> <br>
                     </div>
                 </div>
         </div>

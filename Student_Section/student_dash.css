@@ -315,3 +315,47 @@ a {
       font-size: 26px;
     }
   }
+
+  #borrowedBooksTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#borrowedBooksTable th,
+#borrowedBooksTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#borrowedBooksTable th {
+    background-color: #f2f2f2;
+}
+
+#borrowedBooksTable tr:hover {
+    background-color: #f5f5f5;
+}
+.card-body {
+  border-radius: 0 0 5px 5px;
+}
+#allBooksTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#allBooksTable th,
+#allBooksTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#allBooksTable th {
+  background-color: #f2f2f2;
+}
+
+#allBooksTable tr:hover {
+  background-color: #f5f5f5;
+}
