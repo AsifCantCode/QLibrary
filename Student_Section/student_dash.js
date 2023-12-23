@@ -57,25 +57,6 @@ function getBorrowedBooks(){
   });
 }
 
-function fetchAllBooks(){
-  $.ajax({
-    type: 'GET',
-    url: 'http://'+hostaddr+':8081/allBooks/',
-    contentType: 'application/json',
-    headers:{
-        'Authorization': 'Basic ' + hash
-    },
-
-    
-    success: function(data) {
-        displayAllBooks(data);
-    },
-    error: function() {
-        // Handle login error
-        alert('Login failed. Please check your credentials.');
-    }
-  });
-}
 
 function displayBorrowedBooks(borrowedBooks) {
   const borrowedBooksList = document.getElementById('borrowedBooksList');
@@ -116,38 +97,67 @@ function displayBorrowedBooks(borrowedBooks) {
   });
 }
 
-function displayAllBooks(allBooks) {
-  const allBooksList = document.getElementById('allBooksList');
-  // Clear existing borrowed books list items
-  allBooksList.innerHTML = '';
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', function () {
+    const searchTerm = this.value.trim().toLowerCase();
+    filterBooks(searchTerm);
+});
 
-  allBooks.forEach(book => {
-      const row = document.createElement('tr');
+function filterBooks(searchTerm) {
+    const allBooksList = document.getElementById('allBooksList');
+    const allBooksRows = allBooksList.querySelectorAll('tr');
 
-      // // Calculate overdue days and fines
-      // const borrowedDeadline = new Date(book.borrowedDeadline);
-      // const randomInteger = Math.floor(Math.random() * 10);
-      // const today = new Date();
-      // if(randomInteger%2!=0){
-      //     today.setDate(today.getDate() - 10);
-      // }
-      // else{
-      //     today.setDate(today.getDate() + 10);
-      // }
-      // const overdueDays = Math.max(0, Math.floor((today - borrowedDeadline) / (1000 * 60 * 60 * 24)));
-      // const fine = calculateFine(borrowedDeadline,randomInteger);
+    allBooksRows.forEach(row => {
+        const title = row.querySelector('.title').innerText.toLowerCase();
+        const author = row.querySelectorAll('td')[1].innerText.toLowerCase();
 
-      // // Set button color and text based on the presence of a fine
-      // const buttonColor = fine > 0 ? 'btn-danger' : 'btn-success';
-      // const buttonText = fine > 0 ? `Pay Fine & Return` : `Return`;
-
-      row.innerHTML = `
-          <td class="title">${book.title}</td>
-          <td>${book.author}</td>
-          <td>${book.genre}</td>
-          <td>${book.total_copies}</td>
-          <td>${book.available_copies}</td>
-      `;
-      borrowedBooksList.appendChild(row);
-  });
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+            row.style.display = ''; // Show the row
+        } else {
+            row.style.display = 'none'; // Hide the row
+        }
+    });
 }
+
+function fetchAllBooks() {
+    // Fetch all books from the backend
+    $.ajax({
+        type: 'GET',
+        url: 'http://' + hostaddr + ':8081/student/get-all-books',
+        contentType: 'application/json',
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        success: function (data) {
+            displayAllBooks(data);
+        },
+        error: function () {
+            // Handle error
+            alert('Error fetching books.');
+        }
+    });
+}
+
+function displayAllBooks(allBooks) {
+    const allBooksList = document.getElementById('allBooksList');
+    // Clear existing borrowed books list items
+    allBooksList.innerHTML = '';
+
+    allBooks.forEach(book => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td class="title">${book.title}</td>
+            <td>${book.authors}</td>
+            <td>${book.genre}</td>
+            <td>${book.totalCopies}</td>
+            <td>${book.availableCopies}</td>
+        `;
+        allBooksList.appendChild(row);
+    });
+}
+
+// Fetch all books when the page loads
+$(document).ready(function () {
+    fetchAllBooks();
+});
