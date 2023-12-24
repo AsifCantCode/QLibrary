@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./student_dash.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Dashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./student_dash.css">
+        <script src="./bkash/jquery.min.js"></script>
 </head>
     <body>
         <div>
@@ -40,6 +41,7 @@
                     <div class="section active" id="dashboardSection">
                         <h1>BORROWED BOOK LIST</h1> <br>
                         <div class="card-body">
+                            <h2>Total Fine : <span id="totalFine">0</span> BDT <button id="bKash_button"> pay </button></h2>
                             <table id="borrowedBooksTable">
                                 <thead>
                                     <tr>
@@ -50,7 +52,7 @@
                                         <th>Return Deadline</th>
                                         <th>Overdue Days</th>
                                         <th>Fines</th>
-                                        <th>Payment</th>
+                                        <!-- <th>Payment</th> -->
                                     </tr>
                                 </thead>
                                 <tbody id="borrowedBooksList">
@@ -116,8 +118,19 @@
                 </div>
         </div>
         </div>
+        <script>
+            $(document).ready(function () {
+                // Pass a callback to getFine to handle the asynchronous result
+                getFine(function (amount) {
+                    console.log(amount);
+                    initBkash(amount);
+                });
+            });
+        </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./bkash/bKash-transaction.js"></script>
+        <script src="./bkash/bKash-checkout-sandbox.js"></script>
         <script src = "./student_dash.js"></script>
     </body>
 </html>

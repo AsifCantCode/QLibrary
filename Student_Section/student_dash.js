@@ -1,5 +1,6 @@
 const sidebarItems = document.querySelectorAll(".sidebar li");
 const sections = document.querySelectorAll(".section");
+totalFines = 0;
 
 sidebarItems.forEach((item) => {
   item.addEventListener("click", () => {
@@ -55,33 +56,72 @@ function getBorrowedBooks(){
   });
 }
 
-function fetchAllBorrow(){
+function fetchAllBorrow(callback) {
+    const requestBody = {
+        username: localStorage.getItem("myusername"),
+    };
 
+    $.ajax({
+        type: 'GET',
+        url: 'http://' + hostaddr + ':8081/student/get-all-borrow',
+        contentType: 'application/x-www-form-urlencoded',
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        data: requestBody,
+        success: function (data) {
+            displayBorrowedBooks(data);
+            totalFines = calculateTotalFine(data);
+            document.getElementById('totalFine').innerText = totalFines;
 
-  const requestBody = {
-    username : localStorage.getItem("myusername"),
-  }
-  $.ajax({
-    type: 'GET',
-    url: 'http://'+hostaddr+':8081/student/get-all-borrow',
-    contentType: 'application/x-www-form-urlencoded',
-    headers:{
-        'Authorization': 'Basic ' + hash
-    },
-    data:requestBody,
-
-
-    success: function(data) {
-        //console.log(data);
-        displayBorrowedBooks(data);
-    },
-    error: function() {
-
-    }
-  });
+            // Call the callback function after the asynchronous operation is complete
+            callback(totalFines);
+        },
+        error: function () {
+            // Handle error
+        }
+    });
 }
 
-fetchAllBorrow();
+function getFine(callback) {
+    fetchAllBorrow(function (totalFines) {
+        callback(totalFines);
+    });
+}
+
+
+function calculateFine(reservationDate, borrowedDeadline, finePerDay) {
+    const millisecondsPerDay = 24 * 60 * 60 * 1000; // Number of milliseconds in a day
+
+    // Convert reservation date and borrowed deadline to Date objects
+    const reservationDateObj = new Date(reservationDate);
+    const borrowedDeadlineObj = new Date(borrowedDeadline);
+
+    // If the conversion fails, return 0 fine (or handle it according to your requirements)
+    if (isNaN(reservationDateObj) || isNaN(borrowedDeadlineObj)) {
+        return 0;
+    }
+
+    // Calculate the difference in days
+    const overdueDays = Math.floor((borrowedDeadlineObj - reservationDateObj) / millisecondsPerDay);
+
+    // Calculate the fine
+    const fine = overdueDays > 0 ? overdueDays * finePerDay : 0;
+
+    return fine;
+}
+
+function calculateTotalFine(borrowedBooks) {
+    const finePerDay = 5; // Set your fine amount per day here
+    let totalFine = 0;
+
+    borrowedBooks.forEach(book => {
+        const fine = calculateFine(book.reservation_date, book.borrowedDeadline, finePerDay);
+        totalFine += fine;
+    });
+
+    return totalFine;
+}
 
 function displayBorrowedBooks(borrowedBooks) {
   const borrowedBooksList = document.getElementById('borrowedBooksList');
@@ -93,7 +133,7 @@ function displayBorrowedBooks(borrowedBooks) {
 
 
       const overdueDays = 'test';
-      const fine = 0;
+      const fine = calculateFine(book.reservation_date, book.borrowedDeadline, 5);
 
       console.log(book.reservation_date)
 
@@ -109,8 +149,8 @@ function displayBorrowedBooks(borrowedBooks) {
           <td>${book.borrowedDeadline}</td>
           <td>${overdueDays}</td>
           <td>${fine}</td>
-          <td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
-      `;
+          `;
+          //<td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
       borrowedBooksList.appendChild(row);
   });
 }
