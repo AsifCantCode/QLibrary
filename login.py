@@ -3,7 +3,6 @@ import PyQt5
 import PyPDF2
 import time
 from PyPDF2 import PdfReader
-from pdf2image import convert_from_path
 import cv2
 from PyQt5 import QtGui, QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap ,QStandardItemModel , QStandardItem
@@ -414,8 +413,8 @@ class MainWindow(QMainWindow):
             for port in available_ports:
                 print(port.device)
 
-        if self.ser is None and len(available_ports) == 2:
-            self.ser = serial.Serial(available_ports[1].device, 115200, timeout=1)
+        if self.ser is None and len(available_ports) == 1:
+            self.ser = serial.Serial(available_ports[0].device, 115200, timeout=1)
             self.ui.serportclose.setText('Port Open !')
             self.timer2.start(200)
         elif self.ser is not None:

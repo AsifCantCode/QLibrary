@@ -116,8 +116,9 @@ function calculateTotalFine(borrowedBooks) {
     let totalFine = 0;
 
     borrowedBooks.forEach(book => {
-        const fine = calculateFine(book.reservation_date, book.borrowedDeadline, finePerDay);
-        totalFine += fine;
+        //const fine = calculateFine(book.reservation_date, book.borrowedDeadline, finePerDay);
+        //totalFine += fine;
+        totalFine += Number(book.fine);
     });
 
     return totalFine;
@@ -133,7 +134,8 @@ function displayBorrowedBooks(borrowedBooks) {
 
 
       const overdueDays = 'test';
-      const fine = calculateFine(book.reservation_date, book.borrowedDeadline, 5);
+      //const fine = calculateFine(book.reservation_date, book.borrowedDeadline, 5);
+      const fine = book.fine;
 
       console.log(book.reservation_date)
 

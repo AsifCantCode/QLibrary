@@ -124,6 +124,40 @@ select {
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
+h2 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+#totalFine {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5733; /* Adjust the color as needed */
+}
+
+#bKash_button {
+  height: 40px;
+  width: 40px;
+  padding:12px 10px;
+  font-size: 18px;
+  margin: 1px 10px;;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-image: url('./bkash/bKash.png');
+  background-position: center; /* Center the logo within the button */
+  background-repeat: no-repeat;
+  background-size: contain; /* Adjust based on your logo dimensions */
+}
+
+#bKash_button:hover {
+  background-color: #a9ffad;
+}
+
 
 #updateProfileButton:hover {
   background-color: #cccfff;
