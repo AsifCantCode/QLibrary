@@ -34,7 +34,7 @@
                         <li class="active" data-target="#dashboardSection" onclick="getBorrowedBooks()">HOME</li>
                         <li data-target="#myProfileSection">UPDATE PROFILE</li>
                         <li data-target="#allBooksSection" onclick="fetchAllBooks()">ALL BOOKS</li>
-                        <li data-target="#ebookSection">E-BOOK</li>
+                        <li data-target="#ebookSection" onclick="fetchAllEBooks()">E-BOOK</li>
                     </ul>
                 </div>
                 <div class="main">
@@ -114,6 +114,31 @@
                     </div>
                     <div class="section" id="ebookSection">
                         <h1>E-BOOK</h1> <br>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="search">Search:</label>
+                                        <input type="text" id="search" name="search" class="form-control" required>
+                                    </div>
+                                    <!-- <button type="button" class="btn btn-primary" onclick="searchBooks()">Search Books</button> -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table id="eBooksTable">
+                                <thead>
+                                    <tr>
+                                        <th>E-Book ID</th>
+                                        <th>Name</th>
+                                        <th>Book Cover</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="eBooksList">
+                                    <!-- Borrowed book items will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
         </div>

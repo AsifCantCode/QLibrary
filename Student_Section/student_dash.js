@@ -3,23 +3,23 @@ const sections = document.querySelectorAll(".section");
 totalFines = 0;
 
 sidebarItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // Remove active class from all sidebar items
-    sidebarItems.forEach((item) => item.classList.remove("active"));
-    // Add active class to clicked item
-    item.classList.add("active");
-    const target = item.getAttribute("data-target");
-    // Hide all sections
-    sections.forEach((section) => section.classList.remove("active"));
-    // Show target section
-    document.querySelector(target).classList.add("active");
-  });
+    item.addEventListener("click", () => {
+        // Remove active class from all sidebar items
+        sidebarItems.forEach((item) => item.classList.remove("active"));
+        // Add active class to clicked item
+        item.classList.add("active");
+        const target = item.getAttribute("data-target");
+        // Hide all sections
+        sections.forEach((section) => section.classList.remove("active"));
+        // Show target section
+        document.querySelector(target).classList.add("active");
+    });
 });
 
-hostaddr="localhost";
+hostaddr = "localhost";
 localStorage.setItem('host', hostaddr);
 
-$('#loginButton').click(function() {
+$('#loginButton').click(function () {
     const userType = $('#userType').val();
     const id = $('#email').val();
     const password = $('#password').val();
@@ -28,32 +28,32 @@ $('#loginButton').click(function() {
     // Send login request to the server using jQuery's AJAX
 
     const requestBody = {
-        id : Number(id),
-        password : password
+        id: Number(id),
+        password: password
     }
 
     let hash = btoa(id + ":" + password);
-    
+
 });
 const hash = localStorage.getItem("myhash")
 
-function getBorrowedBooks(){
-  const username = localStorage.getItem("myusername");
-  $.ajax({
-    type: 'GET',
-    url: 'http://'+hostaddr+':8081/borrowedBooks/'+ username,
-    contentType: 'application/json',
-    headers:{
-        'Authorization': 'Basic ' + hash
-    },
+function getBorrowedBooks() {
+    const username = localStorage.getItem("myusername");
+    $.ajax({
+        type: 'GET',
+        url: 'http://' + hostaddr + ':8081/borrowedBooks/' + username,
+        contentType: 'application/json',
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
 
-    
-    success: function(data) {
-        displayBorrowedBooks(data);
-    },
-    error: function() {
-    }
-  });
+
+        success: function (data) {
+            displayBorrowedBooks(data);
+        },
+        error: function () {
+        }
+    });
 }
 
 function fetchAllBorrow(callback) {
@@ -125,36 +125,36 @@ function calculateTotalFine(borrowedBooks) {
 }
 
 function displayBorrowedBooks(borrowedBooks) {
-  const borrowedBooksList = document.getElementById('borrowedBooksList');
-  // Clear existing borrowed books list items
-  borrowedBooksList.innerHTML = '';
+    const borrowedBooksList = document.getElementById('borrowedBooksList');
+    // Clear existing borrowed books list items
+    borrowedBooksList.innerHTML = '';
 
-  borrowedBooks.forEach(book => {
-      const row = document.createElement('tr');
+    borrowedBooks.forEach(book => {
+        const row = document.createElement('tr');
 
 
-      const overdueDays = 'test';
-      //const fine = calculateFine(book.reservation_date, book.borrowedDeadline, 5);
-      const fine = book.fine;
+        const overdueDays = 'test';
+        //const fine = calculateFine(book.reservation_date, book.borrowedDeadline, 5);
+        const fine = book.fine;
 
-      console.log(book.reservation_date)
+        console.log(book.reservation_date)
 
-      // Set button color and text based on the presence of a fine
-      const buttonColor = fine > 0 ? 'btn-danger' : 'btn-success';
-      const buttonText = fine > 0 ? `Pay Fine` : `No Fine`;
+        // Set button color and text based on the presence of a fine
+        const buttonColor = fine > 0 ? 'btn-danger' : 'btn-success';
+        const buttonText = fine > 0 ? `Pay Fine` : `No Fine`;
 
-      row.innerHTML = `
-          <td class="title">${book.title}</td>
-          <td>${book.author}</td>
-          <td>${book.genre}</td>
-          <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
-          <td>${book.borrowedDeadline}</td>
-          <td>${overdueDays}</td>
-          <td>${fine}</td>
-          `;
-          //<td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
-      borrowedBooksList.appendChild(row);
-  });
+        row.innerHTML = `
+            <td class="title">${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.genre}</td>
+            <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
+            <td>${book.borrowedDeadline}</td>
+            <td>${overdueDays}</td>
+            <td>${fine}</td>
+            `;
+        //<td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
+        borrowedBooksList.appendChild(row);
+    });
 }
 
 const searchInput = document.getElementById('search');
@@ -216,7 +216,7 @@ function displayAllBooks(allBooks) {
     allBooks.forEach(book => {
         const row = document.createElement('tr');
 
-    row.innerHTML = `
+        row.innerHTML = `
     <td class="title">${book.title}</td>
     <td>${book.authors}</td>
     <td>${book.genre}</td>
@@ -227,6 +227,46 @@ function displayAllBooks(allBooks) {
 
         allBooksList.appendChild(row);
     });
+}
+
+function displayEBooks(allBooks) {
+    const allBooksList = document.getElementById('eBooksList');
+    // Clear existing borrowed books list items
+    allBooksList.innerHTML = '';
+
+    allBooks.forEach(book => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td class="title">${book.ebookId}</td>
+            <td>${book.ebookFileName}</td>
+            <td>${book.ebookPhotoId}</td>
+            <td><button class="btn btn-primary" onclick="downloadBook('${book.ebookId}')">Download</button></td>
+        `;
+        allBooksList.appendChild(row);
+    });
+}
+function fetchAllEBooks() {
+    // Fetch all books from the backend
+    $.ajax({
+        type: 'GET',
+        url: 'http://' + hostaddr + ':8081/ebook/get/allebooks',
+        contentType: 'application/json',
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        success: function (data) {
+            displayEBooks(data);
+        },
+        error: function () {
+            // Handle error
+            alert('Error fetching books.');
+        }
+    });
+}
+
+function downloadBook(ebookId){
+    //function to download books
 }
 
 $('#updateStudentForm').submit(function (event) {
@@ -266,28 +306,28 @@ $(document).ready(function () {
     fetchAllBooks();
     const username = localStorage.getItem("myusername");
     $.ajax({
-    type: 'GET',
-    url: `http://${hostaddr}:8081/student/member-info/${username}`,
-    contentType: 'application/json',
-    headers: {
-        'Authorization': 'Basic ' + hash
-    },
-    success: function (data) {
-        // Handle the member information received in the 'data' variable
-        if (data) {
-            console.log('Member Information:', data);
-            $('#s_name').text(data.name);
-            $('#s_id').text(data.memberid);
-            $('#s_mail').text(data.email);
-            $('#email_student').val(data.email);
-            $('#phone_student').val(data.contactNumber);
-        } else {
-            console.log('Member not found.');
+        type: 'GET',
+        url: `http://${hostaddr}:8081/student/member-info/${username}`,
+        contentType: 'application/json',
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        success: function (data) {
+            // Handle the member information received in the 'data' variable
+            if (data) {
+                console.log('Member Information:', data);
+                $('#s_name').text(data.name);
+                $('#s_id').text(data.memberid);
+                $('#s_mail').text(data.email);
+                $('#email_student').val(data.email);
+                $('#phone_student').val(data.contactNumber);
+            } else {
+                console.log('Member not found.');
+            }
+        },
+        error: function () {
+            // Handle error
+            alert('Error fetching member information.');
         }
-    },
-    error: function () {
-        // Handle error
-        alert('Error fetching member information.');
-    }
-});
+    });
 });
