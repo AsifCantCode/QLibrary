@@ -233,10 +233,8 @@ function displayEBooks(allBooks) {
     const allBooksList = document.getElementById('eBooksList');
     // Clear existing borrowed books list items
     allBooksList.innerHTML = '';
-
-    allBooks.forEach(book => {
+        allBooks.forEach(book => {
         const row = document.createElement('tr');
-
         row.innerHTML = `
             <td class="title">${book.ebookId}</td>
             <td>${book.ebookFileName}</td>
@@ -246,6 +244,8 @@ function displayEBooks(allBooks) {
         allBooksList.appendChild(row);
     });
 }
+
+
 function fetchAllEBooks() {
     // Fetch all books from the backend
     $.ajax({
@@ -266,24 +266,21 @@ function fetchAllEBooks() {
     });
 }
 
-function downloadBook(ebookId){
-    //function to download books
-    $.ajax({
-        type: 'GET',
-        url: 'http://' + hostaddr + ':8081/ebook/get/'+ebookId,
-        headers: {
-            'Authorization': 'Basic ' + hash
-        },
-        success: function (data) {
-            //console.log(data)
-            displayEBooks(data);
-        },
-        error: function () {
-            // Handle error
-            alert('Error fetching books.');
-        }
-    });
+
+function downloadBook(ebookId) {
+    // Create a hidden anchor element
+    const downloadLink = document.createElement('a');
+
+    // Set the download link's href attribute to the ebook download URL
+    downloadLink.href = 'http://' + hostaddr + ':8081/ebook/get/' + ebookId;
+
+    // Set the download attribute to specify the filename
+    downloadLink.download = `ebook_${ebookId}.pdf`;
+
+    // Simulate a click on the anchor element to trigger the download
+    downloadLink.click();
 }
+
 
 $('#updateStudentForm').submit(function (event) {
     event.preventDefault();
