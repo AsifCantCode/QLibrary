@@ -256,6 +256,7 @@ function fetchAllEBooks() {
             'Authorization': 'Basic ' + hash
         },
         success: function (data) {
+            console.log(data)
             displayEBooks(data);
         },
         error: function () {
@@ -267,6 +268,21 @@ function fetchAllEBooks() {
 
 function downloadBook(ebookId){
     //function to download books
+    $.ajax({
+        type: 'GET',
+        url: 'http://' + hostaddr + ':8081/ebook/get/'+ebookId,
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        success: function (data) {
+            //console.log(data)
+            displayEBooks(data);
+        },
+        error: function () {
+            // Handle error
+            alert('Error fetching books.');
+        }
+    });
 }
 
 $('#updateStudentForm').submit(function (event) {
