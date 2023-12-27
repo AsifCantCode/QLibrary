@@ -218,43 +218,12 @@
             </font>
            </property>
            <property name="text">
-            <string>MESSAGES</string>
+            <string>ISSUE LIST</string>
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>24</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="ebook_button">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Ebook</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+             <normaloff>icon/two-books.png</normaloff>
+             <normalon>icon/two-books (1).png</normalon>icon/two-books.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -477,32 +446,8 @@ QPushButton:hover {
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>21</width>
-             <height>28</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="ebook_button_s">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>icon/icons8-message-24.png</normaloff>
-             <normalon>icon/icons8-message-24 (1).png</normalon>icon/icons8-message-24.png</iconset>
+             <normaloff>icon/two-books.png</normaloff>
+             <normalon>icon/two-books (1).png</normalon>icon/two-books.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -673,70 +618,6 @@ QPushButton:hover {
             <property name="spacing">
              <number>10</number>
             </property>
-            <item>
-             <widget class="QLineEdit" name="search_input">
-              <property name="styleSheet">
-               <string notr="true">/* Style for QLineEdit */
-QLineEdit {
-    border: 1px solid #999999; /* Border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding inside the QLineEdit */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 14px; /* Font size */
-    color: #333333; /* Text color */
-    background-color: #FFFFFF; /* Background color */
-}
-
-/* Style for a focused QLineEdit */
-QLineEdit:focus {
-    border: 2px solid #4A90E2; /* Border when focused */
-}
-
-/* Style for a disabled QLineEdit */
-QLineEdit:disabled {
-    background-color: #dff2ff; /* Background color for disabled state */
-    color: #999999; /* Text color for disabled state */
-}
-</string>
-              </property>
-              <property name="placeholderText">
-               <string>Search...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="search_btn">
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton:hover {
-    background-color: #f0ffed; /* Teal color */
-}
-</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset>
-                <normaloff>icon/icons8-search-128 (1).png</normaloff>icon/icons8-search-128 (1).png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>28</width>
-                <height>29</height>
-               </size>
-              </property>
-             </widget>
-            </item>
            </layout>
           </item>
           <item>
@@ -805,7 +686,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="page">
           <widget class="QLabel" name="label_4">
@@ -2135,6 +2016,23 @@ QPushButton:hover {
                 <width>101</width>
                 <height>31</height>
                </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* Style for QPushButton */
+QPushButton {
+    background-color: #FFA500; /* Orange background color */
+    color: #000000; /* Black text color */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding around the button text */
+	font-size: 14px;
+}
+
+/* QPushButton when hovered */
+QPushButton:hover {
+    background-color: #FFD700; /* Lighter orange on hover */
+}
+</string>
               </property>
               <property name="text">
                <string>Search</string>
