@@ -17,6 +17,8 @@ html {
 
 :root {
 --primary-color: #1d1d1d;
+--table-background: #f2ebffc8;
+--table-header: rgba(22, 0, 121, 0.881);
 }
 
 .p_container {
@@ -103,9 +105,12 @@ html {
   box-shadow: 0.2rem 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-label {
-  margin-top: 1rem;
+.searchLabel {
+  margin-right: 2rem;
+  font-size: 1.9rem;
+  font-weight: 600;
 }
+
 
 .form-control {
   font-size: medium;
@@ -115,6 +120,20 @@ label {
   border: 1px solid #000000;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
+
+/* Search input styling */
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  padding: 7px;
+  border: 2px solid #663399;
+  border-radius: 5px;
+  width: 40rem;
+}
+
 
 select {
     padding: 0.5rem;
@@ -156,6 +175,7 @@ h2 {
 
 #bKash_button:hover {
   background-color: #a9ffad;
+  scale: 1.03;
 }
 
 
@@ -172,13 +192,33 @@ margin-left: auto;
 margin-right: auto;
 margin-top: 2rem;
 width: 20rem;
-padding: 1rem;
+padding: 0.8rem;
 border-radius: 1rem;
 border: #ddd;
 background-color: #ffca4d;
 color: #000000;
 cursor: pointer;
 box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.268);
+}
+
+.tblbtn{
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 12rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: #ddd;
+  background-color: #c4c8ff;
+  box-shadow: 0.12rem 0.12rem 0.1rem rgb(0, 2, 103);
+  color: #000000;
+  cursor: pointer;
+}
+
+.tblbtn:hover {
+  background-color: #69b4ff;
 }
 
 .container,
@@ -258,40 +298,6 @@ a {
     vertical-align: middle;
   }
 
-  @media (max-width: 768px) {
-    .p_container {
-      flex-direction: column;
-      align-items: center;
-      min-height: 205vh;
-    }
-  
-    .circular--square{
-      margin: auto;
-      padding: auto;
-      display: block;
-    }
-  
-    .sidebar{
-      width: 100%;
-      padding: 1rem;
-      display: block;
-      position: relative;
-      height: fit-content;
-    }
-    .main{
-      padding: 2rem;
-    }
-  
-    .form_ctrl {
-      font-size: 1.2rem;
-    }
-
-    button{
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-  }
 
   .file-container {
     margin-top: 4rem;
@@ -345,72 +351,202 @@ a {
     visibility: hidden;
   }
 
-  @media (max-width: 560px) {
-    .nav-text {
-      font-size: 26px;
-    }
-  }
 
-  #borrowedBooksTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  
+
+
+/* Header styling */
+.card-body h2 {
+  color: #663399;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-#borrowedBooksTable th,
-#borrowedBooksTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+/* Total Fine span styling */
+#totalFine {
+  font-size: 24px;
+  color: #800080; /* Purple color for total fine */
+}
+
+/* Button styling */
+#bKash_button {
+  background-color: #800080; /* Purple color for the button */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Table styling */
+#borrowedBooksTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#borrowedBooksTable th, #borrowedBooksTable td {
+  border: 1px solid #663399;
+  padding: 10px;
+  text-align: center;
 }
 
 #borrowedBooksTable th {
-    background-color: #f2f2f2;
+  background-color: var(--table-header); /* Purple color for table header */
+  color: #fff; /* White text color for table header */
 }
 
-#borrowedBooksTable tr:hover {
-    background-color: #f5f5f5;
+/* Table body styling */
+#borrowedBooksList tr:hover {
+  background-color: #f8f5ff; /* Light purplish background on hover */
 }
-.card-body {
-  border-radius: 0 0 5px 5px;
+
+/* Fine cell styling */
+#borrowedBooksTable td:nth-child(7) {
+  color: #ff0000; /* Red color for overdue days */
+  font-weight: bold;
 }
+
+/* Overdue days cell styling */
+#borrowedBooksTable td:nth-child(6) {
+  color: #800080; /* Purple color for fine amount */
+  font-weight: bold;
+}
+
+.cReg hr {
+  border: 1px solid #663399; /* Dark purple horizontal rule */
+  margin: 10px 0;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid #663399; /* Dark purple border for the card */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px 20px;
+
+}
+
+.search-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 #allBooksTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow: auto; /* Enable both horizontal and vertical overflow */
 }
 
-#allBooksTable th,
-#allBooksTable td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+#allBooksTable th, #allBooksTable td {
+  border: 1px solid #663399;
+  padding: 10px;
+  text-align: center;
 }
 
 #allBooksTable th {
-  background-color: #f2f2f2;
+  background-color: var(--table-header);
+  color: #fff;
 }
 
-#allBooksTable tr:hover {
-  background-color: #f5f5f5;
+/* Table body styling */
+#allBooksList tr:hover {
+  background-color: #f8f5ff;
 }
+
+/* Reserved column styling */
+#allBooksTable td:nth-child(6) {
+  color: #800080;
+  font-weight: bold;
+}
+
+.card-body {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  max-width: 100%;
+  overflow: auto; /* Enable horizontal overflow for the container */
+}
+
+
 #eBooksTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow: auto; /* Enable both horizontal and vertical overflow */
 }
 
-#eBooksTable th,
-#eBooksTable td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+#eBooksTable th, #eBooksTable td {
+  border: 1px solid #663399;
+  padding: 10px;
+  text-align: center;
 }
 
 #eBooksTable th {
-  background-color: #f2f2f2;
+  background-color: var(--table-header);
+  color: #fff;
 }
 
-#eBooksTable tr:hover {
-  background-color: #f5f5f5;
+/* Table body styling */
+#eBooksList tr:hover {
+  background-color: #f8f5ff;
+}
+
+/* Reserved column styling */
+#eBooksTable td:nth-child(6) {
+  color: #800080;
+  font-weight: bold;
+}
+
+@media (max-width: 560px) {
+  .nav-text {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p_container {
+    flex-direction: column;
+    align-items: center;
+    min-height: 205vh;
+  }
+
+  .circular--square{
+    margin: auto;
+    padding: auto;
+    display: block;
+  }
+
+  .sidebar{
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    position: relative;
+    height: fit-content;
+  }
+  .main{
+    padding: 2rem;
+  }
+
+  .form_ctrl {
+    font-size: 1.2rem;
+  }
+
+  button{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
 }

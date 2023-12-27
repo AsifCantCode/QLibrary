@@ -157,10 +157,16 @@ function displayBorrowedBooks(borrowedBooks) {
     });
 }
 
-const searchInput = document.getElementById('search');
+const searchInput = document.getElementById('allSearch');
 searchInput.addEventListener('input', function () {
     const searchTerm = this.value.trim().toLowerCase();
     filterBooks(searchTerm);
+});
+
+const EsearchInput = document.getElementById('eSearch');
+EsearchInput.addEventListener('input', function () {
+    const EsearchTerm = this.value.trim().toLowerCase();
+    filtereBooks(EsearchTerm);
 });
 
 function filterBooks(searchTerm) {
@@ -179,6 +185,24 @@ function filterBooks(searchTerm) {
         }
     });
 }
+
+function filtereBooks(searchTerm) {
+    const allBooksList = document.getElementById('eBooksList');
+    const allBooksRows = allBooksList.querySelectorAll('tr');
+
+    allBooksRows.forEach(row => {
+        const eBookid = row.querySelectorAll('td')[0].innerText;
+        const eName = row.querySelectorAll('td')[1].innerText.toLowerCase();
+
+        if (eBookid.includes(searchTerm) || eName.includes(searchTerm)) {
+            row.style.display = ''; // Show the row
+        } else {
+            row.style.display = 'none'; // Hide the row
+        }
+    });
+}
+
+
 
 function fetchAllBooks() {
     // Fetch all books from the backend
@@ -222,7 +246,7 @@ function displayAllBooks(allBooks) {
     <td>${book.genre}</td>
     <td>${book.totalCopies}</td>
     <td>${book.availableCopies}</td>
-    <td><button class="btn btn-primary" onclick="reserveBook('${book.id}')">Reserve</button></td>
+    <td><button class="btn btn-primary tblbtn" onclick="reserveBook('${book.id}')">Reserve</button></td>
     `;
 
         allBooksList.appendChild(row);
@@ -233,19 +257,19 @@ function displayEBooks(allBooks) {
     const allBooksList = document.getElementById('eBooksList');
     // Clear existing borrowed books list items
     allBooksList.innerHTML = '';
-
-    allBooks.forEach(book => {
+        allBooks.forEach(book => {
         const row = document.createElement('tr');
-
         row.innerHTML = `
             <td class="title">${book.ebookId}</td>
             <td>${book.ebookFileName}</td>
             <td>${book.ebookPhotoId}</td>
-            <td><button class="btn btn-primary" onclick="downloadBook('${book.ebookId}')">Download</button></td>
+            <td><button class="btn btn-primary tblbtn" onclick="downloadBook('${book.ebookId}')">Download</button></td>
         `;
         allBooksList.appendChild(row);
     });
 }
+
+
 function fetchAllEBooks() {
     // Fetch all books from the backend
     $.ajax({
@@ -266,24 +290,21 @@ function fetchAllEBooks() {
     });
 }
 
-function downloadBook(ebookId){
-    //function to download books
-    $.ajax({
-        type: 'GET',
-        url: 'http://' + hostaddr + ':8081/ebook/get/'+ebookId,
-        headers: {
-            'Authorization': 'Basic ' + hash
-        },
-        success: function (data) {
-            //console.log(data)
-            displayEBooks(data);
-        },
-        error: function () {
-            // Handle error
-            alert('Error fetching books.');
-        }
-    });
+
+function downloadBook(ebookId) {
+    // Create a hidden anchor element
+    const downloadLink = document.createElement('a');
+
+    // Set the download link's href attribute to the ebook download URL
+    downloadLink.href = 'http://' + hostaddr + ':8081/ebook/get/' + ebookId;
+
+    // Set the download attribute to specify the filename
+    downloadLink.download = `ebook_${ebookId}.pdf`;
+
+    // Simulate a click on the anchor element to trigger the download
+    downloadLink.click();
 }
+
 
 $('#updateStudentForm').submit(function (event) {
     event.preventDefault();
@@ -329,6 +350,7 @@ $(document).ready(function () {
             'Authorization': 'Basic ' + hash
         },
         success: function (data) {
+            console.log(data);
             // Handle the member information received in the 'data' variable
             if (data) {
                 console.log('Member Information:', data);
