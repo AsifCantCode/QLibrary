@@ -144,14 +144,16 @@ function displayBorrowedBooks(borrowedBooks) {
         const buttonText = fine > 0 ? `Pay Fine` : `No Fine`;
 
         row.innerHTML = `
-            <td class="title">${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.genre}</td>
-            <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
-            <td>${book.borrowedDeadline}</td>
-            <td>${book.overdue}</td>
-            <td>${fine}</td>
-            `;
+    <td class="title">${book.title}</td>
+    <td>${book.author}</td>
+    <td>${book.genre}</td>
+    <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
+    <td>${book.borrowedDeadline}</td>
+    <td>${book.overdue}</td>
+    <td style="color: ${fine == 0 ? 'black' : 'red'}">${fine == 0 ? 'No fine' : fine}</td>
+`;
+
+        
         //<td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
         borrowedBooksList.appendChild(row);
     });
