@@ -413,8 +413,9 @@ class MainWindow(QMainWindow):
             for port in available_ports:
                 print(port.device)
 
-        if self.ser is None and len(available_ports) == 1:
-            self.ser = serial.Serial(available_ports[0].device, 115200, timeout=1)
+        l = len(available_ports)
+        if self.ser is None :
+            self.ser = serial.Serial(available_ports[l-1].device, 115200, timeout=1)
             self.ui.serportclose.setText('Port Open !')
             self.timer2.start(200)
         elif self.ser is not None:
