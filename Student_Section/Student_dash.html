@@ -82,15 +82,11 @@
                     </div>
                     <div class="section" id="allBooksSection">
                             <div class="cReg">
-                                <h1>VIEW ALL BOOKS</h1> <br><hr>
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="search">Search:</label>
-                                                <input type="text" id="search" name="search" class="form-control" required>
-                                            </div>
-                                            <!-- <button type="button" class="btn btn-primary" onclick="searchBooks()">Search Books</button> -->
-                                        </form>
+                                <div class="header">
+                                    <h1>VIEW ALL BOOKS</h1>
+                                    <div class="search-body">
+                                        <label class="searchLabel" for="allSearch">Search </label>
+                                        <input type="text" name="search" class="search" id="allSearch">
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -113,35 +109,33 @@
                             </div>
                     </div>
                     <div class="section" id="ebookSection">
-                        <h1>E-BOOK</h1> <br>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="search">Search:</label>
-                                        <input type="text" id="search" name="search" class="form-control" required>
-                                    </div>
-                                    <!-- <button type="button" class="btn btn-primary" onclick="searchBooks()">Search Books</button> -->
-                                </form>
+                        <div class="cReg">
+                            <div class="header">
+                            <h1>E-BOOK</h1> <br>
+                                <div class="search-body">
+                                    <label class="searchLabel" for="search">Search </label>
+                                    <input type="text" name="search" class="search" id="eSearch">
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <table id="eBooksTable">
-                                <thead>
-                                    <tr>
-                                        <th>E-Book ID</th>
-                                        <th>Name</th>
-                                        <th>File Size</th>
-                                        <th>Download</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="eBooksList">
+                            <div class="card-body">
+                                <table id="eBooksTable">
+                                    <thead>
+                                        <tr>
+                                            <th>E-Book ID</th>
+                                            <th>Name</th>
+                                            <th>File Size</th>
+                                            <th>Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="eBooksList">
                                     <!-- Borrowed book items will be dynamically added here -->
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
         <script>
             $(document).ready(function () {
