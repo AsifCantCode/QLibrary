@@ -149,7 +149,7 @@ function displayBorrowedBooks(borrowedBooks) {
             <td>${book.genre}</td>
             <td>${book.reservation_date ? book.reservation_date : 'N/A'}</td>
             <td>${book.borrowedDeadline}</td>
-            <td>${overdueDays}</td>
+            <td>${book.overdue}</td>
             <td>${fine}</td>
             `;
         //<td><button class="btn ${buttonColor}" onclick="handleBookAction('${book._id}', ${fine})">${buttonText}</button></td>
@@ -223,10 +223,41 @@ function fetchAllBooks() {
     });
 }
 
-function reserveBook(bookId) {
+function reserveBook(username , bookId) {
     // Implement your logic to handle book reservation
     // You can use AJAX to send a reservation request to the backend
     // and update the UI accordingly
+
+    const url = 'http://localhost:8081/student/reserve'; // Replace with your API endpoint URL
+
+    // Data to send in the request body
+    const requestData = {
+        username: username,
+        bookid: bookId
+    };
+
+    $.ajax({
+        url: 'http://localhost:8081/student/reserve',
+        type: 'POST',
+        data: requestData,
+        success: function(response) {
+            
+            alert('Book reserved successfully', response);
+            
+        },
+
+        headers: {
+            'Authorization': 'Basic ' + hash
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            
+            alert('The book is already available', errorThrown);
+            
+        }
+    });
+
+
+
     console.log(`Reserving book with ID: ${bookId}`);
     // Add your AJAX call or other reservation logic here
 }
@@ -235,6 +266,8 @@ function reserveBook(bookId) {
 function displayAllBooks(allBooks) {
     const allBooksList = document.getElementById('allBooksList');
     // Clear existing borrowed books list items
+
+    const username = localStorage.getItem("myusername");
     allBooksList.innerHTML = '';
 
     allBooks.forEach(book => {
@@ -246,7 +279,7 @@ function displayAllBooks(allBooks) {
     <td>${book.genre}</td>
     <td>${book.totalCopies}</td>
     <td>${book.availableCopies}</td>
-    <td><button class="btn btn-primary tblbtn" onclick="reserveBook('${book.id}')">Reserve</button></td>
+    <td><button class="btn btn-primary tblbtn" onclick="reserveBook('${username}' , '${book.id}')">Reserve</button></td>
     `;
 
         allBooksList.appendChild(row);
@@ -262,7 +295,7 @@ function displayEBooks(allBooks) {
         row.innerHTML = `
             <td class="title">${book.ebookId}</td>
             <td>${book.ebookFileName}</td>
-            <td>${book.ebookPhotoId}</td>
+            <td>${Number(book.ebookPhotoId).toFixed(2)} MB</td>
             <td><button class="btn btn-primary tblbtn" onclick="downloadBook('${book.ebookId}')">Download</button></td>
         `;
         allBooksList.appendChild(row);
